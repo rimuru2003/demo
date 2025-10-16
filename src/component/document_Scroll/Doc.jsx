@@ -4,6 +4,7 @@ import Service from "../service/Service";
 import Client from "../client/Client";
 import Videos from "../video_page/Video";
 import Hero from "../hero/Hero";
+import TestimonialsCarousel from "../testimonial/Testimonial";
 
 const Doc = () => {
   const components = [
@@ -14,6 +15,7 @@ const Doc = () => {
     { Component: About, offset: 30 },
     { Component: Service, offset: 60 },
     { Component: Client, offset: 90 },
+    { Component: TestimonialsCarousel, offset: 120 },
   ];
 
   return (
