@@ -11,7 +11,7 @@ const Navbar = () => {
       </div>
       <div className="flex items-center justify-evenly gap-x-5 font-semibold">
         {navs.map((a, b) => (
-          <p key={b} className="border-2 p-2 hover:bg-red-500 hover:text-neutral-100"> {a}</p>
+          <p key={b} className="border-2 p-2 text-red-500 hover:bg-red-500 hover:text-neutral-100"> {a}</p>
         ))}
       </div>
     </div>

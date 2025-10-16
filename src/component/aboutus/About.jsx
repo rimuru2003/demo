@@ -3,7 +3,7 @@ import CounterBox from "./Counter";
 
 const About = () => {
   return (
-    <div className="h-screen w-full bg-[#0ABAB5] text-white rounded-[2rem]">
+    <div className="h-screen w-full bg-[#0ABAB5] text-white ">
       <div className="flex justify-between pt-12 pb-2 items-center border-b-[1.5px] w-[95%] mx-auto">
         <div className="text-lg font-medium">[ About ]</div>
         <div className="flex justify-center items-center gap-x-3 text-xl font-medium">
