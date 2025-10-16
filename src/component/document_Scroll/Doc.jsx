@@ -23,7 +23,7 @@ const Doc = () => {
       {components.map(({ Component, offset }, index) => (
         <div
           key={index}
-          className="sticky pb-16  overflow-x-hidden "
+          className=" pb-16  overflow-x-hidden "
           style={{ top: `${offset}px` }}
         >
           <Component />
