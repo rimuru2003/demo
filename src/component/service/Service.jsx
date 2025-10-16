@@ -108,7 +108,7 @@ const Service = () => {
         <div className="text-lg font-medium">[ About ]</div>
       </div>
 
-      <div className="w-full flex py-14 px-10 justify-between h-[35%]">
+      <div className="w-full flex py-14 px-10 justify-between h-[30%]">
         <div className="text-8xl font-bold w-[40%] h-full text-start">
           <p>What We</p><p> Offer</p>
         </div>
