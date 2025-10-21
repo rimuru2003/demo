@@ -6,6 +6,7 @@ import FAISAL from "../../assest/faisal_abbasi.webp";
 import RAHUL from "../../assest/rahul_bhandari.webp";
 import SYED from "../../assest/syed_hyder.webp";
 import MONAM from "../../assest/monam.webp";
+import { createPortal } from "react-dom";
 
 gsap.registerPlugin(useGSAP);
 
@@ -80,10 +81,14 @@ const OurTeam = ({ onBackClick }) => {
 
   return (
     <>
-      <div
-        ref={cursorRef}
-        className="fixed z-50 pointer-events-none bg-white text-[#0ABAB5] text-sm font-bold px-3 py-1 rounded-full shadow opacity-0 scale-0"
-      ></div>
+      {createPortal(
+        <div
+          ref={cursorRef}
+          className="fixed z-[9999] pointer-events-none bg-white text-[#0ABAB5] text-sm
+            font-bold px-3 py-1 rounded-full shadow opacity-0 scale-0"
+        ></div>,
+        document.getElementById("cursor-root") 
+      )}
 
       <div className="min-h-screen w-full bg-[#0ABAB5] flex flex-col space-y-36 pt-40 px-24 items-start justify-center relative overflow-hidden">
         <div className="flex flex-wrap w-full justify-center gap-6 px-4">
