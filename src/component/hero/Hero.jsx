@@ -3,8 +3,8 @@ import Mouse from "../../assest/mouse.svg";
 
 const Hero = () => {
   return (
-    <div className="h-[90vh] w-full flex flex-col justify-around ">
-      <div className=" h-[70%] flex flex-col  px-10  items-start font-bold text-[9rem] text-[#4D4D4D] leading-[8.5rem]">
+    <div className="h-screen w-full flex flex-col justify-around ">
+      <div className=" h-[70%] flex flex-col mt-14   px-10  items-start font-bold text-[9rem] text-[#4D4D4D] leading-[8.5rem]">
         <h1 className="">We make things </h1>
         <h1 className="">possible once and</h1>
         <h1 className="">always</h1>

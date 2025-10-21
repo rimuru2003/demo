@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
+// ...imports
 gsap.registerPlugin(ScrollTrigger);
 
 const Service = () => {
@@ -46,15 +47,12 @@ const Service = () => {
       ],
     },
   ];
-
   const [current, setCurrent] = useState(0);
-
   const containerRef = useRef(null);
   const stackRef = useRef(null);
   const panelsRef = useRef([]);
   const prevRef = useRef(0);
 
-  // keep absolute stacked panels, hide non-current
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       gsap.set(panelsRef.current, {
@@ -72,12 +70,10 @@ const Service = () => {
     return () => ctx.revert();
   }, []);
 
-  // tiny switch animation (short + clear)
   useLayoutEffect(() => {
     const prev = prevRef.current;
     const next = current;
     if (prev === next) return;
-
     const outgoing = panelsRef.current[prev];
     const incoming = panelsRef.current[next];
 
@@ -87,39 +83,49 @@ const Service = () => {
       scale: 0.92,
       zIndex: 3,
     });
-    gsap.set(outgoing, { zIndex: 2,  });
+    gsap.set(outgoing, { zIndex: 2 });
 
-    gsap
+    const tl = gsap
       .timeline({ defaults: { duration: 0.6, ease: "power3.out" } })
       .to(outgoing, { scale: 0.9, y: -40 }, 0)
       .to(incoming, { y: 0, scale: 1 }, 0.05)
       .set(outgoing, { visibility: "hidden", clearProps: "transform,zIndex" });
 
     prevRef.current = next;
+    return () => tl.kill();
   }, [current]);
 
   useGSAP(() => {
+    const last = sections.length - 1;
+    const STEP_HYST = 0.45;
+
     const st = ScrollTrigger.create({
       trigger: containerRef.current,
-      start: "30% 50%",
-      end: "80% 50%",
-
-      // markers: true,
+      start: "top top",
+      end: () => "+=" + window.innerHeight * last   , 
+      scrub: 3,
       onUpdate: (self) => {
-        const idx = Math.min(
-          Math.floor(self.progress * sections.length),
-          sections.length - 1
-        );
-        if (idx !== current) setCurrent(idx);
+        const raw = self.progress * last;
+        const prev = prevRef.current;
+        if (raw > prev + STEP_HYST && prev < last) setCurrent(prev + 1);
+        else if (raw < prev - STEP_HYST && prev > 0) setCurrent(prev - 1);
       },
+      onLeave: () => {
+        if (prevRef.current !== last) setCurrent(last);
+      },
+      onLeaveBack: () => {
+        if (prevRef.current !== 0) setCurrent(0);
+      },
+      markers: true,
     });
+
     return () => st.kill();
-  }, [current, sections.length]);
+  }, [sections.length]);
 
   return (
-    <div
+    <section
       ref={containerRef}
-      className="w-full min-h-screen bg-[#E16C02] text-white overflow-hidden pb-20"
+      className="w-full h-[140vh]  bg-[#E16C02] text-white overflow-hidden pb-20"
     >
       {/* Header */}
       <div className="flex justify-between pt-12 pb-2 items-center border-b-[1.5px] w-[95%] mx-auto">
@@ -135,9 +141,7 @@ const Service = () => {
         <div className="w-[50%]">
           <p className="text-2xl text-start tracking-widest">
             We're Engage, a versatile outlet committed to providing top-tier
-            corporate and outbound training services. We specialize in designing
-            tailored programs that cater to both individual and organizational
-            needs, emphasizing team building and employee growth.
+            corporate and outbound training services...
           </p>
         </div>
       </div>
@@ -163,10 +167,11 @@ const Service = () => {
           ))}
         </div>
 
+        {/* Right: stacked panels */}
         <div className="w-[70%] relative">
           <div
             ref={stackRef}
-            className="relative w-full h-[520px] rounded-3xl overflow-hidden"
+            className="relative w-full h-[30rem] rounded-3xl overflow-hidden"
           >
             {sections.map((s, i) => (
               <div
@@ -174,6 +179,7 @@ const Service = () => {
                 ref={(el) => (panelsRef.current[i] = el)}
                 className="bg-white rounded-3xl w-full h-full"
               >
+                {/* panel content identical to yours */}
                 <div className="w-full h-full rounded-3xl text-start flex justify-between overflow-hidden">
                   <div className="w-1/2 p-10 flex flex-col justify-start">
                     <h1 className="text-5xl font-bold text-orange-600 mb-6">
@@ -190,8 +196,6 @@ const Service = () => {
                       ))}
                     </ul>
                   </div>
-
-                  {/* 4 images */}
                   <div className="w-[50%] relative flex justify-end items-center overflow-hidden py-10">
                     <div className="grid grid-cols-2 gap-3 rotate-[20deg]">
                       {[0, 1, 2, 3].map((k) => (
@@ -211,7 +215,7 @@ const Service = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
