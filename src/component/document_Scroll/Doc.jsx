@@ -6,12 +6,13 @@ import Videos from "../video_page/Video";
 import Hero from "../hero/Hero";
 import TestimonialsCarousel from "../testimonial/Testimonial";
 import OurTeam from "../our_team/OurTeam";
+import AboutLayout from "../aboutlayout/AboutLayout";
 
 const Doc = () => {
   const components = [
     { Component: Hero, offset: 0 },
     { Component: Videos, offset: 0 },
-    { Component: About, offset: 20 },
+    { Component: AboutLayout, offset: 20 },
     { Component: Service, offset: 40 },
     { Component: Client, offset: 60 },
     { Component: TestimonialsCarousel, offset: 80 },
