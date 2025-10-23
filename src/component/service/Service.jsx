@@ -102,8 +102,10 @@ const Service = () => {
     const st = ScrollTrigger.create({
       trigger: containerRef.current,
       start: "top top",
-      end: () => "+=" + window.innerHeight * last   , 
+  end: () => "+=" + window.innerHeight * last,
       scrub: 3,
+         invalidateOnRefresh: true,
+
       onUpdate: (self) => {
         const raw = self.progress * last;
         const prev = prevRef.current;
@@ -125,7 +127,7 @@ const Service = () => {
   return (
     <section
       ref={containerRef}
-      className="w-full h-[140vh]  bg-[#E16C02] text-white overflow-hidden pb-20"
+      className="w-full h-screen  bg-[#E16C02] text-white overflow-hidden pb-20"
     >
       {/* Header */}
       <div className="flex justify-between pt-12 pb-2 items-center border-b-[1.5px] w-[95%] mx-auto">
