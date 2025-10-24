@@ -26,7 +26,7 @@ const Doc = () => {
 
         return (
           <Fragment key={index}>
-            {/* Sticky wrapper for all components */}
+            {/* sticky wrapper (ALL keep sticky; children stay h-screen) */}
             <div
               className="sticky pb-16 overflow-x-hidden"
               style={{ top: `${offset}px` }}
@@ -34,10 +34,11 @@ const Doc = () => {
               <Component />
             </div>
 
-            {/* Spacer ONLY for Service (for scroll animation steps) */}
+            {/* extra scroll distance ONLY for Service (non-sticky spacer) */}
             {isService && (
               <div aria-hidden className="h-[300vh]" />
-              // 3 extra viewports for 4 total slides
+              // 200vh ~= window-height * (slides - 1)
+              // tweak to match how many steps you want to feel
             )}
           </Fragment>
         );

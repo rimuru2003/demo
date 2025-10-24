@@ -3,7 +3,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
-// ...imports
 gsap.registerPlugin(ScrollTrigger);
 
 const Service = () => {
@@ -47,78 +46,130 @@ const Service = () => {
       ],
     },
   ];
+
   const [current, setCurrent] = useState(0);
   const containerRef = useRef(null);
   const stackRef = useRef(null);
   const panelsRef = useRef([]);
   const prevRef = useRef(0);
+  const isAnimatingRef = useRef(false); // ✅ prevents jitter by blocking mid-anim flips
 
+  // Absolute stack setup
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       gsap.set(panelsRef.current, {
         position: "absolute",
-        inset: 0,
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
         transformOrigin: "center",
+        willChange: "transform, opacity",
+        pointerEvents: "none", // panels are visual only
       });
+
       panelsRef.current.forEach((p, i) =>
         gsap.set(p, {
           visibility: i === 0 ? "visible" : "hidden",
+          opacity: i === 0 ? 1 : 0,
           zIndex: i ? 1 : 2,
+          clearProps: "transform",
         })
       );
     }, stackRef);
     return () => ctx.revert();
   }, []);
 
+  // Unified transition (same for up/down): incoming always from bottom, outgoing always down
   useLayoutEffect(() => {
     const prev = prevRef.current;
     const next = current;
     if (prev === next) return;
+
     const outgoing = panelsRef.current[prev];
     const incoming = panelsRef.current[next];
 
+    isAnimatingRef.current = true; // lock during animation
+
+    // Durations tuned for smoothness
+    const D_OUT = 0.9;
+    const D_IN = 1.2;
+
+    // Prep incoming (from bottom, slight overscale, invisible)
     gsap.set(incoming, {
       visibility: "visible",
-      y: 280,
-      scale: 0.92,
       zIndex: 3,
+      opacity: 0,
+      y: 280,         // comes from below
+      scale: 1.06,    // slight overscale for depth
+      force3D: true,
     });
-    gsap.set(outgoing, { zIndex: 2 });
 
-    const tl = gsap
-      .timeline({ defaults: { duration: 0.6, ease: "power3.out" } })
-      .to(outgoing, { scale: 0.9, y: -40 }, 0)
-      .to(incoming, { y: 0, scale: 1 }, 0.05)
-      .set(outgoing, { visibility: "hidden", clearProps: "transform,zIndex" });
+    // Keep outgoing just beneath while animating
+    gsap.set(outgoing, { zIndex: 2, force3D: true });
+
+    const tl = gsap.timeline({
+      defaults: { ease: "power3.out", overwrite: "auto" },
+      onComplete: () => {
+        isAnimatingRef.current = false; // release lock
+      },
+    });
+
+    tl
+      // Outgoing: slide down, fade out, scale to 0 (same both directions)
+      .to(outgoing, {
+        y: 140,
+        scale: 0,
+        opacity: 0,
+        duration: D_OUT,
+      }, 0)
+      // Incoming: slide up from bottom, fade in, settle to scale 1
+      .to(incoming, {
+        y: 0,
+        scale: 1,
+        opacity: 1,
+        duration: D_IN,
+      }, 0.12) // small overlap so it feels continuous
+      // Cleanup
+      .set(outgoing, {
+        visibility: "hidden",
+        clearProps: "transform,opacity,zIndex",
+      });
 
     prevRef.current = next;
     return () => tl.kill();
   }, [current]);
 
+  // ScrollTrigger: step through panels; block step while animating to avoid jitter
   useGSAP(() => {
     const last = sections.length - 1;
-    const STEP_HYST = 0.45;
+    const STEP_HYST = 0.66; // bigger = fewer jumps
 
     const st = ScrollTrigger.create({
       trigger: containerRef.current,
       start: "top top",
-  end: () => "+=" + window.innerHeight * last,
-      scrub: 3,
-         invalidateOnRefresh: true,
-
+      end: () => "+=" + window.innerHeight * last,
+      scrub: 6, // smoother scrub
+      anticipatePin: 1,
+      invalidateOnRefresh: true,
+      markers: false,
       onUpdate: (self) => {
+        if (isAnimatingRef.current) return; // ✅ stop jitter
         const raw = self.progress * last;
         const prev = prevRef.current;
-        if (raw > prev + STEP_HYST && prev < last) setCurrent(prev + 1);
-        else if (raw < prev - STEP_HYST && prev > 0) setCurrent(prev - 1);
+
+        if (raw > prev + STEP_HYST && prev < last) {
+          setCurrent(prev + 1);
+        } else if (raw < prev - STEP_HYST && prev > 0) {
+          setCurrent(prev - 1);
+        }
       },
       onLeave: () => {
-        if (prevRef.current !== last) setCurrent(last);
+        if (!isAnimatingRef.current && prevRef.current !== last) setCurrent(last);
       },
       onLeaveBack: () => {
-        if (prevRef.current !== 0) setCurrent(0);
+        if (!isAnimatingRef.current && prevRef.current !== 0) setCurrent(0);
       },
-      markers: true,
     });
 
     return () => st.kill();
@@ -127,7 +178,7 @@ const Service = () => {
   return (
     <section
       ref={containerRef}
-      className="w-full h-screen  bg-[#E16C02] text-white overflow-hidden pb-20"
+      className="w-full h-screen bg-[#E16C02] text-white overflow-hidden pb-20"
     >
       {/* Header */}
       <div className="flex justify-between pt-12 pb-2 items-center border-b-[1.5px] w-[95%] mx-auto">
@@ -181,7 +232,6 @@ const Service = () => {
                 ref={(el) => (panelsRef.current[i] = el)}
                 className="bg-white rounded-3xl w-full h-full"
               >
-                {/* panel content identical to yours */}
                 <div className="w-full h-full rounded-3xl text-start flex justify-between overflow-hidden">
                   <div className="w-1/2 p-10 flex flex-col justify-start">
                     <h1 className="text-5xl font-bold text-orange-600 mb-6">
@@ -190,9 +240,7 @@ const Service = () => {
                     <ul className="space-y-5 text-gray-800 text-xl font-semibold">
                       {s.items.map((item, j) => (
                         <li key={j} className="flex items-start">
-                          <span className="text-orange-600 text-2xl mr-3">
-                            •
-                          </span>
+                          <span className="text-orange-600 text-2xl mr-3">•</span>
                           <p>{item}</p>
                         </li>
                       ))}
