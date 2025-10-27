@@ -2,6 +2,7 @@ import React, { useState, useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import ScrollFloat from "../../animation/scrollReveal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -100,8 +101,8 @@ const Service = () => {
       visibility: "visible",
       zIndex: 3,
       opacity: 0,
-      y: 280,         // comes from below
-      scale: 1.06,    // slight overscale for depth
+      y: 280, // comes from below
+      scale: 1.06, // slight overscale for depth
       force3D: true,
     });
 
@@ -117,19 +118,27 @@ const Service = () => {
 
     tl
       // Outgoing: slide down, fade out, scale to 0 (same both directions)
-      .to(outgoing, {
-        y: 140,
-        scale: 0,
-        opacity: 0,
-        duration: D_OUT,
-      }, 0)
+      .to(
+        outgoing,
+        {
+          y: 140,
+          scale: 0,
+          opacity: 0,
+          duration: D_OUT,
+        },
+        0
+      )
       // Incoming: slide up from bottom, fade in, settle to scale 1
-      .to(incoming, {
-        y: 0,
-        scale: 1,
-        opacity: 1,
-        duration: D_IN,
-      }, 0.12) // small overlap so it feels continuous
+      .to(
+        incoming,
+        {
+          y: 0,
+          scale: 1,
+          opacity: 1,
+          duration: D_IN,
+        },
+        0.12
+      ) // small overlap so it feels continuous
       // Cleanup
       .set(outgoing, {
         visibility: "hidden",
@@ -165,7 +174,8 @@ const Service = () => {
         }
       },
       onLeave: () => {
-        if (!isAnimatingRef.current && prevRef.current !== last) setCurrent(last);
+        if (!isAnimatingRef.current && prevRef.current !== last)
+          setCurrent(last);
       },
       onLeaveBack: () => {
         if (!isAnimatingRef.current && prevRef.current !== 0) setCurrent(0);
@@ -193,8 +203,19 @@ const Service = () => {
         </div>
         <div className="w-[50%]">
           <p className="text-2xl text-start tracking-widest">
-            We're Engage, a versatile outlet committed to providing top-tier
-            corporate and outbound training services...
+            <ScrollFloat
+              animationDuration={3}
+              ease="back.inOut(2)"
+              scrollStart="top 85%"
+              scrollEnd="top 50%"
+              stagger={0.03}
+            >
+              We're Engage, a versatile outlet committed to providing top-tier
+              corporate and outbound training services. We specialize in
+              designing tailored programs that cater to both individual and
+              organizational needs, emphasizing team building and employee
+              growth.
+            </ScrollFloat>
           </p>
         </div>
       </div>
@@ -220,7 +241,6 @@ const Service = () => {
           ))}
         </div>
 
-        {/* Right: stacked panels */}
         <div className="w-[70%] relative">
           <div
             ref={stackRef}
@@ -240,7 +260,9 @@ const Service = () => {
                     <ul className="space-y-5 text-gray-800 text-xl font-semibold">
                       {s.items.map((item, j) => (
                         <li key={j} className="flex items-start">
-                          <span className="text-orange-600 text-2xl mr-3">•</span>
+                          <span className="text-orange-600 text-2xl mr-3">
+                            •
+                          </span>
                           <p>{item}</p>
                         </li>
                       ))}

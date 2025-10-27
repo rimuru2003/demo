@@ -1,5 +1,6 @@
 import React from "react";
 import CounterBox from "./Counter";
+import ScrollFloat from "../../animation/scrollReveal.jsx";
 
 const About = ({ goToTeam }) => {
   return (
@@ -18,12 +19,20 @@ const About = ({ goToTeam }) => {
 
         {/* Main Content */}
         <div className="flex mx-11 justify-between mt-16">
-          <div className="w-[80%] font-medium text-5xl text-start tracking-wider">
-            Engage is a multi-faceted services organization that conceptualizes,
-            designs, and delivers world-class people engagement programs — from
-            C-suite curated experiences to transformational workshops with top
-            speakers and trainers, driving measurable organizational change.
-            Rooted in Antworx Experience...
+          <div className="w-[80%] font-normal text-5xl text-start tracking-wider">
+            <ScrollFloat
+              animationDuration={3}
+              ease="back.inOut(2)"
+              scrollStart="top 85%"
+              scrollEnd="top 50%"
+              stagger={0.03}
+            >
+              Engage is a multi-faceted services organization that
+              conceptualizes, designs, and delivers world-class people
+              engagement programs — from C-suite curated experiences to
+              transformational workshops with top speakers and trainers, driving
+              measurable organizational change. Rooted in Antworx Experience...
+            </ScrollFloat>
           </div>
 
           <div className="flex flex-col justify-center items-center">
