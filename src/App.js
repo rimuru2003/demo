@@ -7,13 +7,14 @@ import Navbar from "./component/navbar/Navbar";
 import OurTeam from "./component/our_team/OurTeam";
 import Moments from "./component/MOT/Moments";
 import Client from "./component/client/Client";
+import AboutLayout from "./component/aboutlayout/AboutLayout";
 
 function App() {
   return (
     <div className="App ">
       <Navbar />
       <Hero />
-      <About />
+      <AboutLayout />
       <Services />
       {/* <OurTeam /> */}
       <Moments />
