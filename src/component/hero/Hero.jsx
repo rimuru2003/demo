@@ -10,7 +10,7 @@ const Hero = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       // ---------- TEXT ANIMATION ----------
-      const headings = document.querySelectorAll(".hero-text h1, .hero-text p");
+      const headings = document.querySelectorAll(".hero-text h1");
 
       headings.forEach((h1) => {
         const text = h1.textContent;
@@ -25,7 +25,7 @@ const Hero = () => {
         h1.innerHTML = wrapped;
       });
 
-      gsap.from(".hero-text h1 span", {
+      gsap.from(".hero-text h1 ", {
         y: 50,
         stagger: 0.05,
         duration: 1.2,
@@ -96,22 +96,17 @@ const Hero = () => {
       ref={heroRef}
       className="relative h-[130vh] w-full overflow-hidden flex flex-col justify-evenly "
     >
-      {/* ---------- TEXT SECTION ---------- */}
       <div
         className="hero-text flex  flex-col font-Parkinsans text-[#1A1A1A]
          px-10 items-start font-bold text-[6rem] leading-[1.05]"
       >
-        <h1 className="">
-          We Make Things Possible
-        </h1>
-        <h1 className="">
-          Once And Always
-        </h1>
-        <p className="text-3xl hero-text font-semibold">
+        <h1 className="">We Make Things Possible</h1>
+        <h1 className="">Once And Always</h1>
+        <p className="text-3xl  mt-2 font-semibold">
           Unleashing Potential Through Experiential Programs
         </p>
         <style>{`
-        .hero-text h1 span, .hero-text p span {
+        .hero-text h1 span,  {
           display: inline-block;
         }
       `}</style>

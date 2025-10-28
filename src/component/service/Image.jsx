@@ -26,6 +26,7 @@ const Images = ({
               y: -10,
               duration: 0.3,
               ease: "power3.out",
+              borderColor: "white"
             });
           } else {
             gsap.to(c, {

@@ -4,7 +4,7 @@ import Image from "../../assest/logo.svg";
 
 const Footer = () => {
   return (
-    <div className="bg-[#FAF6F0] px-10 py-12 mt-20 flex flex-col gap-12 h-[50vh]">
+    <div className="bg-[#FAF6F0] px-10 py-16 mt-20 flex flex-col gap-12 h-[50vh]">
       {/* Top Section - Menu + Socials */}
       <div className="flex flex-col md:flex-row justify-between items-center gap-8">
         {/* Menu */}
@@ -12,7 +12,8 @@ const Footer = () => {
           {["Expertises", "Work", "About", "Contact"].map((item) => (
             <button
               key={item}
-              className="px-4 py-1  rounded-2xl text-base font-semibold hover:bg-gray-100 transition"
+              className="px-4 py-1 hover:bg-black hover:text-white transition  
+              rounded-2xl text-base font-semibold  "
             >
               {item}
             </button>
@@ -44,7 +45,7 @@ const Footer = () => {
         
         <img src={Image} alt="Engage Logo" className="w-[70%]" />
 
-        <div className="text-end">
+        <div className="text-end space-y-4">
           <div className="flex flex-col ">
             <p className="font-bold text-2xl  mb-1">Contact</p>
             <p className="font-medium text-lg">antworxengage.com</p>
