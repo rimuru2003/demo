@@ -33,7 +33,7 @@ const Client = () => {
           speed={80}
           gradient={false}
           direction="right"
-          loop={0} // 🔁 infinite scroll
+          loop={0} 
           pauseOnHover={false}
           autoFill={true}
         >
@@ -50,7 +50,7 @@ const Client = () => {
 
       {/* Center Text */}
       <div className="relative pr-8 z-10 text-end">
-        <h1 className="text-[8rem] font-extrabold text-[#1A1A1A] leading-tight">
+        <h1 className="text-[7rem] font-extrabold text-[#1A1A1A] leading-tight">
           These brands <br />
           we worked with.
         </h1>

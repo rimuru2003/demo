@@ -30,21 +30,21 @@ const testimonials = [
     company: "Bright Ideas",
     image: "https://randomuser.me/api/portraits/men/30.jpg",
     text: "My experience with the Antworx team is really excellent. The Red Hat Open Innovation Labs Team engaged them and I can't tell more, they are excellent, very professional and I really enjoyed working with them. I highly recommend them.",
-    bg: "bg-[#0D8DFF]",
+    bg: "bg-[#0ABAB5]",
   },
   {
     name: "Aisha Khan",
     company: "NextGen Solutions",
     image: "https://randomuser.me/api/portraits/women/56.jpg",
     text: "My experience with the Antworx team is really excellent. The Red Hat Open Innovation Labs Team engaged them and I can't tell more, they are excellent, very professional and I really enjoyed working with them. I highly recommend them.",
-    bg: "bg-[#E16C02]",
+    bg: "bg-[#F9B900]",
   },
   {
     name: "James Miller",
     company: "SkyTech",
     image: "https://randomuser.me/api/portraits/men/15.jpg",
     text: "My experience with the Antworx team is really excellent. The Red Hat Open Innovation Labs Team engaged them and I can't tell more, they are excellent, very professional and I really enjoyed working with them. I highly recommend them.",
-    bg: "bg-[#E61F25]",
+    bg: "bg-[#FCB8FA]",
   },
   {
     name: "Emily Davis",
@@ -65,7 +65,7 @@ const testimonials = [
     company: "VisionWorks",
     image: "https://randomuser.me/api/portraits/women/41.jpg",
     text: "My experience with the Antworx team is really excellent. The Red Hat Open Innovation Labs Team engaged them and I can't tell more, they are excellent, very professional and I really enjoyed working with them. I highly recommend them.",
-    bg: "bg-[#E61F25]",
+    bg: "bg-[#0ABAB5]",
   },
 ];
 
