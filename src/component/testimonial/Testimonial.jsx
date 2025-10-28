@@ -104,14 +104,14 @@ const TestimonialsCarousel = () => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 5000, // ← super slow transition for smooth movement
+    speed: 5000, 
     slidesToShow: 3.5,
     slidesToScroll: 1,
     arrows: false,
     autoplay: true,
     autoplaySpeed: 0,
-    pauseOnHover: true, // ← no pause between slides
-    cssEase: "linear", // ← makes the motion smooth & constant
+    pauseOnHover: true, 
+    cssEase: "linear", 
     responsive: [
       { breakpoint: 1024, settings: { slidesToShow: 2 } },
       { breakpoint: 640, settings: { slidesToShow: 1 } },
