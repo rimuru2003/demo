@@ -48,7 +48,7 @@ useEffect(() => {
 
   return (
     <div className="min-h-screen w-full bg-[#0ABAB1] flex flex-col space-y-36 pt-40 px-24 items-start justify-center relative overflow-hidden">
-      <div className="flex flex-wrap w-full justify-center gap-6 px-4">
+      <div className="flex  w-full justify-center gap-6 px-4">
         {teamMembers.map((member, index) => (
           <div
             key={index}
