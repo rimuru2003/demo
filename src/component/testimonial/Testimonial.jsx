@@ -73,7 +73,7 @@ const testimonials = [
 const Card = ({ text, name, company, image, bg }) => {
   return (
     <div
-      className={`${bg} rounded-3xl p-8 text-white w-[30rem] h-[25rem] flex flex-col
+      className={`${bg} rounded-3xl p-10 font-[Poppins] text-white w-[32rem] h-[28rem] flex flex-col
          justify-between relative`}
     >
       <span
@@ -84,14 +84,14 @@ const Card = ({ text, name, company, image, bg }) => {
         &ldquo;
       </span>
 
-      <p className="text-lg font-semibold text-start leading-relaxed mt-14 z-10">
+      <p className="text-xl font-semibold text-start leading-relaxed mt-14 z-10">
         {text}
       </p>
 
       <div className="flex justify-end text-end space-x-3 items-center mt-6">
         <div>
           <p className="font-semibold text-white text-lg">{name}</p>
-          <p className="font-bold text-white text-base opacity-90">{company}</p>
+          <p className="font-bold text-white text-xl opacity-90">{company}</p>
         </div>
         <img src={image} alt={name} className="w-14 h-14 rounded-full " />
       </div>
@@ -104,14 +104,14 @@ const TestimonialsCarousel = () => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 5000, 
-    slidesToShow: 3.5,
+    speed: 6000,
+    slidesToShow: 3,
     slidesToScroll: 1,
     arrows: false,
     autoplay: true,
     autoplaySpeed: 0,
-    pauseOnHover: true, 
-    cssEase: "linear", 
+    pauseOnHover: true,
+    cssEase: "linear",
     responsive: [
       { breakpoint: 1024, settings: { slidesToShow: 2 } },
       { breakpoint: 640, settings: { slidesToShow: 1 } },

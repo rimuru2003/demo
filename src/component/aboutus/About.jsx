@@ -14,7 +14,7 @@ const About = ({ goToTeam }) => {
   useGSAP(() => {
     // GSAP tween for smooth scaleX animation
     hoverTween.current = gsap.to(cardRef.current, {
-      scaleX: 1.5,
+      scaleX: 1.2,
       duration: 0.5,
       ease: "power3.out",
       paused: true,
@@ -24,7 +24,7 @@ const About = ({ goToTeam }) => {
 
   return (
     <div className="w-full h-screen text-black flex flex-col overflow-hidden">
-      <div className="flex flex-col w-full space-y-16">
+      <div className="flex flex-col w-full space-y-40">
         {/* Top Section */}
         <div className="w-[80%] mx-auto font-semibold text-5xl text-start tracking-wider">
           
@@ -37,12 +37,13 @@ const About = ({ goToTeam }) => {
         {/* Video Row */}
         <div className="flex w-[95%] justify-between items-end mx-auto">
           {/* Video Card */}
-          <div className="w-[30%] h-[26rem]">
+          <div className="w-[30%] h-[20rem]">
             <div
               ref={cardRef}
               onMouseEnter={() => hoverTween.current?.play()}
               onMouseLeave={() => hoverTween.current?.reverse()}
-              className="w-[22rem] h-full rounded-2xl overflow-hidden origin-left will-change-transform"
+              className="w-[30rem] h-full rounded-2xl overflow-hidden origin-left 
+              will-change-transform"
               style={{
                 transform: "scaleX(1)",
                 transformOrigin: "left center",
@@ -55,6 +56,7 @@ const About = ({ goToTeam }) => {
                 loop
                 autoPlay
                 playsInline
+                controls
               />
             </div>
           </div>

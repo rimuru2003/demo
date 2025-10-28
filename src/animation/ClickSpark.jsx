@@ -135,12 +135,9 @@ return (
   <div
     className="relative w-full h-full"
     onClick={handleClick}
-    style={{ cursor: "pointer" }}
+    // style={{ cursor: "" }}
   >
-    {/* Content stays below */}
     <div className="relative z-10">{children}</div>
-
-    {/* Canvas overlay always on top */}
     <canvas
       ref={canvasRef}
       className="w-full h-full absolute top-0 left-0 pointer-events-none z-50"

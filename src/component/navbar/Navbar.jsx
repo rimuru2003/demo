@@ -74,7 +74,10 @@ const Navbar = () => {
         </div>
 
         {/* Nav links */}
-        <div className="flex items-center bg-white rounded-2xl px-2 justify-evenly gap-x-2 font-semibold">
+        <div
+          className="flex items-center bg-white rounded-2xl py-1   px-4 justify-evenly 
+        gap-x-2 font-semibold"
+        >
           {navs.map((a, b) => (
             <p
               key={b}
