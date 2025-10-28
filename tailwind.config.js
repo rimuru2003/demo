@@ -5,7 +5,11 @@ module.exports = {
     "./public/index.html"
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+      Parkinsans: ['Parkinsans', 'sans-serif','Inter'],
+    },
+    },
   },
   plugins: [],
 }
