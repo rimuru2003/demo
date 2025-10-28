@@ -1,7 +1,7 @@
 import React from "react";
 import Airtel from "../../assest/airtel.svg";
 
-const Client = () => {
+const   Client = () => {
   return (
     <div
       className="relative w-full h-screen bg-[#F9F6EE] overflow-hidden
