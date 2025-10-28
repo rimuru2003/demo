@@ -94,11 +94,11 @@ const Hero = () => {
   return (
     <div
       ref={heroRef}
-      className="relative h-[125vh] w-full overflow-hidden flex flex-col space-y-52"
+      className="relative h-[130vh] w-full overflow-hidden flex flex-col justify-evenly "
     >
       {/* ---------- TEXT SECTION ---------- */}
       <div
-        className="hero-text flex mt-28 flex-col font-Parkinsans text-[#1A1A1A]
+        className="hero-text flex  flex-col font-Parkinsans text-[#1A1A1A]
          px-10 items-start font-bold text-[6rem] leading-[1.05]"
       >
         <h1 className="">
@@ -117,7 +117,7 @@ const Hero = () => {
       `}</style>
       </div>
 
-      <div className="flex justify-center font-[Inter] p-4">
+      <div className="flex justify-center font-[Inter]  ">
         <div
           ref={(el) => (cardsRef.current[0] = el)}
           className="w-80 -ml-8 q1 rounded-3xl h-[28rem] bg-[#F9B900]"

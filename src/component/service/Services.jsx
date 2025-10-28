@@ -92,7 +92,7 @@ const Services = () => {
           </div>
 
           {index < components.length - 1 && (
-            <div className="h-[150vh]" aria-hidden="true" />
+            <div className="h-[100vh]" aria-hidden="true" />
           )}
         </React.Fragment>
       ))}
