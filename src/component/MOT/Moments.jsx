@@ -91,7 +91,7 @@ const Moments = () => {
   );
 
   return (
-    <div className=" relative w-full h-[200vh] mt-20  justify-evenly flex px-20 py-32">
+    <div className=" relative w-full h-[180vh] mt-20  justify-evenly flex px-20 py-32">
       <div
         className="absolute left-[0px] top-[40%]  -translate-y-1/2 
          rounded-full rotate-0"

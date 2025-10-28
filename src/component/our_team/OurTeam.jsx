@@ -9,6 +9,7 @@ import SYED from "../../assest/SYED.svg";
 import MONAM from "../../assest/MONAM.svg";
 import Icons from "../../assest/icon.png";
 import Cursor from "../../assest/cursor.png";
+import Back from "../../assest/back.svg";
 
 const Card = React.forwardRef(({ name, img, rotate = 0, y = 0 }, ref) => (
   <div
@@ -117,7 +118,7 @@ const OurTeam = ({ onBackClick }) => {
   }, []);
 
   return (
-    <div className="h-screen w-full bg-[#FAF4EC] flex flex-col space-y-36 px-24 items-start justify-center relative overflow-hidden">
+    <div className="h-screen w-full bg-[#FAF4EC] flex flex-col space-y-36 px-24 items-end justify-center relative overflow-hidden">
       {/* Cursor is created inside OurTeam BUT portaled to document.body */}
       <KnowMoreCursor ref={cursorRef} />
 
@@ -159,17 +160,12 @@ const OurTeam = ({ onBackClick }) => {
         />
       </div>
 
-      <div className="flex flex-col items-center gap-3">
-        <button className="px-8 py-4 border border-black text-base text-black font-semibold tracking-widest rounded-xl hover:bg-[#E46002] hover:text-white transition">
-          DETAILS
-        </button>
-        <p
+        <span
           onClick={onBackClick}
-          className="text-black text-sm tracking-wider cursor-pointer hover:underline"
+          className="text-black border-[1.5px] border-black p-2 rounded-2xl text-sm tracking-wider cursor-pointer hover:underline"
         >
-          &lt;&lt; BACK TO ABOUT
-        </p>
-      </div>
+          <img src={Back} alt="" className="w-8 h-8" />
+        </span>
     </div>
   );
 };
