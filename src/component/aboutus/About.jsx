@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import ScrollFloat from "../../animation/scrollReveal.jsx";
 import Arrow from "../../assest/arrow.png";
 import Hand from "../../assest/hand.png";
 import Video from "../../assest/videoplayback.mp4";
@@ -28,18 +27,11 @@ const About = ({ goToTeam }) => {
       <div className="flex flex-col w-full space-y-16">
         {/* Top Section */}
         <div className="w-[80%] mx-auto font-semibold text-5xl text-start tracking-wider">
-          <ScrollFloat
-            animationDuration={4}
-            ease="back.inOut(2)"
-            scrollStart="top 85%"
-            scrollEnd="top 50%"
-            stagger={0.03}
-          >
+          
             Engage is a multi-faceted services organization that conceptualizes,
             designs, and delivers world-class people engagement programs — from
             C-suite curated experiences to transformational workshops with top
             speakers and trainers, driving measurable organizational change.
-          </ScrollFloat>
         </div>
 
         {/* Video Row */}
@@ -70,19 +62,12 @@ const About = ({ goToTeam }) => {
           {/* Right Side */}
           <div className="flex flex-col w-[70%] ml-16">
             <div className="w-[80%] tracking-wider font-semibold text-start text-3xl leading-snug">
-              <ScrollFloat
-                animationDuration={4}
-                ease="back.inOut(2)"
-                scrollStart="top 85%"
-                scrollEnd="top 50%"
-                stagger={0.03}
-              >
+           
                 Engage is a multi-faceted services organization that
                 conceptualizes, designs, and delivers world-class people
                 engagement programs — from C-suite curated experiences to
                 transformational workshops with top speakers and trainers,
                 driving measurable organizational change.
-              </ScrollFloat>
             </div>
 
             <div className="flex justify-between mt-4">
