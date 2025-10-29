@@ -1,70 +1,133 @@
-import React from "react";
-import { FaLinkedinIn, FaTiktok, FaInstagram, FaYoutube } from "react-icons/fa";
+import React, { useRef, useState, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import Image from "../../assest/logo.svg";
+import Scan from "../../assest/scan.svg";
+import Contact from "../contact/contact";
 
-const Footer = () => {
+gsap.registerPlugin(ScrollTrigger);
+
+const Navbar = () => {
+  const navs = ["About Us", "Services", "Works", "Feedbacks"];
+  const [isVisible, setIsVisible] = useState(true);
+  const [showContact, setShowContact] = useState(false);
+  const contactRef = useRef(null);
+  const overlayRef = useRef(null);
+  const lastScroll = useRef(0);
+
+  // Hide/show navbar on scroll
+  useGSAP(() => {
+    const st = ScrollTrigger.create({
+      start: 0,
+      end: "max",
+      onUpdate: (self) => {
+        const scrollY = window.scrollY;
+        const direction = self.direction;
+
+        if (direction === 1 && scrollY > 80) {
+          gsap.to({}, { duration: 0.2, onComplete: () => setIsVisible(false) });
+        }
+        if (direction === -1) {
+          gsap.to({}, { duration: 0.2, onComplete: () => setIsVisible(true) });
+        }
+
+        lastScroll.current = scrollY;
+      },
+    });
+
+    return () => st.kill();
+  }, []);
+
+  // Slide animation for contact form
+  useEffect(() => {
+    if (contactRef.current) {
+      gsap.to(contactRef.current, {
+        x: showContact ? 0 : "100%",
+        duration: 0.8,
+        ease: "power3.inOut",
+      });
+    }
+
+    // Animate overlay visibility
+    if (overlayRef.current) {
+      gsap.to(overlayRef.current, {
+        opacity: showContact ? 1 : 0,
+        pointerEvents: showContact ? "auto" : "none",
+        duration: 0.5,
+        ease: "power2.out",
+      });
+    }
+  }, [showContact]);
+
   return (
-    <div className="bg-[#FAF6F0] px-10 py-16 mt-20 flex flex-col gap-12 h-[50vh]">
-      {/* Top Section - Menu + Socials */}
-      <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-        {/* Menu */}
-        <div className="flex flex-wrap  justify-center md:justify-start gap-3">
-          {["Expertises", "Work", "About", "Contact"].map((item) => (
-            <button
-              key={item}
-              className="px-4 py-1 hover:bg-black hover:text-white transition  
-              rounded-2xl text-base font-semibold  "
+    <>
+      {/* Navbar */}
+      <div
+        className={`w-full px-11 py-8 flex items-center justify-between fixed top-0 left-0 right-0 z-30 
+        transition-transform duration-500 ease-out 
+        ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
+      >
+        {/* Logo */}
+        <div>
+          <img src={Image} alt="logo" className="h-10" />
+        </div>
+
+        {/* Nav links */}
+        <div
+          className="flex items-center bg-white rounded-2xl py-1   px-4 justify-evenly 
+        gap-x-2 font-semibold"
+        >
+          {navs.map((a, b) => (
+            <p
+              key={b}
+              className="p-2 cursor-pointer hover:text-[#E61F25] transition"
             >
-              {item}
-            </button>
+              {a}
+            </p>
           ))}
         </div>
 
-        {/* Social Icons */}
-        <div className="flex space-x-4  justify-center items-center ">
-          <p className="font-semibold text-lg mb-2">Follow us</p>
-          <div className="flex gap-5">
-            {[FaLinkedinIn, FaTiktok, FaInstagram, FaYoutube].map(
-              (Icon, index) => (
-                <a
-                  key={index}
-                  href="#"
-                  className="w-12 h-12 text-xl border rounded-full flex items-center justify-center
-                   hover:bg-black hover:text-white transition"
-                >
-                  <Icon />
-                </a>
-              )
-            )}
-          </div>
+        {/* Contact Button */}
+        <div
+          onClick={() => setShowContact(true)}
+          className="flex justify-center font-semibold items-center bg-[#E61F25] hover:bg-[#8ABF3C] font-[Inter] px-3 p-2 gap-x-2 rounded-xl text-white cursor-pointer transition"
+        >
+          Contact Us{" "}
+          <span>
+            <img src={Scan} alt="" />
+          </span>
         </div>
       </div>
 
-      {/* Bottom Section - Logo + Contact + Address */}
-      <div className="flex flex-row  justify-between items-end  gap-10">
-        
-        <img src={Image} alt="Engage Logo" className="w-[70%]" />
+      {/* Overlay (click outside to close) */}
+      <div
+        ref={overlayRef}
+        onClick={() => setShowContact(false)}
+        className="fixed inset-0 bg-black/50  backdrop-blur-sm opacity-0 
+        pointer-events-none z-40 transition-opacity"
+      />
 
-        <div className="text-end space-y-4">
-          <div className="flex flex-col ">
-            <p className="font-bold text-2xl  mb-1">Contact</p>
-            <p className="font-medium text-lg">antworxengage.com</p>
-            <p  className="font-mfont-medium text-lg">+91 987654321</p>
-          </div>
+      {/* Contact Slider Panel */}
+      <div
+        ref={contactRef}
+        className="fixed top-0 right-0 h-[100vh] w-[40%] bg-[#FAF4EC]   z-[22222] translate-x-full"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          onClick={() => setShowContact(false)}
+          className="absolute right-5 top-5 py-2 px-3 rounded-2xl border-[1.5px] border-black text-xl font-bold
+           text-gray-600 hover:text-red-500 transition"
+        >
+          close
+        </button>
 
-          {/* Address */}
-          <div className="flex flex-col ">
-            <p className="font-bold text-2xl mb-1">Address</p>
-            <p className="font-medium text-lg">B-1, 4th Floor, Greater Kailash Enclave II</p>
-            <p className="font-medium text-lg">Greater Kailash, New Delhi, Delhi 110048</p>
-            <p className=" font-medium text-base mt-2">
-              engageantworx@gmail.com
-            </p>
-          </div>
+        <div className="p-8">
+          <Contact />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
-export default Footer;
+export default Navbar;

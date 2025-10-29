@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import Arrow from "../../assest/arrow.png";
+import Arrow from "../../assest/arrow.svg";
 import Images from "../../component/service/Image";
 
 const General = () => {
@@ -47,12 +47,12 @@ const General = () => {
 
            
               <button
-                className="flex  py-1 items-center justify-evenly xl:ml-5 w-[35%] xl:w-[25%]  bg-white
-               text-black px-1   xl:px-5 xl:py-2 rounded-2xl text-xs xl:text-sm xl:font-semibold transition"
+                className="flex  py-1 items-center justify-evenly xl:ml-5 w-[35%] xl:w-[25%]  bg-[#FA5424]
+               text-white px-1   xl:px-5 xl:py-2 rounded-2xl text-xs xl:text-sm xl:font-semibold transition"
               >
                 Know More
                 <div
-                  className="xl:ml-4  bg-black rounded-xl -rotate-90 p-2 xl:p-3 flex justify-center
+                  className="xl:ml-4  bg-white text-black rounded-xl -rotate-90 p-2 xl:p-3 flex justify-center
                  items-center"
                 >
                   <img

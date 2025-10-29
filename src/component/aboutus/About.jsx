@@ -3,8 +3,8 @@ import { createPortal } from "react-dom";
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import Arrow from "../../assest/arrow.png";
-import Hand from "../../assest/hand.png";
+import Arrow from "../../assest/arrow.svg";
+import Hand from "../../assest/hand.svg";
 import Video from "../../assest/videoplayback.mp4";
 import Vlogo from "../../assest/videologo.svg";
 

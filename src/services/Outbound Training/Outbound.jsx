@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import Arrow from "../../assest/arrow.png";
+import Arrow from "../../assest/arrow.svg";
 import Images from "../../component/service/Image";
 
 gsap.registerPlugin(useGSAP);
