@@ -1,6 +1,10 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import gsap from "gsap";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCards } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/effect-cards";
 
 import Devid from "../../assest/Devid.svg";
 import FAISAL from "../../assest/FAISAL.svg";
@@ -8,17 +12,18 @@ import RAHUL from "../../assest/RAHUL.svg";
 import SYED from "../../assest/SYED.svg";
 import MONAM from "../../assest/MONAM.svg";
 import Icons from "../../assest/icon.png";
-import Cursor from "../../assest/cursor.png";
 import Back from "../../assest/back.svg";
 
 const Card = React.forwardRef(
   ({ name, img, rotate = 0, y = 0, x = 0 }, ref) => (
     <div
       ref={ref}
-      className="group relative border bg-[#FFFFFF] hover:bg-[#E16C02] border-white rounded-3xl flex flex-col items-center justify-between w-[18rem] sm:w-[20rem] h-[26rem] sm:h-[28rem] overflow-hidden transition-all duration-300 hover:rotate-0"
+      className="group relative border bg-[#FFFFFF] hover:bg-[#E16C02] border-white rounded-3xl 
+      flex flex-col items-center justify-between w-[18rem] sm:w-[20rem] h-[26rem] sm:h-[28rem] 
+      overflow-hidden transition-all duration-300 hover:rotate-0"
       style={{
         transform: `rotate(${rotate}deg) translate(${x}px, ${y}px)`,
-        zIndex: rotate === 0 ? 20 : 10, // center card appears on top
+        zIndex: rotate === 0 ? 20 : 10,
       }}
     >
       <div className="flex items-center gap-2 mb-2 p-4 mx-auto self-start transition-all duration-300 group-hover:text-white">
@@ -71,14 +76,29 @@ const KnowMoreCursor = React.forwardRef((props, ref) => {
 const OurTeam = ({ onBackClick }) => {
   const cardRefs = useRef([]);
   const cursorRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
 
+  // Detect screen size
   useEffect(() => {
+    const checkScreen = () => {
+      setIsMobile(window.innerWidth <= 767);
+    };
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
+  // Cursor & hover animations (only for desktop)
+  useEffect(() => {
+    if (isMobile) return;
+
     const cursor = cursorRef.current;
     if (!cursor) return;
+
     const move = (e) => {
       gsap.to(cursor, {
-        left: e.clientX + 0,
-        top: e.clientY + 0,
+        left: e.clientX,
+        top: e.clientY,
         duration: 0.12,
         ease: "power3.out",
       });
@@ -101,6 +121,7 @@ const OurTeam = ({ onBackClick }) => {
         ease: "power2.inOut",
       });
     };
+
     cardRefs.current.forEach((card) => {
       if (!card) return;
       card.addEventListener("mouseenter", enter);
@@ -115,15 +136,26 @@ const OurTeam = ({ onBackClick }) => {
         card.removeEventListener("mouseleave", leave);
       });
     };
-  }, []);
+  }, [isMobile]);
+
+  const teamMembers = [
+    { name: "FAISAL ABBASI", img: FAISAL, rotate: -8, x: 130, y: 60 },
+    { name: "RAHUL BHANDARI", img: RAHUL, rotate: -8, x: 15, y: 80 },
+    { name: "SYED HYDER", img: SYED, rotate: 0, x: 0, y: 0 },
+    { name: "DAVID CHELEKET", img: Devid, rotate: 4, x: -20, y: 80 },
+    { name: "MONAM NISHAT", img: MONAM, rotate: 8, x: -80, y: 60 },
+  ];
 
   return (
-    <div className="h-screen w-full bg-[#FAF4EC] flex flex-col  px-24 items-end 
-    justify-center relative overflow-hidden">
+    <div className="h-screen w-full bg-[#FAF4EC] flex flex-col items-center justify-center relative overflow-hidden px-6 md:px-24">
       <KnowMoreCursor ref={cursorRef} />
 
-      <div className="flex w-full space-y-14 flex-col justify-center gap-6 px-4 ">
-        <h1 className="text-8xl w-full  font-bold">Meet Our Team</h1>
+      <h1 className="text-5xl md:text-8xl font-bold mb-12 text-center">
+        Meet Our Team
+      </h1>
+
+      {/* Desktop view */}
+      {!isMobile ? (
         <div className="flex justify-center gap-6  px-4">
           <Card
             ref={(el) => (cardRefs.current[0] = el)}
@@ -166,15 +198,35 @@ const OurTeam = ({ onBackClick }) => {
             y={60}
           />
         </div>
-      </div>
+      ) : (
+        <Swiper
+          effect={"cards"}
+          grabCursor={true}
+          modules={[EffectCards]}
+          className="w-[18rem] sm:w-[20rem] h-[28rem] rounded-2xl mySwiper"
+        >
+          {teamMembers.map((member) => (
+            <SwiperSlide key={member.name}>
+              <Card
+                name={member.name}
+                img={member.img}
+                rotate={0}
+                x={0}
+                y={0}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      )}
 
-      <span
+      <button
         onClick={onBackClick}
-        className="text-black border-[1.5px] border-black p-2 rounded-2xl 
-        text-sm tracking-wider cursor-pointer hover:underline"
+        className="absolute bottom-8 left-8 flex items-center gap-2 border border-black p-2 rounded-2xl 
+        text-sm tracking-wider cursor-pointer hover:underline bg-white/50 backdrop-blur"
       >
-        <img src={Back} alt="" className="w-8 h-8" />
-      </span>
+        <img src={Back} alt="Back" className="w-6 h-6" />
+        Back
+      </button>
     </div>
   );
 };

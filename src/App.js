@@ -2,7 +2,7 @@ import "./App.css";
 import Services from "./component/service/Services";
 import Hero from "./component/hero/Hero";
 import ClickSpark from "./animation/ClickSpark";
-import Navbar from "./component/navbar/Navbar";
+// import Navbar from "./component/navbar/Navbar";
 import Moments from "./component/MOT/Moments";
 import Client from "./component/client/Client";
 import AboutLayout from "./component/aboutlayout/AboutLayout";
@@ -20,7 +20,7 @@ function App() {
       duration={400}
     >
       <div className="App space-y-16">
-        <Navbar />
+        {/* <Navbar /> */}
         <Hero />
         <AboutLayout />
         <Services />

@@ -26,7 +26,7 @@ const Images = ({
               y: -10,
               duration: 0.3,
               ease: "power3.out",
-              borderColor: "white"
+              borderColor: "white",
             });
           } else {
             gsap.to(c, {
@@ -46,12 +46,12 @@ const Images = ({
   }, []);
 
   return (
-    <div className="relative w-[30rem] h-full top-0 flex flex-col items-center justify-start">
+    <div className="relative w-[30rem] h-full xl:-top-40  flex flex-col items-center justify-start">
       {/* Top Row */}
-      <div className="flex top-16 relative">
+      <div className="flex  relative">
         <div
           ref={(el) => (cardsRef.current[0] = el)}
-          className={`xl:w-[20rem] w-[10rem] h-[12rem] xl:h-[22rem] rotate-[0deg] z-[11]
+          className={`xl:w-[20rem] w-[10rem] h-[12rem] xl:h-[25rem] rotate-[0deg] z-[11]
           border-[5px] ${borderClass} rounded-2xl overflow-hidden shadow-lg cursor-pointer`}
         >
           <img src={img1} alt="card-1" className="w-full h-full object-cover" />
@@ -59,7 +59,7 @@ const Images = ({
 
         <div
           ref={(el) => (cardsRef.current[1] = el)}
-          className={`xl:w-[20rem] w-[10rem] h-[12rem] xl:h-[22rem] relative top-14 right-20 rotate-[9deg] z-[10]
+          className={`xl:w-[20rem] w-[10rem] h-[12rem] xl:h-[25rem] relative top-14 right-20 rotate-[9deg] z-[10]
           border-[5px] ${borderClass} rounded-2xl overflow-hidden shadow-lg cursor-pointer -ml-4`}
         >
           <img src={img2} alt="card-2" className="w-full h-full object-cover" />
@@ -70,7 +70,7 @@ const Images = ({
       <div className="flex relative">
         <div
           ref={(el) => (cardsRef.current[2] = el)}
-          className={`xl:w-[20rem] w-[10rem] h-[12rem] xl:h-[22rem]  relative -top-14 rotate-[-8deg] z-[9]
+          className={`xl:w-[20rem] w-[10rem] h-[12rem] xl:h-[25rem]  relative -top-14 rotate-[-8deg] z-[9]
           border-[5px] ${borderClass} rounded-2xl overflow-hidden shadow-lg cursor-pointer`}
         >
           <img src={img3} alt="card-3" className="w-full h-full object-cover" />
@@ -78,7 +78,7 @@ const Images = ({
 
         <div
           ref={(el) => (cardsRef.current[3] = el)}
-          className={`xl:w-[20rem] w-[10rem] h-[12rem] xl:h-[22rem] relative -top-14 right-14 rotate-[8deg] z-[8]
+          className={`xl:w-[20rem] w-[10rem] h-[12rem] xl:h-[25rem] relative -top-14 right-14 rotate-[8deg] z-[8]
           border-[5px] ${borderClass} rounded-2xl overflow-hidden shadow-lg cursor-pointer -ml-4`}
         >
           <img src={img4} alt="card-4" className="w-full h-full object-cover" />
