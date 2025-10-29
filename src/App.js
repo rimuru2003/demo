@@ -8,6 +8,7 @@ import Client from "./component/client/Client";
 import AboutLayout from "./component/aboutlayout/AboutLayout";
 import TestimonialsCarousel from "./component/testimonial/Testimonial";
 import Footer from "./component/footer/Footer";
+import InfoMediaCard from "./component/MOT/Pop";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
       sparkCount={8}
       duration={400}
     >
-      <div className="App">
+      <div className="App space-y-16">
         <Navbar />
         <Hero />
         <AboutLayout />
@@ -27,6 +28,7 @@ function App() {
         <Client />
         <TestimonialsCarousel />
         <Footer />
+        <InfoMediaCard />
       </div>
     </ClickSpark>
   );

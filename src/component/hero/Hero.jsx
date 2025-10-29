@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Mouse from "../../assest/mouse.svg";
 import CounterBox from "./Counter";
+import SplitText from "../../animation/scrollRevealHeading";
+import redFlower from "../../assest/redFlower.svg"
 
 const Hero = () => {
   const heroRef = useRef(null);
@@ -9,30 +11,6 @@ const Hero = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // ---------- TEXT ANIMATION ----------
-      const headings = document.querySelectorAll(".hero-text h1");
-
-      headings.forEach((h1) => {
-        const text = h1.textContent;
-        const wrapped = text
-          .split("")
-          .map((char) =>
-            char === " "
-              ? `<span style="display:inline-block; width:0.5em;">&nbsp;</span>`
-              : `<span>${char}</span>`
-          )
-          .join("");
-        h1.innerHTML = wrapped;
-      });
-
-      gsap.from(".hero-text h1 ", {
-        y: 50,
-        stagger: 0.05,
-        duration: 1.2,
-        opacity: 0,
-        ease: "back.out(1.7)",
-      });
-
       const cards = cardsRef.current.filter(Boolean);
       if (!cards.length) return;
 
@@ -44,7 +22,6 @@ const Hero = () => {
         });
       });
 
-      // set margin overlap
       cards.forEach((card, i) => {
         if (i !== 0) gsap.set(card, { marginLeft: -30 });
       });
@@ -94,28 +71,46 @@ const Hero = () => {
   return (
     <div
       ref={heroRef}
-      className="relative h-[130vh] w-full overflow-hidden flex flex-col justify-evenly "
+      className="relative h-screen xl:h-[130vh] w-full overflow-hidden flex flex-col justify-evenly "
     >
       <div
-        className="hero-text flex  flex-col font-Parkinsans text-[#1A1A1A]
-         px-10 items-start font-bold text-[6rem] leading-[1.05]"
+        className=" flex  flex-col font-Parkinsans text-[#1A1A1A]
+         xl:px-10 items-start font-bold px-2 text-3xl xl:text-[6rem] leading-[1.05]"
       >
-        <h1 className="">We Make Things Possible</h1>
-        <h1 className="">Once And Always</h1>
-        <p className="text-3xl  mt-2 font-semibold">
-          Unleashing Potential Through Experiential Programs
+        <SplitText
+          text="We Make Things Possible"
+          delay={100}
+          duration={0.6}
+          ease="power3.out"
+          splitType="chars"
+          from={{ opacity: 0, y: 40 }}
+          to={{ opacity: 1, y: 0 }}
+          threshold={0.1}
+          rootMargin="-100px"
+          textAlign="start"
+        />
+        <SplitText
+          text="Once And Always"
+          delay={200}
+          duration={0.6}
+          ease="power3.out"
+          splitType="chars"
+          from={{ opacity: 0, y: 40 }}
+          to={{ opacity: 1, y: 0 }}
+          threshold={0.1}
+          rootMargin="-100px"
+          textAlign="start"
+        />
+        <p className="xl:text-3xl text-start  mt-2 text-sm font-semibold">
+          Unleashing Potential Through
+          <br /> Experiential Programs
         </p>
-        <style>{`
-        .hero-text h1 span,  {
-          display: inline-block;
-        }
-      `}</style>
       </div>
 
-      <div className="flex justify-center font-[Inter]  ">
+      <div className="flex justify-center items-center font-[Inter]  ">
         <div
           ref={(el) => (cardsRef.current[0] = el)}
-          className="w-80 -ml-8 q1 rounded-3xl h-[28rem] bg-[#F9B900]"
+          className="xl:w-96 xl:h-[30rem]  h-[15rem] -ml-8 q1 rounded-3xl  bg-[#F9B900]"
         >
           <CounterBox
             value={900}
@@ -123,19 +118,19 @@ const Hero = () => {
             subHeading="Crafted for Every Culture"
           />
         </div>
-        <div
+        {/* <div
           ref={(el) => (cardsRef.current[1] = el)}
-          className="w-80 -ml-8 q2 rounded-3xl h-[28rem] bg-blue-500"
+          className="w-[25rem] -ml-16 scale-150 hidden lg:block q2 rounded-full h-[25rem] "
         >
           <img
-            src="https://via.placeholder.com/400x400"
+            src={redFlower}
             alt=""
-            className="w-full h-full object-contain"
+            className="w-full h-full object-cover"
           />
-        </div>
+        </div> */}
         <div
           ref={(el) => (cardsRef.current[2] = el)}
-          className="w-80 -ml-8 q3 rounded-3xl h-[28rem] bg-green-500"
+          className="xl:w-96 -ml-8 q3 h-[15rem] rounded-3xl xl:h-[30rem] bg-green-500"
         >
           <CounterBox
             value={13}
@@ -143,7 +138,7 @@ const Hero = () => {
             subHeading="Crafted for Every Culture"
           />
         </div>
-        <div
+        {/* <div
           ref={(el) => (cardsRef.current[3] = el)}
           className="w-80 -ml-8 q4 rounded-3xl h-[28rem] bg-yellow-500"
         >
@@ -152,10 +147,10 @@ const Hero = () => {
             alt=""
             className="w-full h-full object-contain"
           />
-        </div>
+        </div> */}
         <div
           ref={(el) => (cardsRef.current[4] = el)}
-          className="w-80 -ml-8 q5 rounded-3xl h-[28rem] bg-purple-500"
+          className="xl:w-96 -ml-8 q5 h-[15rem] rounded-3xl xl:h-[30rem] bg-purple-500"
         >
           <CounterBox
             value={100}

@@ -15,7 +15,7 @@ const Contact = () => {
   }, []);
 
   return (
-    <div className="h-full bg-[#FAF4EC] flex justify-center items-center px-6 py-12">
+    <div className="h-[100vh] bg-[#FAF4EC]  flex justify-center items-center px-6 py-12">
       <div ref={formRef} className="w-full max-w-2xl  p-10 ">
         <h1 className="text-[3rem] text-start font-bold text-[#111] ">
           Let’s Engage

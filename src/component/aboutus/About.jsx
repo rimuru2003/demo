@@ -9,67 +9,44 @@ gsap.registerPlugin(useGSAP);
 
 const About = ({ goToTeam }) => {
   const cardRef = useRef(null);
-  const hoverTween = useRef(null);
 
-  useGSAP(() => {
-    // GSAP tween for smooth scaleX animation
-    hoverTween.current = gsap.to(cardRef.current, {
-      scaleX: 1.2,
-      duration: 0.5,
-      ease: "power3.out",
-      paused: true,
-      transformOrigin: "left center",
-    });
-  }, []);
+  useGSAP(() => {}, []);
 
   return (
     <div className="w-full h-screen text-black flex flex-col overflow-hidden">
-      <div className="flex flex-col w-full space-y-40">
+      <div className="flex flex-col w-full space-y-14 xl:space-y-40">
         {/* Top Section */}
-        <div className="w-[80%] mx-auto font-semibold text-5xl text-start tracking-wider">
-          
-            Engage is a multi-faceted services organization that conceptualizes,
-            designs, and delivers world-class people engagement programs — from
-            C-suite curated experiences to transformational workshops with top
-            speakers and trainers, driving measurable organizational change.
+        <div className="xl:w-[80%] w-full mx-auto font-semibold px-3 xl:text-5xl text-start tracking-wider">
+          Engage is a multi-faceted services organization that conceptualizes,
+          designs, and delivers world-class people engagement programs — from
+          C-suite curated experiences to transformational workshops with top
+          speakers and trainers, driving measurable organizational change.
         </div>
 
         {/* Video Row */}
-        <div className="flex w-[95%] justify-between items-end mx-auto">
+        <div className="flex xl:flex-row flex-col w-[95%] items-center space-y-5 xl:justify-between xl:items-end mx-auto">
           {/* Video Card */}
-          <div className="w-[30%] h-[20rem]">
-            <div
-              ref={cardRef}
-              onMouseEnter={() => hoverTween.current?.play()}
-              onMouseLeave={() => hoverTween.current?.reverse()}
-              className="w-[30rem] h-full rounded-2xl overflow-hidden origin-left 
-              will-change-transform"
-              style={{
-                transform: "scaleX(1)",
-                transformOrigin: "left center",
-              }}
-            >
-              <video
-                className="w-full h-full object-cover block"
-                src={Video}
-                muted
-                loop
-                autoPlay
-                playsInline
-                controls
-              />
-            </div>
+          <div className="xl:w-[30%] w-full h-[15rem] xl:h-[20rem] rounded-2xl overflow-hidden">
+            <video
+              className="w-full h-full object-cover block"
+              src={Video}
+              muted
+              loop
+              autoPlay
+              playsInline
+              controls
+            />
           </div>
 
           {/* Right Side */}
-          <div className="flex flex-col w-[70%] ml-16">
-            <div className="w-[80%] tracking-wider font-semibold text-start text-3xl leading-snug">
-           
-                Engage is a multi-faceted services organization that
-                conceptualizes, designs, and delivers world-class people
-                engagement programs — from C-suite curated experiences to
-                transformational workshops with top speakers and trainers,
-                driving measurable organizational change.
+          <div className="flex flex-col w-full px-3 xl:w-[70%] xl:ml-16">
+            <div className="xl:w-[70%] w-full tracking-wider font-semibold text-start
+             xl:text-3xl leading-snug">
+              Engage is a multi-faceted services organization that
+              conceptualizes, designs, and delivers world-class people
+              engagement programs — from C-suite curated experiences to
+              transformational workshops with top speakers and trainers, driving
+              measurable organizational change.
             </div>
 
             <div className="flex justify-between mt-4">
