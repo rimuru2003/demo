@@ -7,7 +7,6 @@ import Client from "./component/client/Client";
 import AboutLayout from "./component/aboutlayout/AboutLayout";
 import TestimonialsCarousel from "./component/testimonial/Testimonial";
 import Footer from "./component/footer/Footer";
-import Navbartwo from "./component/navbar/Navbartwo";
 
 function App() {
   return (
@@ -19,7 +18,6 @@ function App() {
       duration={400}
     >
       <div className="App space-y-16">
-        <Navbartwo />
         <Hero />
         <AboutLayout />
         <Services />
