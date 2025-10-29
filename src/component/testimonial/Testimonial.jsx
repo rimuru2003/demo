@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
 
 const testimonials = [
   {
@@ -71,15 +71,13 @@ const testimonials = [
 
 const Card = ({ text, name, company, image, bg }) => {
   return (
-    <div
-      className={`${bg} relative rounded-3xl text-white font-[Poppins]
+    <div className={`${bg} relative rounded-3xl text-white font-[Poppins]
                   w-full max-w-[30rem] mx-auto
                   p-6 sm:p-8 lg:p-10
                   min-h-[22rem] sm:min-h-[24rem] lg:min-h-[26rem]
                   flex flex-col justify-between shadow-lg`}
     >
-      <span
-        className="absolute z-10 text-orange-400 border-2 border-orange-400
+      <span className="absolute z-10 text-orange-400 border-2 border-orange-400
                    flex justify-center items-center
                    top-4 left-4 sm:left-6 w-10 h-10 sm:w-12 sm:h-12
                    bg-white rounded-full text-2xl sm:text-3xl font-serif leading-none shadow-md"
@@ -114,47 +112,56 @@ const Card = ({ text, name, company, image, bg }) => {
 };
 
 const TestimonialsCarousel = () => {
-  const sliderRef = useRef(null);
+  const swiperRef = useRef(null);
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (mq.matches && sliderRef.current?.slickPause) {
-      sliderRef.current.slickPause();
-    }
+    const stopIfReduced = () => {
+      if (mq.matches && swiperRef.current?.autoplay) {
+        swiperRef.current.autoplay.stop();
+      }
+    };
+    stopIfReduced();
+    mq.addEventListener?.("change", stopIfReduced);
+    return () => mq.removeEventListener?.("change", stopIfReduced);
   }, []);
-
-  const settings = {
-    // 👇 Start mobile-first
-    mobileFirst: true,
-    dots: false,
-    infinite: true,
-    speed: 6000,
-    slidesToShow: 3, 
-    slidesToScroll: 1,
-    arrows: false,
-    autoplay: true,
-    autoplaySpeed: 0,
-    pauseOnHover: true,
-    cssEase: "linear",
-    // 👇 Scale up as viewport grows (min-width style since mobileFirst: true)
-    responsive: [
-      { breakpoint: 440, settings: { slidesToShow: 1 } }, // ≥640px (sm)
-
-      { breakpoint: 640, settings: { slidesToShow: 2.5 } }, // ≥640px (sm)
-      { breakpoint: 1024, settings: { slidesToShow: 2 } }, // ≥1024px (lg/desktop)
-    ],
-  };
 
   return (
     <section className="py-12 sm:py-16 lg:py-20 mt-10 lg:mt-20 text-black overflow-hidden">
-      <div className="mx-auto w-full ">
-        <Slider ref={sliderRef} {...settings}>
-          {testimonials.map((t, index) => (
-            <div key={index} className="px-2 sm:px-3">
-              <Card {...t} />
-            </div>
+      <div className="mx-auto w-full">
+        <Swiper
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
+          }}
+          modules={[Autoplay]}
+          loop
+          freeMode
+          freeModeMomentum={false}
+          grabCursor
+          spaceBetween={12}
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          speed={6000} 
+          allowTouchMove
+          breakpoints={{
+            0: { slidesPerView: 1 },
+            440: { slidesPerView: 1 },
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          className="!px-2 sm:!px-3"
+        >
+          {testimonials.map((t, i) => (
+            <SwiperSlide key={i}>
+              <div className="px-2 sm:px-3">
+                <Card {...t} />
+              </div>
+            </SwiperSlide>
           ))}
-        </Slider>
+        </Swiper>
       </div>
     </section>
   );
