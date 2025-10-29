@@ -111,7 +111,7 @@ const Navbar = () => {
       {/* Contact Slider Panel */}
       <div
         ref={contactRef}
-        className="fixed top-0 right-0 h-full w-[40%] bg-[#FAF4EC]   z-50 translate-x-full"
+        className="fixed top-0 right-0 h-[100vh] w-[40%] bg-[#FAF4EC]   z-[22222] translate-x-full"
         onClick={(e) => e.stopPropagation()}
       >
         <button

@@ -8,7 +8,7 @@ const Footer = () => {
       {/* Top Section - Menu + Socials */}
       <div className="flex flex-col md:flex-row justify-between items-center gap-8">
         {/* Menu */}
-        <div className="flex flex-wrap bg-white justify-center md:justify-start gap-3">
+        <div className="flex flex-wrap  justify-center md:justify-start gap-3">
           {["Expertises", "Work", "About", "Contact"].map((item) => (
             <button
               key={item}

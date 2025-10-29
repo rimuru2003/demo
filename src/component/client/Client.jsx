@@ -50,7 +50,7 @@ const Client = () => {
 
       {/* Center Text */}
       <div className="relative pr-8 z-10 text-end">
-        <h1 className="text-[7rem] font-extrabold text-[#1A1A1A] leading-tight">
+        <h1 className="text-[6rem]  font-extrabold text-[#1A1A1A] leading-tight">
           These brands <br />
           we worked with.
         </h1>
