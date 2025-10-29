@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import Arrow from "../../assest/arrow.png";
+import Arrow from "../../assest/arrow.svg";
 import Images from "../../component/service/Image";
 
 const Tna = () => {

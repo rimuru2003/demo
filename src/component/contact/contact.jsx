@@ -15,19 +15,19 @@ const Contact = () => {
   }, []);
 
   return (
-    <div className="h-[100vh] bg-[#FAF4EC]  flex justify-center items-center px-6 py-12">
-      <div ref={formRef} className="w-full max-w-2xl  p-10 ">
-        <h1 className="text-[3rem] text-start font-bold text-[#111] ">
+    <div className="h-[100vh] bg-[#8ABF3C]  flex justify-center items-center xl:px-6 ">
+      <div ref={formRef} className="w-full max-w-2xl  xl:p-10 ">
+        <h1 className="xl:text-[3rem] text-4xl text-start font-bold text-white ">
           Let’s Engage
         </h1>
-        <p className="mb-10 text-start">
+        <p className="mb-10 text-start text-white">
           Engaging Naturally, Get A Great Experience
         </p>
 
-        <form className="space-y-6 text-start">
+        <form className="space-y-3 text-start">
           {/* Full Name */}
           <div>
-            <label className="block font-semibold mb-2">
+            <label className="block font-semibold mb-2 text-white">
               First Name<span className="text-red-500">*</span>
             </label>
             <input
@@ -39,7 +39,7 @@ const Contact = () => {
 
           {/* Email */}
           <div>
-            <label className="block font-semibold mb-2">
+            <label className="block font-semibold mb-2 text-white">
               Last Name <span className="text-red-500">*</span>
             </label>
             <input
@@ -51,7 +51,7 @@ const Contact = () => {
 
           {/* Phone Number */}
           <div>
-            <label className="block font-semibold mb-2">
+            <label className="block font-semibold mb-2 text-white">
               Email <span className="text-red-500">*</span>
             </label>
             <input
@@ -63,7 +63,7 @@ const Contact = () => {
 
           {/* Message */}
           <div>
-            <label className="block font-semibold mb-2">
+            <label className="block font-semibold mb-2 text-white">
               Message <span className="text-red-500">*</span>
             </label>
             <textarea
@@ -73,7 +73,7 @@ const Contact = () => {
           </div>
 
           {/* Placeholder CAPTCHA */}
-          <div className="w-[40%] border rounded-lg flex items-center justify-between px-4 py-3 bg-[#f9f9f9] shadow-sm">
+          <div className="xl:w-[40%] w-[60%] border rounded-lg flex items-center justify-between px-4 py-3 bg-[#f9f9f9] shadow-sm">
             <div className="flex items-center gap-3">
               <input type="checkbox" className="w-5 h-5 accent-[#ff6b6b]" />
               <p className="text-sm text-[#111]">I'm not a robot</p>
@@ -86,7 +86,7 @@ const Contact = () => {
           </div>
 
           {/* Button + Phone */}
-          <div className="flex flex-wrap items-center gap-4 mt-4">
+          <div className="flex flex-wrap items-center gap-4">
             <button
               type="submit"
               className="flex items-center gap-2 bg-[#ff6b6b] text-white font-semibold px-6 py-3 rounded-md hover:bg-[#ff4a4a] transition-all duration-300"

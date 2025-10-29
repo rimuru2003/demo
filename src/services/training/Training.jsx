@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import Arrow from "../../assest/arrow.png";
+import Arrow from "../../assest/arrow.svg";
 import Images from "../../component/service/Image";
 
 gsap.registerPlugin(useGSAP);
@@ -64,7 +64,7 @@ const Training = () => {
                 What we Offers
               </span>
               <h1 className="text-3xl md:text-[80px] font-bold text-black leading-none">
-                Training Need Analysis (TNA)
+                Training Programs
               </h1>
             </div>
 

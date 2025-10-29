@@ -4,15 +4,15 @@ import Image from "../../assest/logo.svg";
 
 const Footer = () => {
   return (
-    <div className="bg-[#FAF6F0] px-10 py-16 mt-20 flex flex-col gap-12 h-[50vh]">
+    <div className="bg-[#FAF6F0] px-4 py-16 mt-20 flex flex-col gap-12 h-[50vh]">
       {/* Top Section - Menu + Socials */}
       <div className="flex flex-col md:flex-row justify-between items-center gap-8">
         {/* Menu */}
-        <div className="flex flex-wrap  justify-center md:justify-start gap-3">
+        <div className="flex  justify-center md:justify-start gap-3">
           {["Expertises", "Work", "About", "Contact"].map((item) => (
             <button
               key={item}
-              className="px-4 py-1 hover:bg-black hover:text-white transition  
+              className="px-4 py-2 hover:bg-black hover:text-white transition  
               rounded-2xl text-base font-semibold  "
             >
               {item}
@@ -21,7 +21,7 @@ const Footer = () => {
         </div>
 
         {/* Social Icons */}
-        <div className="flex space-x-4  justify-center items-center ">
+        <div className="flex space-x-4 flex-col xl:flex-row justify-center items-center ">
           <p className="font-semibold text-lg mb-2">Follow us</p>
           <div className="flex gap-5">
             {[FaLinkedinIn, FaTiktok, FaInstagram, FaYoutube].map(
@@ -41,9 +41,9 @@ const Footer = () => {
       </div>
 
       {/* Bottom Section - Logo + Contact + Address */}
-      <div className="flex flex-row  justify-between items-end  gap-10">
+      <div className="flex flex-col-reverse xl:flex-row pb-4 justify-between items-end  gap-10">
         
-        <img src={Image} alt="Engage Logo" className="w-[70%]" />
+        <img src={Image} alt="Engage Logo" className="xl:w-[70%] w-full " />
 
         <div className="text-end space-y-4">
           <div className="flex flex-col ">

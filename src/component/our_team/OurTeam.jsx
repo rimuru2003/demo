@@ -88,7 +88,6 @@ const OurTeam = ({ onBackClick }) => {
     return () => window.removeEventListener("resize", checkScreen);
   }, []);
 
-  // Cursor & hover animations (only for desktop)
   useEffect(() => {
     if (isMobile) return;
 
@@ -204,6 +203,7 @@ const OurTeam = ({ onBackClick }) => {
           grabCursor={true}
           modules={[EffectCards]}
           className="w-[18rem] sm:w-[20rem] h-[28rem] rounded-2xl mySwiper"
+          cardsEffect={{ slideShadows: false }} 
         >
           {teamMembers.map((member) => (
             <SwiperSlide key={member.name}>

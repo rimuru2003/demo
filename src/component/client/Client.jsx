@@ -21,7 +21,7 @@ const Client = () => {
               key={index}
               src={logo}
               alt={`logo-${index}`}
-              className="h-16 mx-16"
+              className="xl:h-16 h-10 xl:mx-16 mx-8 "
             />
           ))}
         </Marquee>
@@ -42,7 +42,7 @@ const Client = () => {
               key={index}
               src={logo}
               alt={`logo-${index}`}
-              className="h-16 mx-16 invert brightness-0"
+              className="xl:h-16 h-10 xl:mx-16 mx-8 invert brightness-0"
             />
           ))}
         </Marquee>
@@ -50,7 +50,7 @@ const Client = () => {
 
       {/* Center Text */}
       <div className="relative pr-8 z-10 text-end">
-        <h1 className="text-[6rem]  font-extrabold text-[#1A1A1A] leading-tight">
+        <h1 className="xl:text-[6rem] text-[3rem]  font-extrabold text-[#1A1A1A] leading-tight">
           These brands <br />
           we worked with.
         </h1>
