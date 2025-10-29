@@ -1,5 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import { FiInfo } from "react-icons/fi";
+import { FiImage } from "react-icons/fi";
+import { GoVideo } from "react-icons/go";
 
 const InfoMediaCard = ({
   open,
@@ -36,16 +39,16 @@ const InfoMediaCard = ({
     : [];
 
   const tabs = [
-    { key: "details", label: "Details" },
-    { key: "images", label: "Image" },
-    { key: "videos", label: "Video" },
+    { key: "details", label: "Details", Icon: FiInfo },
+    { key: "images", label: "Image", Icon: FiImage },
+    { key: "videos", label: "Video", Icon: GoVideo },
   ];
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-[1px]">
       {/* overlay */}
       <div
-        className="absolute inset-0 bg-black/50 backdrop-blur-[1px]"
+        className="absolute inset-0"
         onClick={onClose}
       />
       <div
@@ -55,11 +58,10 @@ const InfoMediaCard = ({
         aria-modal="true"
         aria-label={`${card.brand} info`}
       >
-        {/* header */}
-        <div className="flex w-full items-end  px-5  ">
+        <div className="flex w-full justify-end px-5 pt-3 pb-2">
           <button
             onClick={onClose}
-            className="rounded-lg p-2 hover:bg-gray-100"
+            className="rounded-lg text-2xl py-1 px-2 border-[1px] hover:bg-gray-100 transition-colors"
             aria-label="Close"
           >
             ✕
@@ -67,31 +69,36 @@ const InfoMediaCard = ({
         </div>
 
         {/* tabs */}
-        <div className="px-5 pt-4">
-          <div className="flex gap-2">
-            {tabs.map((t) => (
-              <button
-                key={t.key}
-                onClick={() => onTabChange?.(t.key)}
-                className={[
-                  "px-3 py-1.5 rounded-xl text-sm font-medium transition",
-                  activeTab === t.key
-                    ? "bg-[#FA5424] text-white"
-                    : "bg-orange-50 text-orange-600 hover:bg-orange-100",
-                ].join(" ")}
-              >
-                {t.label}
-              </button>
-            ))}
+        <div className="px-5 pt-2">
+          <div className="flex gap-2" role="tablist">
+            {tabs.map((t) => {
+              const Icon = t.Icon;
+              return (
+                <button
+                  key={t.key}
+                  onClick={() => onTabChange?.(t.key)}
+                  role="tab"
+                  aria-selected={activeTab === t.key}
+                  className={[
+                    "px-3 rounded-xl flex items-center gap-x-2 py-2 font-semibold text-lg transition",
+                    activeTab === t.key
+                      ? "bg-[#E16C02] text-white"
+                      : "bg-orange-50 text-[#E16C02]",
+                  ].join(" ")}
+                >
+                  <Icon className="w-4 h-4" /> {t.label}
+                </button>
+              );
+            })}
           </div>
         </div>
 
         {/* content */}
-        <div className="p-5 overflow-y-auto max-h-[70vh]">
+        <div className="p-5 overflow-y-auto max-h-[calc(70vh-140px)]">
           {activeTab === "details" && (
             <div className="space-y-3 text-[15px] text-gray-700">
               {detailItems.length > 0 ? (
-                <ul className="list-disc pl-5 text-start text-xl space-y-2">
+                <ul className="pl-5 text-start text-xl font-semibold space-y-2">
                   {detailItems.map((line, i) => (
                     <li key={i} className="leading-relaxed">
                       {line}
@@ -129,7 +136,7 @@ const InfoMediaCard = ({
           )}
 
           {activeTab === "videos" && (
-            <div className="space-y-4 ">
+            <div className="space-y-4">
               {(card.videos?.length ?? 0) === 0 && (
                 <p className="text-gray-600">No videos available.</p>
               )}
@@ -141,7 +148,8 @@ const InfoMediaCard = ({
                   <video
                     src={src}
                     controls
-                    className="w-full h-auto"
+                    preload="metadata"
+                    className="w-full py-4 rounded-xl h-[58vh]"
                     poster={card.img}
                   />
                 </div>

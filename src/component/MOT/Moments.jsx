@@ -4,15 +4,17 @@ import {
   FaYoutube,
   FaFacebookF,
   FaInstagram,
-  FaInfoCircle,
 } from "react-icons/fa";
-import { MdOutlineImage } from "react-icons/md";
-import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import yelloStar from "../../assest/yellowStar.svg";
 import neoCurve from "../../assest/neoCurve.svg";
 import InfoMediaCard from "./Pop.jsx";
+import VideoM from "../../assest/videom.svg";
+import ImgM from "../../assest/imgM.svg";
+import detailM from "../../assest/detailM.svg";
+import Glan from "../../assest/glan.svg";
+import Airtel from "../../assest/airtel.svg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,7 +48,7 @@ const Moments = () => {
       color: "#FA5424",
       border: "#FA5424",
       img: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
-      logo: "GLan",
+      logo: Glan,
       details: [
         "Our genesis has evolved from Antworx, where we, like Ants in an colony, ensure methodical delivery of solutions, impacting every function and person, with auditable ROI outcomes.",
         "Our genesis has evolved from Antworx, where we, like Ants in an colony, ensure methodical delivery of solutions, impacting every function and person, with auditable ROI outcomes.",
@@ -71,7 +73,7 @@ const Moments = () => {
       color: "#0D8DFF",
       border: "#0D8DFF",
       img: "https://images.unsplash.com/photo-1563298723-dcfebaa392e3?auto=format&fit=crop&w=1200&q=80",
-      logo: "Airtel",
+      logo: Airtel,
       details: [
         "Our genesis has evolved from Antworx, where we, like Ants in an colony, ensure methodical delivery of solutions, impacting every function and person, with auditable ROI outcomes.",
         "Our genesis has evolved from Antworx, where we, like Ants in an colony, ensure methodical delivery of solutions, impacting every function and person, with auditable ROI outcomes.",
@@ -96,7 +98,7 @@ const Moments = () => {
       color: "#F9B900",
       border: "#F9B900",
       img: "https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1200&q=80",
-      logo: "GLan",
+      logo: Glan,
       details: [
         "Our genesis has evolved from Antworx, where we, like Ants in an colony, ensure methodical delivery of solutions, impacting every function and person, with auditable ROI outcomes.",
         "Our genesis has evolved from Antworx, where we, like Ants in an colony, ensure methodical delivery of solutions, impacting every function and person, with auditable ROI outcomes.",
@@ -121,7 +123,7 @@ const Moments = () => {
       color: "#0ABAB5",
       border: "#0ABAB5",
       img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
-      logo: "Airtel",
+      logo: Airtel,
       details: [
         "Our genesis has evolved from Antworx, where we, like Ants in an colony, ensure methodical delivery of solutions, impacting every function and person, with auditable ROI outcomes.",
         "Our genesis has evolved from Antworx, where we, like Ants in an colony, ensure methodical delivery of solutions, impacting every function and person, with auditable ROI outcomes.",
@@ -147,7 +149,7 @@ const Moments = () => {
       color: "#FA5424",
       border: "#FA5424",
       img: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
-      logo: "GLan",
+      logo: Glan,
       details: [
         "Our genesis has evolved from Antworx, where we, like Ants in an colony, ensure methodical delivery of solutions, impacting every function and person, with auditable ROI outcomes.",
         "Our genesis has evolved from Antworx, where we, like Ants in an colony, ensure methodical delivery of solutions, impacting every function and person, with auditable ROI outcomes.",
@@ -172,7 +174,7 @@ const Moments = () => {
       color: "#0D8DFF",
       border: "#0D8DFF",
       img: "https://images.unsplash.com/photo-1563298723-dcfebaa392e3?auto=format&fit=crop&w=1200&q=80",
-      logo: "Airtel",
+      logo: Airtel,
       details: [
         "Our genesis has evolved from Antworx, where we, like Ants in an colony, ensure methodical delivery of solutions, impacting every function and person, with auditable ROI outcomes.",
         "Our genesis has evolved from Antworx, where we, like Ants in an colony, ensure methodical delivery of solutions, impacting every function and person, with auditable ROI outcomes.",
@@ -197,7 +199,7 @@ const Moments = () => {
       color: "#F9B900",
       border: "#F9B900",
       img: "https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=1200&q=80",
-      logo: "GLan",
+      logo: Glan,
       details: [
         "Our genesis has evolved from Antworx, where we, like Ants in an colony, ensure methodical delivery of solutions, impacting every function and person, with auditable ROI outcomes.",
         "Our genesis has evolved from Antworx, where we, like Ants in an colony, ensure methodical delivery of solutions, impacting every function and person, with auditable ROI outcomes.",
@@ -222,7 +224,7 @@ const Moments = () => {
       color: "#0ABAB5",
       border: "#0ABAB5",
       img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
-      logo: "Airtel",
+      logo: Airtel,
       details: [
         "Our genesis has evolved from Antworx, where we, like Ants in an colony, ensure methodical delivery of solutions, impacting every function and person, with auditable ROI outcomes.",
         "Our genesis has evolved from Antworx, where we, like Ants in an colony, ensure methodical delivery of solutions, impacting every function and person, with auditable ROI outcomes.",
@@ -243,7 +245,6 @@ const Moments = () => {
     },
   ];
 
-  // ---------------- GSAP scroll/pin ----------------
   useEffect(() => {
     const section = sectionRef.current;
     const scroller = scrollContainerRef.current;
@@ -296,7 +297,7 @@ const Moments = () => {
   // ---------------- Card ----------------
   const Card = ({ card }) => (
     <div
-      className="card-item relative w-[23rem] h-[35rem] rounded-3xl justify-center flex overflow-hidden"
+      className="card-item relative w-[23rem] h-[32rem] rounded-3xl justify-center flex overflow-hidden"
       style={{ border: `8px solid ${card.border}` }}
     >
       <img
@@ -310,46 +311,57 @@ const Moments = () => {
       >
         <div className="flex items-center justify-around">
           <div className="flex flex-col text-white font-bold">
-            <span className="text-2xl">{card.logo}</span>
+            <img className="text-2xl" src={card.logo} alt="" />
           </div>
-
-          {/* Action icons */}
-          <div className="flex gap-2">
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                onOpen(card, "details");
+          <div className="relative w-20 rotate-12 h-40">
+            <div
+              className="absolute inset-0 bg-gradient-to-br "
+              style={{
+                clipPath: "ellipse(60% 50% at 0% 50%)",
+                borderTopRightRadius: "100px",
+                borderBottomRightRadius: "100px",
               }}
-              className="w-8 h-8 rounded-full border border-white flex items-center justify-center text-white hover:bg-white/20 transition"
-              aria-label="Open details"
-              title="Details"
-            >
-              <HiOutlineClipboardDocumentList size={18} />
-            </button>
+            />
+            <div className="absolute inset-0 ml-12 flex flex-col items-center justify-center gap-3 z-10">
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onOpen(card, "details");
+                }}
+                className="w-10 h-10 rounded-full border border-white flex items-center 
+                justify-center text-white bg-white/20 transition hover:bg-white/30"
+                aria-label="Open details"
+                title="Details"
+              >
+                <img src={detailM} alt="" className="p-2 " />
+              </button>
 
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                onOpen(card, "images");
-              }}
-              className="w-8 h-8 rounded-full border border-white flex items-center justify-center text-white hover:bg-white/20 transition"
-              aria-label="Open images"
-              title="Images"
-            >
-              <MdOutlineImage size={18} />
-            </button>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onOpen(card, "images");
+                }}
+                className="w-10 h-10 rounded-full border mr-6 border-white flex items-center 
+                justify-center text-white bg-white/20 transition hover:bg-white/30"
+                aria-label="Open images"
+                title="Images"
+              >
+                <img src={ImgM} alt="" className="p-2" />
+              </button>
 
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                onOpen(card, "videos");
-              }}
-              className="w-8 h-8 rounded-full border border-white flex items-center justify-center text-white hover:bg-white/20 transition"
-              aria-label="Open videos"
-              title="Videos"
-            >
-              <FaInfoCircle size={16} />
-            </button>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onOpen(card, "videos");
+                }}
+                className="w-10 h-10 rounded-full border mr-24 border-white flex items-center justify-center
+              text-white bg-white/20 transition hover:bg-white/30"
+                aria-label="Open videos"
+                title="Videos"
+              >
+                <img src={VideoM} alt="" className="p-2" />
+              </button>
+            </div>
           </div>
         </div>
       </div>

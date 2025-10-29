@@ -118,20 +118,20 @@ const OurTeam = ({ onBackClick }) => {
   }, []);
 
   return (
-    <div className="h-screen w-full bg-[#FAF4EC] flex flex-col space-y-36 px-24 items-end justify-center relative overflow-hidden">
-      {/* Cursor is created inside OurTeam BUT portaled to document.body */}
+    <div className="h-screen w-full bg-[#FAF4EC] flex flex-col  px-24 items-end 
+    justify-center relative overflow-hidden">
       <KnowMoreCursor ref={cursorRef} />
 
       <div className="flex w-full space-y-14 flex-col justify-center gap-6 px-4 ">
         <h1 className="text-8xl w-full  font-bold">Meet Our Team</h1>
-        <div className="flex justify-center gap-6 px-4">
+        <div className="flex justify-center gap-6  px-4">
           <Card
             ref={(el) => (cardRefs.current[0] = el)}
             name="FAISAL ABBASI"
             img={FAISAL}
             rotate={-8}
-            x={100}
-            y={40}
+            x={130}
+            y={60}
           />
           <Card
             ref={(el) => (cardRefs.current[1] = el)}
@@ -139,7 +139,7 @@ const OurTeam = ({ onBackClick }) => {
             img={RAHUL}
             rotate={-8}
             x={15}
-            y={60}
+            y={80}
           />
           <Card
             ref={(el) => (cardRefs.current[2] = el)}
@@ -147,30 +147,31 @@ const OurTeam = ({ onBackClick }) => {
             img={SYED}
             rotate={0}
             x={0}
-            y={-20}
+            y={0}
           />
           <Card
             ref={(el) => (cardRefs.current[3] = el)}
             name="DAVID CHELEKET"
             img={Devid}
             rotate={4}
-            x={20}
-            y={60}
+            x={-20}
+            y={80}
           />
           <Card
             ref={(el) => (cardRefs.current[4] = el)}
             name="MONAM NISHAT"
             img={MONAM}
             rotate={8}
-            x={40}
-            y={40}
+            x={-80}
+            y={60}
           />
         </div>
       </div>
 
       <span
         onClick={onBackClick}
-        className="text-black border-[1.5px] border-black p-2 rounded-2xl text-sm tracking-wider cursor-pointer hover:underline"
+        className="text-black border-[1.5px] border-black p-2 rounded-2xl 
+        text-sm tracking-wider cursor-pointer hover:underline"
       >
         <img src={Back} alt="" className="w-8 h-8" />
       </span>
