@@ -19,7 +19,7 @@ function App() {
       duration={400}
     >
       <div className="App space-y-16">
-        // <Navbartwo />
+        
         <Hero />
         <AboutLayout />
         <Services />
