@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
+import Coma from "../../assest/coma.svg";
 
 const testimonials = [
   {
@@ -71,41 +72,46 @@ const testimonials = [
 
 const Card = ({ text, name, company, image, bg }) => {
   return (
-    <div className={`${bg} relative rounded-3xl text-white font-[Poppins]
+    <div className="relative w-full max-w-[30rem] mx-auto">
+      <span
+        className="absolute top-2 left-8 z-20
+                   flex items-center justify-center
+                   w-12 h-12 sm:w-14 sm:h-14
+                   rounded-full shadow-md
+                   bg-white ring-4 ring-[#F3B24D]
+                   pointer-events-none"
+        aria-hidden="true"
+      >
+        <img src={Coma} alt="" className="w-6 sm:w-10" />
+      </span>
+      <div
+        className={`${bg} relative rounded-3xl text-white font-[Poppins]
                   w-full max-w-[30rem] mx-auto
                   p-6 sm:p-8 lg:p-10
                   min-h-[22rem] sm:min-h-[24rem] lg:min-h-[26rem]
                   flex flex-col justify-between shadow-lg`}
-    >
-      <span className="absolute z-10 text-orange-400 border-2 border-orange-400
-                   flex justify-center items-center
-                   top-4 left-4 sm:left-6 w-10 h-10 sm:w-12 sm:h-12
-                   bg-white rounded-full text-2xl sm:text-3xl font-serif leading-none shadow-md"
-        aria-hidden="true"
       >
-        &ldquo;
-      </span>
+        <p className="z-10 mt-12 text-start sm:mt-14 text-base sm:text-lg lg:text-lg font-semibold leading-relaxed">
+          {text}
+        </p>
 
-      <p className="z-10 mt-12 text-start sm:mt-14 text-base sm:text-lg lg:text-lg font-semibold leading-relaxed">
-        {text}
-      </p>
-
-      <div className="mt-6 flex items-center justify-end gap-3 text-right">
-        <div className="min-w-0">
-          <p className="font-semibold text-white text-sm sm:text-base truncate">
-            {name}
-          </p>
-          <p className="font-bold text-white text-base sm:text-lg lg:text-xl opacity-90 truncate">
-            {company}
-          </p>
+        <div className="mt-6 flex items-center justify-end gap-3 text-right">
+          <div className="min-w-0">
+            <p className="font-semibold text-white text-sm sm:text-base truncate">
+              {name}
+            </p>
+            <p className="font-bold text-white text-base sm:text-lg lg:text-xl opacity-90 truncate">
+              {company}
+            </p>
+          </div>
+          <img
+            src={image}
+            alt={`${name} — ${company}`}
+            className="w-12 h-12 sm:w-14 sm:h-14 rounded-full shrink-0"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
-        <img
-          src={image}
-          alt={`${name} — ${company}`}
-          className="w-12 h-12 sm:w-14 sm:h-14 rounded-full shrink-0"
-          loading="lazy"
-          decoding="async"
-        />
       </div>
     </div>
   );
@@ -144,7 +150,7 @@ const TestimonialsCarousel = () => {
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
-          speed={6000} 
+          speed={6000}
           allowTouchMove
           breakpoints={{
             0: { slidesPerView: 1 },

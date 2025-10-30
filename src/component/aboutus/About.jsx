@@ -127,21 +127,20 @@ const About = ({ goToTeam }) => {
               className="xl:w-[70%] w-full tracking-wider font-semibold text-start
              xl:text-3xl leading-snug"
             >
-              Engage is a multi-faceted services organization that
-              conceptualizes, designs, and delivers world-class people
-              engagement programs — from C-suite curated experiences to
-              transformational workshops with top speakers and trainers, driving
-              measurable organizational change.
+              Rooted in Antworx Experience Pvt. Ltd., we draw strength from a
+              deep understanding of enterprise structures and hierarchies; like
+              ants in a colony, we work methodically to create meaningful impact
+              across every level, delivering clear, auditable ROI.
             </div>
 
             <div className="flex justify-between mt-4">
               <div
                 onClick={() => setShowPopup(true)}
                 className="flex items-center justify-between border-[1.5px]
-                border-black rounded-2xl px-2 py-1 w-fit cursor-pointer
+                border-black rounded-[14px] px-2 py-1 w-fit cursor-pointer
                 hover:bg-gray-100 transition"
               >
-                <span className="text-xl font-semibold">know more</span>
+                <span className="text-xl ml-2  font-semibold">know more</span>
                 <div className="ml-4 bg-black rounded-xl p-3 flex justify-center items-center">
                   <img src={Arrow} alt="arrow" className="w-4 h-4" />
                 </div>
@@ -149,7 +148,7 @@ const About = ({ goToTeam }) => {
 
               <div
                 onClick={goToTeam}
-                className="border-[1.5px] border-black rounded-xl p-1 flex w-10 h-10 justify-center items-center cursor-pointer hover:bg-gray-100 transition"
+                className="border-[1.5px] border-black rounded-xl p-1 flex w-12 h-12 justify-center items-center cursor-pointer hover:bg-gray-100 transition"
               >
                 <img src={Hand} alt="hand" className="w-6 h-6" />
               </div>

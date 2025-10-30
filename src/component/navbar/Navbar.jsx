@@ -11,7 +11,12 @@ import Portal from "../../component/portal/Portal";
 gsap.registerPlugin(ScrollTrigger);
 
 const Navbar = () => {
-  const navs = ["About Us", "Services", "Works", "Feedbacks"];
+  const navs = [
+    { name: "About Us", id: "about" },
+    { name: "Services", id: "services" },
+    { name: "Works", id: "works" },
+    { name: "Feedbacks", id: "feedbacks" },
+  ];
 
   const [isVisible, setIsVisible] = useState(true);
   const [showContact, setShowContact] = useState(false);
@@ -22,6 +27,22 @@ const Navbar = () => {
   const mobileMenuRef = useRef(null);
   const mobileOverlayRef = useRef(null);
   const lastScroll = useRef(0);
+
+  // Smooth scroll to section
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const navbarHeight = 80; // Adjust based on your navbar height
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - navbarHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
 
   // Hide/show navbar on scroll
   useGSAP(() => {
@@ -103,13 +124,16 @@ const Navbar = () => {
 
   const NavItems = ({ onClick }) => (
     <>
-      {navs.map((label, idx) => (
+      {navs.map((item, idx) => (
         <button
           key={idx}
           className="p-2 cursor-pointer hover:text-[#E61F25] transition text-base font-semibold text-left"
-          onClick={onClick}
+          onClick={() => {
+            scrollToSection(item.id);
+            if (onClick) onClick();
+          }}
         >
-          {label}
+          {item.name}
         </button>
       ))}
     </>
@@ -215,5 +239,5 @@ const Navbar = () => {
     </>
   );
 };
-
+  
 export default Navbar;

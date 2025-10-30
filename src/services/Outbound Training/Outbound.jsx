@@ -3,6 +3,11 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Arrow from "../../assest/arrow.svg";
 import Images from "../../component/service/Image";
+import Out1 from "../../assest/Out1.svg"
+import Out2 from "../../assest/Out2.svg"
+import Out3 from "../../assest/Out3.svg"
+import Out4 from "../../assest/Out4.svg"
+
 
 gsap.registerPlugin(useGSAP);
 
@@ -53,14 +58,14 @@ const Outbound = () => {
   return (
     <section
       ref={containerRef}
-      className="w-full h-[90vh] flex justify-center xl:pb-10 bg-[#0D8DFF] rounded-3xl"
+      className="w-full h-[95vh] flex justify-center xl:pb-10 bg-[#0D8DFF] rounded-3xl"
     >
       <div className="w-[95%]   ">
         <div className="flex  flex-col h-full justify-center">
           <div className="flex  justify-between ">
             <div className="text-start space-y-2">
               {" "}
-              <span className="xl:text-sm text-xs w-32 font-semibold bg-[#EAE4D8] px-1 py-1 rounded-lg">
+              <span className="x bg-white xl:text-sm text-xs w-32 font-[Inter] font-medium  px-2 py-1 rounded-lg ">
                 What we Offers
               </span>
               <h1 className="text-3xl md:text-[80px] font-bold text-black leading-none">
@@ -81,7 +86,7 @@ const Outbound = () => {
                 <h2 className="text-sm md:text-2xl  font-semibold leading-snug">
                   Learning through real-world experiences and team challenges.
                 </h2>
-                <p className="text-xs md:text-lg text-black/70 xl:ml-5 leading-relaxed">
+                <p className="text-xs md:text-lg text-black/70 xl:ml-5 xl:w-[90%] leading-relaxed">
                   Our outbound programs immerse participants in hands-on
                   activities and team-based games that promote experiential
                   learning. By solving challenges together and reflecting on
@@ -92,12 +97,12 @@ const Outbound = () => {
 
             
               <button
-                className="flex  py-1 items-center justify-evenly xl:ml-5 w-[35%] xl:w-[25%]  bg-white
-               text-black px-1   xl:px-5 xl:py-2 rounded-2xl text-xs xl:text-sm xl:font-semibold transition"
+                className="flex  py-1 items-center font-[Inter] justify-evenly xl:ml-5 w-[35%] xl:w-[20%]  bg-white
+               text-black px-1   xl:pl-3 xl:pr-2 xl:py-2 rounded-2xl text-xs xl:text-base xl:font-semibold transition"
               >
                 Know More
                 <div
-                  className="xl:ml-4  bg-black rounded-xl -rotate-90 p-2 xl:p-3 flex justify-center
+                  className="xl:ml-4  bg-black rounded-xl -rotate-90  p-2 xl:p-3 flex justify-center
                  items-center"
                 >
                   <img
@@ -112,10 +117,10 @@ const Outbound = () => {
             <div className="relative w-full md:w-[45%] flex justify-center h-full">
               <Images
                 borderClass="border-orange-500"
-                img1="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop"
-                img2="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1200&auto=format&fit=crop"
-                img3="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1200&auto=format&fit=crop"
-                img4="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop"
+                      img1={Out1}
+                img2={Out2}
+                img3={Out3}
+                img4={Out4}
               />
             </div>
           </div>

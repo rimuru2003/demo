@@ -1,5 +1,6 @@
 import "./App.css";
 import Services from "./component/service/Services";
+import Lenis from 'lenis'
 import Hero from "./component/hero/Hero";
 import ClickSpark from "./animation/ClickSpark";
 import Moments from "./component/MOT/Moments";
@@ -18,14 +19,22 @@ function App() {
       sparkCount={8}
       duration={400}
     >
-      <div className="App space-y-16">
+      <div className="App space-y-12 xl:space-y-16">
         <Navbar /> 
         <Hero />
-        <AboutLayout />
-        <Services />
-        <Moments />
+        <div id="about">
+          <AboutLayout />
+        </div>
+        <div id="services">
+          <Services />
+        </div>
+        <div id="works">
+          <Moments />
+        </div>
         <Client />
-        <TestimonialsCarousel />
+        <div id="feedbacks">
+          <TestimonialsCarousel />
+        </div>
         <Footer />
       </div>
     </ClickSpark>

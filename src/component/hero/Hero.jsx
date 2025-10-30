@@ -74,8 +74,8 @@ const Hero = () => {
       className="relative h-[80vh] xl:h-[130vh] w-full overflow-hidden flex flex-col justify-around md:justify-evenly "
     >
       <div
-        className=" flex flex-wrap  flex-col font-Parkinsans text-[#1A1A1A]
-         xl:px-10 items-start font-bold px-2 text-5xl xl:text-[6rem] leading-[1.05]"
+        className=" flex flex-wrap space-y-0 flex-col font-Parkinsans text-[#1A1A1A]
+         xl:px-10 items-start font-semibold px-2 text-5xl xl:text-[7rem] leading-[1.05]"
       >
         <SplitText
           text="We Make Things  Possible"
@@ -101,7 +101,7 @@ const Hero = () => {
           rootMargin="-100px"
           textAlign="start"
         />
-        <p className="xl:text-3xl text-start  mt-2 text-sm font-semibold">
+        <p className="xl:text-3xl text-start  mt-4 text-sm font-semibold">
           Unleashing Potential Through
           <br /> Experiential Programs
         </p>
@@ -110,7 +110,7 @@ const Hero = () => {
       <div className="flex justify-center items-center font-[Inter]  ">
         <div
           ref={(el) => (cardsRef.current[0] = el)}
-          className="xl:w-96 xl:h-[30rem]  h-[15rem] -ml-8 q1 rounded-3xl  bg-[#F9B900]"
+          className="xl:w-96 xl:h-[32rem]  h-[15rem] -ml-8 q1 rounded-3xl  bg-[#F9B900]"
         >
           <CounterBox
             value={900}
@@ -120,7 +120,7 @@ const Hero = () => {
         </div>
         <div
           ref={(el) => (cardsRef.current[1] = el)}
-          className="xl:w-96 -ml-8  hidden md:block q3 h-[15rem] rounded-3xl xl:h-[30rem] "
+          className="xl:w-96 -ml-8  hidden md:block q3 h-[15rem] rounded-3xl xl:h-[32rem] "
         >
           <video
             className="w-full h-full rounded-3xl object-cover block"
@@ -133,17 +133,17 @@ const Hero = () => {
         </div>
         <div
           ref={(el) => (cardsRef.current[2] = el)}
-          className="xl:w-96 -ml-8 q3 h-[15rem] rounded-3xl xl:h-[30rem] bg-[#0D8DFF]"
+          className="xl:w-96 -ml-8 q3 h-[15rem] rounded-3xl xl:h-[32rem] bg-[#0D8DFF]"
         >
           <CounterBox
             value={13}
-            mainHeading="Projects Worldwide"
-            subHeading="Crafted for Every Culture"
+            mainHeading="Countries"
+            subHeading="United by Vision"
           />
         </div>
         <div
           ref={(el) => (cardsRef.current[3] = el)}
-          className="xl:w-96 hidden md:block -ml-8 q3 h-[15rem] rounded-3xl xl:h-[30rem]"
+          className="xl:w-96 hidden md:block -ml-8 q3 h-[15rem] rounded-3xl xl:h-[32rem]"
         >
           <video
             className="w-full h-full rounded-3xl object-cover block"
@@ -156,12 +156,12 @@ const Hero = () => {
         </div>
         <div
           ref={(el) => (cardsRef.current[4] = el)}
-          className="xl:w-96 -ml-8 q5 h-[15rem] rounded-3xl xl:h-[30rem] bg-[#33C791]"
+          className="xl:w-96 -ml-8 q5 h-[15rem] rounded-3xl xl:h-[32rem] bg-[#33C791]"
         >
           <CounterBox
             value={100}
-            mainHeading="Projects Worldwide"
-            subHeading="Crafted for Every Culture"
+            mainHeading="Brands"
+            subHeading="Built for Tomorrow"
           />
         </div>
       </div>

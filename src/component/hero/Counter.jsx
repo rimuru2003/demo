@@ -8,10 +8,10 @@ const CounterBox = ({ value, mainHeading, subHeading }) => {
   return (
     <div
       ref={ref}
-      className="flex flex-col py-4 xl:px-6 px-2 items-start justify-between h-full text-[#1A1A1A]"
+      className="flex flex-col pb-8 pt-10 xl:px-6 px-2 items-start justify-between h-full text-[#1A1A1A]"
     >
       {/* Animated Counter */}
-      <div className="xl:text-[3rem] text-xl font-bold text-[#1A1A1A]">
+      <div className="xl:text-[5rem] text-xl font-bold text-[#1A1A1A]">
         <CountUp start={0} end={inView ? value : 0} duration={2.5} />+
       </div>
 

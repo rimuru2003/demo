@@ -29,7 +29,7 @@ const Card = React.forwardRef(
       }}
       className="group relative border bg-[#FFFFFF] hover:bg-[#E16C02] border-white rounded-3xl 
       flex flex-col items-center justify-between w-[18rem] sm:w-[20rem] h-[26rem] sm:h-[28rem] 
-      overflow-hidden transition-all duration-300 hover:rotate-0 cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300"
+      overflow-hidden transition-all duration-300 hover:rotate-0 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300"
       style={{
         transform: `rotate(${rotate}deg) translate(${x}px, ${y}px)`,
         zIndex: rotate === 0 ? 20 : 10,
@@ -56,7 +56,7 @@ const KnowMoreCursor = React.forwardRef((props, ref) => {
   const node = (
     <div
       ref={ref}
-      className="fixed z-[9999] pointer-events-none"
+      className="fixed z-[9999] "
       style={{ opacity: 0, transform: "scale(0.85)", left: 0, top: 0 }}
     >
       <div className="flex flex-col ml-6 mt-6 items-center gap-2">
