@@ -12,7 +12,7 @@ import FAISAL from "../../assest/FAISAL.svg";
 import RAHUL from "../../assest/RAHUL.svg";
 import SYED from "../../assest/SYED.svg";
 import MONAM from "../../assest/MONAM.svg";
-import Icons from "../../assest/icon.png";
+import Icons from "../../assest/detailM.svg";
 import Back from "../../assest/back.svg";
 
 // --- Card
@@ -61,7 +61,7 @@ const KnowMoreCursor = React.forwardRef((props, ref) => {
     >
       <div className="flex flex-col ml-6 mt-6 items-center gap-2">
         <div className="flex items-center gap-4 px-2 py-2 rounded-2xl shadow" style={{ background: "#FFFFFF" }}>
-          <img src={Icons} alt="" />
+          <img src={Icons} alt="" className="bg-[#E16C02] p-2 rounded-xl" />
           <span className="text-xl leading-none font-semibold tracking-tight" style={{ color: "#111" }}>
             know more
           </span>

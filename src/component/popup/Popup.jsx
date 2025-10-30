@@ -3,13 +3,6 @@ import { createPortal } from "react-dom";
 import gsap from "gsap";
 import Logo from "../../assest/logo.svg";
 
-/**
- * Responsive, mobile-first popup modal
- * - Fullscreen-ish on small screens; centered card on md+
- * - Scrollable content area with locked document scroll
- * - ESC/overlay to close
- * - Reduced motion support
- */
 const Popup = ({ open, onClose }) => {
   const overlayRef = useRef(null);
   const cardRef = useRef(null);
@@ -88,7 +81,7 @@ const Popup = ({ open, onClose }) => {
         <button
           ref={closeBtnRef}
           onClick={onClose}
-          className="absolute top-3 right-3 xl:h-9 xl:w-9 w-4 h-4 p-2 rounded-3xl flex
+          className="absolute top-3 right-3 xl:h-9 xl:w-9 w-4 h-4 p-2 rounded-xl flex
            items-center justify-center text-gray-700 hover:bg-gray-100 focus:outline-none 
            focus:ring-2 focus:ring-offset-2 focus:ring-gray-300"
           aria-label="Close"
