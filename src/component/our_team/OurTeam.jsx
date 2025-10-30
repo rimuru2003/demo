@@ -60,9 +60,15 @@ const KnowMoreCursor = React.forwardRef((props, ref) => {
       style={{ opacity: 0, transform: "scale(0.85)", left: 0, top: 0 }}
     >
       <div className="flex flex-col ml-6 mt-6 items-center gap-2">
-        <div className="flex items-center gap-4 px-2 py-2 rounded-2xl shadow" style={{ background: "#FFFFFF" }}>
+        <div
+          className="flex items-center gap-4 px-2 py-2 rounded-2xl shadow"
+          style={{ background: "#FFFFFF" }}
+        >
           <img src={Icons} alt="" className="bg-[#E16C02] p-2 rounded-xl" />
-          <span className="text-xl leading-none font-semibold tracking-tight" style={{ color: "#111" }}>
+          <span
+            className="text-xl leading-none font-semibold tracking-tight"
+            style={{ color: "#111" }}
+          >
             know more
           </span>
         </div>
@@ -93,13 +99,28 @@ const OurTeam = ({ onBackClick }) => {
     if (!cursor) return;
 
     const move = (e) => {
-      gsap.to(cursor, { left: e.clientX, top: e.clientY, duration: 0.12, ease: "power3.out" });
+      gsap.to(cursor, {
+        left: e.clientX,
+        top: e.clientY,
+        duration: 0.12,
+        ease: "power3.out",
+      });
     };
     const enter = () => {
-      gsap.to(cursor, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(1.6)" });
+      gsap.to(cursor, {
+        opacity: 1,
+        scale: 1,
+        duration: 0.2,
+        ease: "back.out(1.6)",
+      });
     };
     const leave = () => {
-      gsap.to(cursor, { opacity: 0, scale: 0.85, duration: 0.2, ease: "power2.inOut" });
+      gsap.to(cursor, {
+        opacity: 0,
+        scale: 0.85,
+        duration: 0.2,
+        ease: "power2.inOut",
+      });
     };
 
     window.addEventListener("mousemove", move);
@@ -131,7 +152,9 @@ const OurTeam = ({ onBackClick }) => {
     <div className="h-screen w-full bg-[#FAF4EC] xl:-mt-40 -mt-36 flex flex-col items-center justify-center relative overflow-hidden px-6 md:px-24">
       <KnowMoreCursor ref={cursorRef} />
 
-      <h1 className="text-5xl md:text-8xl font-bold mb-12 text-center">Meet Our Team</h1>
+      <h1 className="text-5xl md:text-8xl font-bold mb-12 text-center">
+        Meet Our Team
+      </h1>
 
       {/* Desktop view */}
       {!isMobile ? (
@@ -159,7 +182,14 @@ const OurTeam = ({ onBackClick }) => {
         >
           {teamMembers.map((member) => (
             <SwiperSlide key={member.name}>
-              <Card name={member.name} img={member.img} rotate={0} x={0} y={0} onClick={() => setShowPopup(true)} />
+              <Card
+                name={member.name}
+                img={member.img}
+                rotate={0}
+                x={0}
+                y={0}
+                onClick={() => setShowPopup(true)}
+              />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -167,7 +197,7 @@ const OurTeam = ({ onBackClick }) => {
 
       <button
         onClick={onBackClick}
-        className="absolute bottom-8 left-8 flex items-center gap-2 border border-black p-2 rounded-2xl 
+        className="absolute bottom-8 right-8 flex items-center gap-2 border border-black p-2 h-12 w-12  rounded-2xl 
         text-sm tracking-wider cursor-pointer hover:underline bg-white/50 backdrop-blur"
       >
         <img src={Back} alt="Back" className="w-6 h-6" />
