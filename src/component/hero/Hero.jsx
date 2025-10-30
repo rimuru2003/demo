@@ -3,7 +3,7 @@ import gsap from "gsap";
 import Mouse from "../../assest/mouse.svg";
 import CounterBox from "./Counter";
 import SplitText from "../../animation/scrollRevealHeading";
-import redFlower from "../../assest/redFlower.svg"
+import antworx from "../../assest/antworx 1video1.2.webm";
 
 const Hero = () => {
   const heroRef = useRef(null);
@@ -118,19 +118,22 @@ const Hero = () => {
             subHeading="Crafted for Every Culture"
           />
         </div>
-        {/* <div
+        <div
           ref={(el) => (cardsRef.current[1] = el)}
-          className="w-[25rem] -ml-16 scale-150 hidden lg:block q2 rounded-full h-[25rem] "
+          className="xl:w-96 -ml-8  hidden md:block q3 h-[15rem] rounded-3xl xl:h-[30rem] "
         >
-          <img
-            src={redFlower}
-            alt=""
-            className="w-full h-full object-cover"
-          />
-        </div> */}
+          <video
+            className="w-full h-full rounded-3xl object-cover block"
+            muted
+            loop
+            autoPlay
+            playsInline
+            src={antworx}
+          ></video>
+        </div>
         <div
           ref={(el) => (cardsRef.current[2] = el)}
-          className="xl:w-96 -ml-8 q3 h-[15rem] rounded-3xl xl:h-[30rem] bg-green-500"
+          className="xl:w-96 -ml-8 q3 h-[15rem] rounded-3xl xl:h-[30rem] bg-[#0D8DFF]"
         >
           <CounterBox
             value={13}
@@ -138,19 +141,22 @@ const Hero = () => {
             subHeading="Crafted for Every Culture"
           />
         </div>
-        {/* <div
+        <div
           ref={(el) => (cardsRef.current[3] = el)}
-          className="w-80 -ml-8 q4 rounded-3xl h-[28rem] bg-yellow-500"
+          className="xl:w-96 hidden md:block -ml-8 q3 h-[15rem] rounded-3xl xl:h-[30rem]"
         >
-          <img
-            src="https://via.placeholder.com/400x400"
-            alt=""
-            className="w-full h-full object-contain"
-          />
-        </div> */}
+          <video
+            className="w-full h-full rounded-3xl object-cover block"
+            muted
+            loop
+            autoPlay
+            playsInline
+            src={antworx}
+          ></video>
+        </div>
         <div
           ref={(el) => (cardsRef.current[4] = el)}
-          className="xl:w-96 -ml-8 q5 h-[15rem] rounded-3xl xl:h-[30rem] bg-purple-500"
+          className="xl:w-96 -ml-8 q5 h-[15rem] rounded-3xl xl:h-[30rem] bg-[#33C791]"
         >
           <CounterBox
             value={100}

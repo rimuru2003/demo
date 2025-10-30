@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCards } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-cards";
+import Popup from "../popup/Popup";
 
 import Devid from "../../assest/Devid.svg";
 import FAISAL from "../../assest/FAISAL.svg";
@@ -14,13 +15,21 @@ import MONAM from "../../assest/MONAM.svg";
 import Icons from "../../assest/icon.png";
 import Back from "../../assest/back.svg";
 
+// --- Card
 const Card = React.forwardRef(
-  ({ name, img, rotate = 0, y = 0, x = 0 }, ref) => (
+  ({ name, img, rotate = 0, y = 0, x = 0, onClick }, ref) => (
     <div
       ref={ref}
+      role="button"
+      tabIndex={0}
+      aria-label={`Open profile for ${name}`}
+      onClick={onClick}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") onClick?.(e);
+      }}
       className="group relative border bg-[#FFFFFF] hover:bg-[#E16C02] border-white rounded-3xl 
       flex flex-col items-center justify-between w-[18rem] sm:w-[20rem] h-[26rem] sm:h-[28rem] 
-      overflow-hidden transition-all duration-300 hover:rotate-0"
+      overflow-hidden transition-all duration-300 hover:rotate-0 cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300"
       style={{
         transform: `rotate(${rotate}deg) translate(${x}px, ${y}px)`,
         zIndex: rotate === 0 ? 20 : 10,
@@ -42,28 +51,18 @@ const Card = React.forwardRef(
   )
 );
 
+// --- Floating "know more" cursor (desktop only)
 const KnowMoreCursor = React.forwardRef((props, ref) => {
   const node = (
     <div
       ref={ref}
       className="fixed z-[9999] pointer-events-none"
-      style={{
-        opacity: 0,
-        transform: "scale(0.85)",
-        left: 0,
-        top: 0,
-      }}
+      style={{ opacity: 0, transform: "scale(0.85)", left: 0, top: 0 }}
     >
       <div className="flex flex-col ml-6 mt-6 items-center gap-2">
-        <div
-          className="flex items-center gap-4  px-2 py-2 rounded-2xl shadow"
-          style={{ background: "#FFFFFF" }}
-        >
+        <div className="flex items-center gap-4 px-2 py-2 rounded-2xl shadow" style={{ background: "#FFFFFF" }}>
           <img src={Icons} alt="" />
-          <span
-            className="text-xl leading-none font-semibold tracking-tight"
-            style={{ color: "#111" }}
-          >
+          <span className="text-xl leading-none font-semibold tracking-tight" style={{ color: "#111" }}>
             know more
           </span>
         </div>
@@ -77,50 +76,33 @@ const OurTeam = ({ onBackClick }) => {
   const cardRefs = useRef([]);
   const cursorRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   // Detect screen size
   useEffect(() => {
-    const checkScreen = () => {
-      setIsMobile(window.innerWidth <= 767);
-    };
+    const checkScreen = () => setIsMobile(window.innerWidth <= 767);
     checkScreen();
     window.addEventListener("resize", checkScreen);
     return () => window.removeEventListener("resize", checkScreen);
   }, []);
 
+  // Desktop-only custom cursor + hover handlers
   useEffect(() => {
     if (isMobile) return;
-
     const cursor = cursorRef.current;
     if (!cursor) return;
 
     const move = (e) => {
-      gsap.to(cursor, {
-        left: e.clientX,
-        top: e.clientY,
-        duration: 0.12,
-        ease: "power3.out",
-      });
+      gsap.to(cursor, { left: e.clientX, top: e.clientY, duration: 0.12, ease: "power3.out" });
     };
-    window.addEventListener("mousemove", move);
-
     const enter = () => {
-      gsap.to(cursor, {
-        opacity: 1,
-        scale: 1,
-        duration: 0.2,
-        ease: "back.out(1.6)",
-      });
+      gsap.to(cursor, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(1.6)" });
     };
     const leave = () => {
-      gsap.to(cursor, {
-        opacity: 0,
-        scale: 0.85,
-        duration: 0.2,
-        ease: "power2.inOut",
-      });
+      gsap.to(cursor, { opacity: 0, scale: 0.85, duration: 0.2, ease: "power2.inOut" });
     };
 
+    window.addEventListener("mousemove", move);
     cardRefs.current.forEach((card) => {
       if (!card) return;
       card.addEventListener("mouseenter", enter);
@@ -146,56 +128,26 @@ const OurTeam = ({ onBackClick }) => {
   ];
 
   return (
-    <div className="h-screen w-full bg-[#FAF4EC] flex flex-col items-center justify-center relative overflow-hidden px-6 md:px-24">
+    <div className="h-screen w-full bg-[#FAF4EC] xl:-mt-40 -mt-36 flex flex-col items-center justify-center relative overflow-hidden px-6 md:px-24">
       <KnowMoreCursor ref={cursorRef} />
 
-      <h1 className="text-5xl md:text-8xl font-bold mb-12 text-center">
-        Meet Our Team
-      </h1>
+      <h1 className="text-5xl md:text-8xl font-bold mb-12 text-center">Meet Our Team</h1>
 
       {/* Desktop view */}
       {!isMobile ? (
-        <div className="flex justify-center gap-6  px-4">
-          <Card
-            ref={(el) => (cardRefs.current[0] = el)}
-            name="FAISAL ABBASI"
-            img={FAISAL}
-            rotate={-8}
-            x={130}
-            y={60}
-          />
-          <Card
-            ref={(el) => (cardRefs.current[1] = el)}
-            name="RAHUL BHANDARI"
-            img={RAHUL}
-            rotate={-8}
-            x={15}
-            y={80}
-          />
-          <Card
-            ref={(el) => (cardRefs.current[2] = el)}
-            name="SYED HYDER"
-            img={SYED}
-            rotate={0}
-            x={0}
-            y={0}
-          />
-          <Card
-            ref={(el) => (cardRefs.current[3] = el)}
-            name="DAVID CHELEKET"
-            img={Devid}
-            rotate={4}
-            x={-20}
-            y={80}
-          />
-          <Card
-            ref={(el) => (cardRefs.current[4] = el)}
-            name="MONAM NISHAT"
-            img={MONAM}
-            rotate={8}
-            x={-80}
-            y={60}
-          />
+        <div className="flex justify-center gap-6 px-4">
+          {teamMembers.map((m, i) => (
+            <Card
+              key={m.name}
+              ref={(el) => (cardRefs.current[i] = el)}
+              name={m.name}
+              img={m.img}
+              rotate={m.rotate}
+              x={m.x}
+              y={m.y}
+              onClick={() => setShowPopup(true)}
+            />
+          ))}
         </div>
       ) : (
         <Swiper
@@ -203,17 +155,11 @@ const OurTeam = ({ onBackClick }) => {
           grabCursor={true}
           modules={[EffectCards]}
           className="w-[18rem] sm:w-[20rem] h-[28rem] rounded-2xl mySwiper"
-          cardsEffect={{ slideShadows: false }} 
+          cardsEffect={{ slideShadows: false }}
         >
           {teamMembers.map((member) => (
             <SwiperSlide key={member.name}>
-              <Card
-                name={member.name}
-                img={member.img}
-                rotate={0}
-                x={0}
-                y={0}
-              />
+              <Card name={member.name} img={member.img} rotate={0} x={0} y={0} onClick={() => setShowPopup(true)} />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -225,8 +171,10 @@ const OurTeam = ({ onBackClick }) => {
         text-sm tracking-wider cursor-pointer hover:underline bg-white/50 backdrop-blur"
       >
         <img src={Back} alt="Back" className="w-6 h-6" />
-        Back
       </button>
+
+      {/* Popup opens when any card is clicked (desktop or mobile) */}
+      <Popup open={showPopup} onClose={() => setShowPopup(false)} />
     </div>
   );
 };
