@@ -1,6 +1,6 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { createPortal } from "react-dom";
-
+import Popup from "../popup/Popup";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Arrow from "../../assest/arrow.svg";
@@ -32,7 +32,7 @@ const KnowMoreCursor = React.forwardRef((props, ref) => {
             className="text-xl leading-none font-semibold tracking-tight"
             style={{ color: "#111" }}
           >
-            know more
+            Play Video
           </span>
         </div>
       </div>
@@ -44,7 +44,7 @@ const KnowMoreCursor = React.forwardRef((props, ref) => {
 const About = ({ goToTeam }) => {
   const cursorRef = useRef(null);
   const videoRef = useRef(null);
-  const buttonRef = useRef(null)
+  const [showPopup, setShowPopup] = useState(false);
 
   useGSAP(() => {
     const video = videoRef.current;
@@ -78,8 +78,6 @@ const About = ({ goToTeam }) => {
         ease: "power2.out",
       });
     };
-
-    
 
     video.addEventListener("mouseenter", onMouseEnter);
     video.addEventListener("mouseleave", onMouseLeave);
@@ -138,6 +136,7 @@ const About = ({ goToTeam }) => {
 
             <div className="flex justify-between mt-4">
               <div
+                onClick={() => setShowPopup(true)}
                 className="flex items-center justify-between border-[1.5px]
                 border-black rounded-2xl px-2 py-1 w-fit cursor-pointer
                 hover:bg-gray-100 transition"
@@ -158,6 +157,7 @@ const About = ({ goToTeam }) => {
           </div>
         </div>
       </div>
+      <Popup open={showPopup} onClose={() => setShowPopup(false)} />
     </div>
   );
 };

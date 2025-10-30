@@ -64,7 +64,8 @@ const Training = () => {
                 What we Offers
               </span>
               <h1 className="text-3xl md:text-[80px] font-bold text-black leading-none">
-                Training Programs
+                Training
+                <br className="hidden md:block" /> Programs
               </h1>
             </div>
 

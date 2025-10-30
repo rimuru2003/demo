@@ -64,7 +64,8 @@ const Outbound = () => {
                 What we Offers
               </span>
               <h1 className="text-3xl md:text-[80px] font-bold text-black leading-none">
-                Outbound Training
+                Outbound
+                <br className="hidden md:block" /> Training
               </h1>
             </div>
             <div

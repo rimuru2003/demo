@@ -19,7 +19,8 @@ const Tna = () => {
                 What we Offers
               </span>
               <h1 className="text-3xl md:text-[80px] font-bold text-black leading-none">
-                Training Need Analysis (TNA)
+                Training Need
+                <br className="hidden md:block" /> Analysis (TNA)
               </h1>
             </div>
 
