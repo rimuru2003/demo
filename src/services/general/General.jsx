@@ -1,13 +1,16 @@
-import React, { useRef } from "react";
+import React, { useRef,useState } from "react";
 import Arrow from "../../assest/arrowBlack.svg";
 import Images from "../../component/service/Image";
 import General1 from "../../assest/General1.svg";
 import General2 from "../../assest/General2.svg";
 import General3 from "../../assest/General3.svg";
 import General4 from "../../assest/General4.svg";
+import PopupS from   "../../component/popup/PopupS"
 
 const General = () => {
   const containerRef = useRef(null);
+    const [showPopup, setShowPopup] = useState(false);
+  
 
   return (
     <section
@@ -49,7 +52,8 @@ const General = () => {
                 </p>
               </div>
 
-              <button
+              <button                 onClick={() => setShowPopup(true)}
+
                 className="flex  py-1 items-center font-[Inter] justify-evenly xl:ml-5 w-[35%] xl:w-[25%]  bg-[#FA5424]
                text-white px-1   xl:pl-3 xl:pr-2 xl:py-2 rounded-2xl text-xs xl:text-base xl:font-semibold transition"
               >
@@ -78,6 +82,7 @@ const General = () => {
             </div>  
           </div>
         </div>
+      <PopupS open={showPopup} onClose={() => setShowPopup(false)} />
       </div>
     </section>
   );

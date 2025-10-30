@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
-import Mouse from "../../assest/mouse.svg";
 import CounterBox from "./Counter";
 import SplitText from "../../animation/scrollRevealHeading";
 import antworx from "../../assest/antworx 1video1.2.webm";
+import antworx2 from "../../assest/antworx 1video1.3.webm";
 
 const Hero = () => {
   const heroRef = useRef(null);
@@ -151,7 +151,7 @@ const Hero = () => {
             loop
             autoPlay
             playsInline
-            src={antworx}
+            src={antworx2}
           ></video>
         </div>
         <div
