@@ -71,14 +71,14 @@ const Hero = () => {
   return (
     <div
       ref={heroRef}
-      className="relative h-screen xl:h-[130vh] w-full overflow-hidden flex flex-col justify-evenly "
+      className="relative h-[80vh] xl:h-[130vh] w-full overflow-hidden flex flex-col justify-around md:justify-evenly "
     >
       <div
-        className=" flex  flex-col font-Parkinsans text-[#1A1A1A]
-         xl:px-10 items-start font-bold px-2 text-3xl xl:text-[6rem] leading-[1.05]"
+        className=" flex flex-wrap  flex-col font-Parkinsans text-[#1A1A1A]
+         xl:px-10 items-start font-bold px-2 text-5xl xl:text-[6rem] leading-[1.05]"
       >
         <SplitText
-          text="We Make Things Possible"
+          text="We Make Things  Possible"
           delay={100}
           duration={0.6}
           ease="power3.out"
