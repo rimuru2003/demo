@@ -88,7 +88,7 @@ const Hero = () => {
     >
       <div
         className=" flex flex-wrap space-y-0 flex-col font-Parkinsans text-[#1A1A1A]
-         xl:px-10 items-start font-semibold px-2 text-5xl xl:text-[7rem] leading-[1.05]"
+         xl:px-10 items-start font-semibold px-2 text-5xl xl:text-[7rem] leading-[1.21]"
       >
         <SplitText
           text="We Make Things  Possible"
