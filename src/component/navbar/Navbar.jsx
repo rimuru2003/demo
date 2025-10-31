@@ -7,6 +7,7 @@ import Image from "../../assest/logo.svg";
 import Scan from "../../assest/scan.svg";
 import Contact from "../contact/contact";
 import Portal from "../../component/portal/Portal";
+import { MdClose } from "react-icons/md";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -144,7 +145,7 @@ const Navbar = () => {
     <>
       {/* Navbar */}
       <div
-        className={`w-full px-5 md:px-11 py-4 md:py-8 flex items-center justify-between 
+        className={`w-full px-5 md:px-11 py-4 overflow-y-hidden md:py-8 flex items-center justify-between 
           fixed top-0 left-0 right-0 z-30 
   transition-transform duration-500 ease-out
   bg-white/20 backdrop-blur-md border-b border-white/10
@@ -243,9 +244,12 @@ const Navbar = () => {
         >
           <button
             onClick={() => setShowContact(false)}
-            className="absolute right-5 top-5 py-2 px-3 rounded-2xl border-[1.5px] border-black text-base md:text-xl font-bold text-gray-600 hover:text-red-500 transition"
+            className="absolute right-5 top-5 p-2 rounded-2xl border border-white/30 
+  h-10 w-10 flex items-center justify-center text-white 
+  backdrop-blur-md bg-white/10 hover:bg-white/20 hover:text-red-400 
+  transition-all duration-300 ease-out "
           >
-            close
+            <MdClose className="text-3xl" />
           </button>
 
           <div className="p-5 md:p-8">
