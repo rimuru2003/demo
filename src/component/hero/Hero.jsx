@@ -28,24 +28,37 @@ const Hero = () => {
 
       const randomTilt = () => (Math.random() > 0.5 ? 8 : -8);
 
+      const getMargins = () => {
+        const width = window.innerWidth;
+        if (width < 768) {
+          return { marginRight: 15, marginLeft: 15, cardShift: 10 };
+        } else if (width < 1280) {
+          return { marginRight: 35, marginLeft: 35, cardShift: 20 };
+        } else {
+          return { marginRight: 50, marginLeft: 50, cardShift: 25 };
+        }
+      };
+
       cards.forEach((card, i) => {
         card.addEventListener("mouseenter", () => {
+          const margins = getMargins();
+
           gsap.to(card, {
             scale: 1.05,
             rotate: 0,
             duration: 0.8,
             ease: "expo.out",
-            marginRight: 50,
-            marginLeft: 50,
+            marginRight: margins.marginRight,
+            marginLeft: margins.marginLeft,
           });
 
           gsap.to(cards.slice(i + 1), {
-            x: 25,
+            x: margins.cardShift,
             duration: 0.8,
             ease: "expo.out",
           });
           gsap.to(cards.slice(0, i), {
-            x: -25,
+            x: -margins.cardShift,
             duration: 0.8,
             ease: "expo.out",
           });
@@ -110,7 +123,7 @@ const Hero = () => {
       <div className="flex justify-center items-center font-[Inter]  ">
         <div
           ref={(el) => (cardsRef.current[0] = el)}
-          className="xl:w-96 xl:h-[32rem]  h-[15rem] -ml-8 q1 rounded-3xl  bg-[#F9B900]"
+          className="xl:w-96 xl:h-[32rem]  h-[15rem] w-36 -ml-8 q1 rounded-3xl  bg-[#F9B900]"
         >
           <CounterBox
             value={900}
@@ -133,7 +146,7 @@ const Hero = () => {
         </div>
         <div
           ref={(el) => (cardsRef.current[2] = el)}
-          className="xl:w-96 -ml-8 q3 h-[15rem] rounded-3xl xl:h-[32rem] bg-[#0D8DFF]"
+          className="xl:w-96 -ml-8 q3 h-[15rem] w-36  rounded-3xl xl:h-[32rem] bg-[#0D8DFF]"
         >
           <CounterBox
             value={13}
@@ -156,7 +169,7 @@ const Hero = () => {
         </div>
         <div
           ref={(el) => (cardsRef.current[4] = el)}
-          className="xl:w-96 -ml-8 q5 h-[15rem] rounded-3xl xl:h-[32rem] bg-[#33C791]"
+          className="xl:w-96 -ml-8 q5 h-[15rem] w-36 rounded-3xl xl:h-[32rem] bg-[#33C791]"
         >
           <CounterBox
             value={100}
