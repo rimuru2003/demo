@@ -127,7 +127,8 @@ const Navbar = () => {
       {navs.map((item, idx) => (
         <button
           key={idx}
-          className="p-2 cursor-pointer hover:text-[#E61F25] transition text-base font-semibold text-left"
+          className="p-4 cursor-pointer hover:bg-white rounded-2xl hover:text-[#E61F25]
+           transition text-2xl font-semibold text-left"
           onClick={() => {
             scrollToSection(item.id);
             if (onClick) onClick();
@@ -143,9 +144,11 @@ const Navbar = () => {
     <>
       {/* Navbar */}
       <div
-        className={`w-full px-5 md:px-11 py-4 md:py-8 flex items-center justify-between fixed top-0 left-0 right-0 z-30 
-        transition-transform duration-500 ease-out bg-transparent
-        ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
+        className={`w-full px-5 md:px-11 py-4 md:py-8 flex items-center justify-between 
+          fixed top-0 left-0 right-0 z-30 
+  transition-transform duration-500 ease-out
+  bg-white/20 backdrop-blur-md border-b border-white/10
+  ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
       >
         {/* Logo */}
         <div className="flex items-center gap-3">
@@ -173,7 +176,7 @@ const Navbar = () => {
           <Hamburger
             toggled={mobileOpen}
             toggle={setMobileOpen}
-            size={24}
+            size={26}
             color={mobileOpen ? "#E61F25" : "#000"}
             duration={0.4}
             rounded
@@ -183,35 +186,49 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div
+      {/* <div
         ref={mobileOverlayRef}
         onClick={() => setMobileOpen(false)}
         className="fixed inset-0 bg-black/50 m-0 backdrop-blur-sm opacity-0 pointer-events-none z-40 transition-opacity md:hidden"
-      />
-      <div
-        ref={mobileMenuRef}
-        className="fixed top-0 right-0 h-screen w-[86%] max-w-sm bg-[#FAF4EC] z-[22221] translate-x-full md:hidden shadow-2xl"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="p-5 space-y-6">
-          <div className="flex flex-col gap-2">
-            <NavItems onClick={() => setMobileOpen(false)} />
+      /> */}
+      <Portal>
+        <div
+          ref={mobileMenuRef}
+          className="fixed top-0 right-0 h-screen w-[100%]  flex flex-col items-end  bg-[#FAF4EC] z-[22221] translate-x-full md:hidden shadow-2xl"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="md:hidden mr-5  mt-4     ">
+            <Hamburger
+              toggled={mobileOpen}
+              toggle={setMobileOpen}
+              size={26}
+              color={mobileOpen ? "#E61F25" : "#000"}
+              duration={0.4}
+              rounded
+              label="Show menu"
+              className="absolute right-0"
+            />
           </div>
+          <div className="p-5 flex flex-col items-center h-screen justify-evenly space-y-6 w-full">
+            <div className="flex flex-col items-center gap-4">
+              <NavItems onClick={() => setMobileOpen(false)} />
+            </div>
 
-          <button
-            onClick={() => {
-              setMobileOpen(false);
-              setShowContact(true);
-            }}
-            className="w-full flex justify-center items-center bg-[#E61F25] hover:bg-[#8ABF3C] px-4 py-3 gap-x-2 rounded-xl text-white font-semibold transition"
-          >
-            Contact Us
-            <span className="inline-block">
-              <img src={Scan} alt="" />
-            </span>
-          </button>
+            <button
+              onClick={() => {
+                setMobileOpen(false);
+                setShowContact(true);
+              }}
+              className=" flex justify-center items-center bg-[#E61F25] hover:bg-[#8ABF3C] px-4 py-3 gap-x-2 rounded-xl text-white font-semibold transition"
+            >
+              Contact Us
+              <span className="inline-block">
+                <img src={Scan} alt="" />
+              </span>
+            </button>
+          </div>
         </div>
-      </div>
+      </Portal>
 
       <Portal>
         <div
@@ -239,5 +256,5 @@ const Navbar = () => {
     </>
   );
 };
-  
+
 export default Navbar;
