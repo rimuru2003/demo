@@ -72,32 +72,32 @@ const testimonials = [
 
 const Card = ({ text, name, company, image, bg }) => {
   return (
-    <div className="relative  w-[30rem] mx-auto">
+    <div className="relative    xl:w-[30rem] mx-auto">
       <span
         className="absolute top-2 left-8 z-20 flex items-center justify-center
-                   w-12 h-12 sm:w-14 sm:h-14 rounded-full shadow-md
+                   w-8 h-8                           sm:w-14 sm:h-14 rounded-full shadow-md
                    bg-white ring-4 ring-[#F3B24D] pointer-events-none"
         aria-hidden="true"
       >
-        <img src={Coma} alt="" className="w-6 sm:w-10" />
+        <img src={Coma} alt="" className="w-3 sm:w-10" />
       </span>
       <div
         className={`${bg} relative rounded-3xl text-white font-[Poppins]
                   w-full max-w-[30rem] mx-auto
-                  p-6 sm:p-8 lg:p-10
-                  min-h-[22rem] sm:min-h-[24rem] lg:min-h-[26rem]
+                  p-4 sm:p-8 lg:p-10 
+                  h-[20rem] sm:h-[24rem] lg:h-[26rem]
                   flex flex-col justify-between shadow-lg`}
       >
-        <p className="z-10 mt-12 text-start sm:mt-14 text-base sm:text-lg lg:text-lg font-semibold leading-relaxed">
+        <p className="z-10 mt-12 text-start sm:mt-14 text-xs sm:text-lg lg:text-lg font-semibold leading-relaxed">
           {text}
         </p>
 
         <div className="mt-6 flex items-center justify-end gap-3 text-right">
           <div className="min-w-0">
-            <p className="font-semibold text-white text-sm sm:text-base truncate">
+            <p className="font-semibold text-white text-xs sm:text-base truncate">
               {name}
             </p>
-            <p className="font-bold text-white text-base sm:text-lg lg:text-xl opacity-90 truncate">
+            <p className="font-bold text-white text-sm sm:text-lg lg:text-xl opacity-90 truncate">
               {company}
             </p>
           </div>
@@ -147,8 +147,9 @@ const TestimonialsCarousel = () => {
           spaceBetween={24} // 👈 gap fixed!
           breakpoints={{
             0: { slidesPerView: 1.1, spaceBetween: 16 },
-            640: { slidesPerView: 1.5, spaceBetween: 20 },
+            640: { slidesPerView: 2, spaceBetween: 20 },
             1024: { slidesPerView: 2.3, spaceBetween: 24 },
+            1280: { slidesPerView: 3.1, spaceBetween: 24 },
           }}
           className="!px-4"
         >

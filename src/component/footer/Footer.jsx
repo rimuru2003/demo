@@ -4,7 +4,7 @@ import Image from "../../assest/logo.svg";
 
 const Footer = () => {
   return (
-    <div className="bg-[#FAF6F0] px-4 py-16 mt-20 flex flex-col gap-12 h-[50vh]">
+    <div className="bg-[#FAF6F0] px-2 md:px-4 py-16 mt-20 flex flex-col gap-12 h-[50vh]">
       {/* Top Section - Menu + Socials */}
       <div className="flex flex-col md:flex-row justify-between items-center gap-8">
         {/* Menu */}
@@ -13,7 +13,7 @@ const Footer = () => {
             <button
               key={item}
               className="px-2 py-2 hover:bg-black hover:text-white transition  
-              rounded-2xl text-sm md:text-base font-semibold  "
+              rounded-2xl text-base  font-semibold  "
             >
               {item}
             </button>
@@ -21,15 +21,16 @@ const Footer = () => {
         </div>
 
         {/* Social Icons */}
-        <div className="flex space-x-4 flex-col xl:flex-row justify-center items-center ">
+        <div className="flex space-x-4 sm:space-x-2 flex-col sm:flex-row justify-center items-center ">
           <p className="font-semibold text-lg mb-2">Follow us</p>
-          <div className="flex gap-5">
+          <div className="flex gap-5 md:gap-3">
             {[FaLinkedinIn, FaTiktok, FaInstagram, FaYoutube].map(
               (Icon, index) => (
                 <a
                   key={index}
                   href="#"
-                  className="w-12 h-12 text-xl border rounded-full flex items-center justify-center
+                  className="w-12 h-12 text-xl border rounded-full flex items-center 
+                  justify-center
                    hover:bg-black hover:text-white transition"
                 >
                   <Icon />

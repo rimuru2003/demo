@@ -3,7 +3,7 @@ import Services from "./component/service/Services";
 import Lenis from 'lenis'
 import Hero from "./component/hero/Hero";
 import ClickSpark from "./animation/ClickSpark";
-import Moments from "./component/MOT/Moments";
+// import Moments from "./component/MOT/Moments";
 import Client from "./component/client/Client";
 import AboutLayout from "./component/aboutlayout/AboutLayout";
 import TestimonialsCarousel from "./component/testimonial/Testimonial";
@@ -29,7 +29,7 @@ function App() {
           <Services />
         </div>
         <div id="works">
-           <Moments /> 
+           {/* <Moments />  */}
         </div>
         <Client />
         <div id="feedbacks">
