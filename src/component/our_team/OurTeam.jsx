@@ -195,7 +195,7 @@ const OurTeam = ({ onBackClick }) => {
         </Swiper>
       )}
 
-      <button
+    <button
         onClick={onBackClick}
         className="absolute bottom-8 left-8 xl:right-8 flex items-center gap-2 border border-black p-2 h-12 w-12  rounded-2xl 
         text-sm tracking-wider cursor-pointer hover:underline bg-white/50 backdrop-blur"

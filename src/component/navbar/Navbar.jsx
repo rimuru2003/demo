@@ -128,8 +128,8 @@ const Navbar = () => {
       {navs.map((item, idx) => (
         <button
           key={idx}
-          className="p-3 lg:p-2 cursor-pointer bg-white rounded-2xl hover:text-[#E61F25]
-           transition lg:text-lg xl:text-xl font-semibold text-left"
+          className="p-3 md:p-2 cursor-pointer bg-white rounded-2xl hover:text-[#E61F25]
+           transition text-2xl font-semibold text-left"
           onClick={() => {
             scrollToSection(item.id);
             if (onClick) onClick();
@@ -145,7 +145,7 @@ const Navbar = () => {
     <>
       {/* Navbar */}
       <div
-        className={`w-full px-5 lg:px-5 py-4 overflow-y-hidden lg:py-4 flex items-center justify-between 
+        className={`w-full px-5 md:px-11 py-4 overflow-y-hidden md:py-4 flex items-center justify-between 
           fixed top-0 left-0 right-0 z-30 
   transition-transform duration-500 ease-out
   bg-white/20 backdrop-blur-md border-b border-white/10
@@ -157,10 +157,8 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Nav */}
-        <div
-          className="hidden lg:flex items-center bg-white rounded-2xl py-1 px-4 gap-x-2 
-        font-semibold "
-        >
+        <div className="hidden md:flex items-center bg-white rounded-2xl py-1 px-4 gap-x-2 
+        font-semibold ">
           <NavItems />
         </div>
 

@@ -123,8 +123,9 @@ const Hero = () => {
       <div className="flex justify-center items-center font-[Inter]  ">
         <div
           ref={(el) => (cardsRef.current[0] = el)}
+
           className="xl:w-96 xl:h-[32rem]  h-[15rem] md:h-[18rem] md:w-56 w-36 -ml-8 q1 rounded-3xl  bg-[#F9B900]"
-        >
+>
           <CounterBox
             value={900}
             mainHeading="Projects Worldwide"
@@ -146,8 +147,10 @@ const Hero = () => {
         </div>
         <div
           ref={(el) => (cardsRef.current[2] = el)}
+
           className="xl:w-96 -ml-8 q3 h-[15rem] w-36  md:h-[18rem] md:w-56 rounded-3xl xl:h-[32rem] bg-[#0D8DFF]"
-        >
+
+>
           <CounterBox
             value={13}
             mainHeading="Countries"
