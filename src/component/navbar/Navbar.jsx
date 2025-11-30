@@ -7,6 +7,7 @@ import Image from "../../assest/logo.svg";
 import Scan from "../../assest/scan.svg";
 import Contact from "../contact/contact";
 import Portal from "../../component/portal/Portal";
+import { MdClose } from "react-icons/md";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -127,7 +128,8 @@ const Navbar = () => {
       {navs.map((item, idx) => (
         <button
           key={idx}
-          className="p-2 cursor-pointer hover:text-[#E61F25] transition text-base font-semibold text-left"
+          className="p-3 lg:p-2 cursor-pointer bg-white rounded-2xl hover:text-[#E61F25]
+           transition lg:text-lg xl:text-xl font-semibold text-left"
           onClick={() => {
             scrollToSection(item.id);
             if (onClick) onClick();
@@ -143,9 +145,11 @@ const Navbar = () => {
     <>
       {/* Navbar */}
       <div
-        className={`w-full px-5 md:px-11 py-4 md:py-8 flex items-center justify-between fixed top-0 left-0 right-0 z-30 
-        transition-transform duration-500 ease-out bg-transparent
-        ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
+        className={`w-full px-5 lg:px-5 py-4 overflow-y-hidden lg:py-4 flex items-center justify-between 
+          fixed top-0 left-0 right-0 z-30 
+  transition-transform duration-500 ease-out
+  bg-white/20 backdrop-blur-md border-b border-white/10
+  ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
       >
         {/* Logo */}
         <div className="flex items-center gap-3">
@@ -153,14 +157,18 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center bg-white rounded-2xl py-1 px-4 gap-x-2 font-semibold shadow-sm">
+        <div
+          className="hidden lg:flex items-center bg-white rounded-2xl py-1 px-4 gap-x-2 
+        font-semibold "
+        >
           <NavItems />
         </div>
 
         {/* Desktop Contact */}
         <div
           onClick={() => setShowContact(true)}
-          className="hidden md:flex justify-center font-semibold items-center bg-[#E61F25] hover:bg-[#8ABF3C] px-3 py-2 gap-x-2 rounded-xl text-white cursor-pointer transition"
+          className="hidden lg:flex justify-center font-semibold items-center bg-[#E61F25]
+           hover:bg-[#8ABF3C] px-3 py-2 gap-x-2 rounded-xl text-white cursor-pointer transition"
         >
           Contact Us
           <span>
@@ -169,11 +177,11 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Hamburger (replaces close button) */}
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <Hamburger
             toggled={mobileOpen}
             toggle={setMobileOpen}
-            size={24}
+            size={26}
             color={mobileOpen ? "#E61F25" : "#000"}
             duration={0.4}
             rounded
@@ -183,35 +191,49 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div
+      {/* <div
         ref={mobileOverlayRef}
         onClick={() => setMobileOpen(false)}
         className="fixed inset-0 bg-black/50 m-0 backdrop-blur-sm opacity-0 pointer-events-none z-40 transition-opacity md:hidden"
-      />
-      <div
-        ref={mobileMenuRef}
-        className="fixed top-0 right-0 h-screen w-[86%] max-w-sm bg-[#FAF4EC] z-[22221] translate-x-full md:hidden shadow-2xl"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="p-5 space-y-6">
-          <div className="flex flex-col gap-2">
-            <NavItems onClick={() => setMobileOpen(false)} />
+      /> */}
+      <Portal>
+        <div
+          ref={mobileMenuRef}
+          className="fixed top-0 right-0 h-screen w-[100%]  flex flex-col items-end  bg-[#FAF4EC] z-[22221] translate-x-full md:hidden shadow-2xl"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="md:hidden mr-5  mt-4     ">
+            <Hamburger
+              toggled={mobileOpen}
+              toggle={setMobileOpen}
+              size={26}
+              color={mobileOpen ? "#E61F25" : "#000"}
+              duration={0.4}
+              rounded
+              label="Show menu"
+              className="absolute right-0"
+            />
           </div>
+          <div className="p-5 flex flex-col items-center h-screen justify-evenly space-y-6 w-full">
+            <div className="flex flex-col items-center gap-4">
+              <NavItems onClick={() => setMobileOpen(false)} />
+            </div>
 
-          <button
-            onClick={() => {
-              setMobileOpen(false);
-              setShowContact(true);
-            }}
-            className="w-full flex justify-center items-center bg-[#E61F25] hover:bg-[#8ABF3C] px-4 py-3 gap-x-2 rounded-xl text-white font-semibold transition"
-          >
-            Contact Us
-            <span className="inline-block">
-              <img src={Scan} alt="" />
-            </span>
-          </button>
+            <button
+              onClick={() => {
+                setMobileOpen(false);
+                setShowContact(true);
+              }}
+              className=" flex justify-center items-center bg-[#E61F25] hover:bg-[#8ABF3C] px-4 py-3 gap-x-2 rounded-xl text-white font-semibold transition"
+            >
+              Contact Us
+              <span className="inline-block">
+                <img src={Scan} alt="" />
+              </span>
+            </button>
+          </div>
         </div>
-      </div>
+      </Portal>
 
       <Portal>
         <div
@@ -226,9 +248,12 @@ const Navbar = () => {
         >
           <button
             onClick={() => setShowContact(false)}
-            className="absolute right-5 top-5 py-2 px-3 rounded-2xl border-[1.5px] border-black text-base md:text-xl font-bold text-gray-600 hover:text-red-500 transition"
+            className="absolute right-5 top-5 p-2 rounded-2xl border border-white/30 
+  h-10 w-10 flex items-center justify-center text-white 
+  backdrop-blur-md bg-white/10 hover:bg-white/20 hover:text-red-400 
+  transition-all duration-300 ease-out "
           >
-            close
+            <MdClose className="text-3xl" />
           </button>
 
           <div className="p-5 md:p-8">
@@ -239,5 +264,5 @@ const Navbar = () => {
     </>
   );
 };
-  
+
 export default Navbar;

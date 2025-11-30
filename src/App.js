@@ -29,13 +29,13 @@ function App() {
           <Services />
         </div>
         <div id="works">
-          <Moments />
+           <Moments /> 
         </div>
         <Client />
         <div id="feedbacks">
           <TestimonialsCarousel />
         </div>
-        <Footer />
+         <Footer /> 
       </div>
     </ClickSpark>
   );

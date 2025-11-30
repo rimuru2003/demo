@@ -8,7 +8,7 @@ const CounterBox = ({ value, mainHeading, subHeading }) => {
   return (
     <div
       ref={ref}
-      className="flex flex-col pb-8 pt-10 xl:px-6 px-2 items-start justify-between h-full text-[#1A1A1A]"
+      className="flex flex-col py-4 xl:pb-8 xl:pt-10 xl:px-6 px-2 items-start justify-between h-full text-[#1A1A1A]"
     >
       {/* Animated Counter */}
       <div className="xl:text-[5rem] text-xl font-bold text-[#1A1A1A]">
@@ -19,7 +19,7 @@ const CounterBox = ({ value, mainHeading, subHeading }) => {
       <div className="space-y-1 text-start">
         <h1 className="xl:text-2xl text-xs font-semibold">{mainHeading}</h1>
         <div className="border border-black w-[90%]" />
-        <h1 className="xl:text-xl text-xs font-medium">{subHeading}</h1>
+        <h1 className="xl:text-xl text-[10px] font-medium">{subHeading}</h1>
       </div>
     </div>
   );

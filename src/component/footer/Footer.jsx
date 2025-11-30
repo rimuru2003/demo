@@ -8,12 +8,12 @@ const Footer = () => {
       {/* Top Section - Menu + Socials */}
       <div className="flex flex-col md:flex-row justify-between items-center gap-8">
         {/* Menu */}
-        <div className="flex  justify-center md:justify-start gap-3">
+        <div className="flex  justify-center md:justify-start gap-2  md:gap-3">
           {["Expertises", "Work", "About", "Contact"].map((item) => (
             <button
               key={item}
-              className="px-4 py-2 hover:bg-black hover:text-white transition  
-              rounded-2xl text-base font-semibold  "
+              className="px-2 py-2 hover:bg-black hover:text-white transition  
+              rounded-2xl text-sm md:text-base font-semibold  "
             >
               {item}
             </button>

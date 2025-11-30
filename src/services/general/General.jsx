@@ -15,36 +15,37 @@ const General = () => {
   return (
     <section
       ref={containerRef}
-      className="w-full h-[95vh] flex justify-center xl:pb-10 bg-white rounded-3xl"
+      className="w-full h-[95vh]  flex justify-center xl:pb-10 bg-yellow-300 rounded-3xl"
     >
       <div className="w-[95%]   ">
         <div className="flex  flex-col h-full justify-center">
           <div className="flex  justify-between ">
             <div className="text-start space-y-2">
               {" "}
-              <span className="xl:text-sm text-xs w-32 font-[Inter] font-medium  px-2 py-1 rounded-lg   bg-[#EAE4D8]">
+              <span className="xl:text-sm  text-xs w-32 font-[Inter] font-medium  px-2 py-1 rounded-lg  
+               bg-[#EAE4D8]">
                 What we Offers
               </span>
-              <h1 className="text-3xl md:text-[80px] font-bold text-black leading-none">
+              <h1 className="text-3xl md:text-4xl xl:text-[80px] font-bold text-black leading-none">
                 General
               </h1>
             </div>
             <div
-              className="  text-[60px] md:text-[120px] font-bold
+              className="  text-[60px] md:text-[70px] xl:text-[120px] font-bold
              text-black/10 select-none"
             >
               01
             </div>
           </div>
 
-          <div className="flex xl:flex-row  flex-col-reverse   xl:justify-between  xl:h-[70%] w-full">
+          <div className="flex lg:flex-row  flex-col-reverse   xl:justify-between  lg:h-[70%] w-full">
             <div className="flex flex-col w-full xl:w-[40%] space-y-4 justify-end">
               <div className=" text-start space-y-4">
-                <h2 className="text-sm md:text-2xl  font-semibold leading-snug">
+                <h2 className="text-sm xl:text-2xl md:text-xl font-semibold leading-snug">
                   Building stronger, happier, and more productive teams through
                   experience-driven activities.
                 </h2>
-                <p className="text-xs md:text-lg text-black/70 xl:ml-5 xl:w-[95%] font-[Inter] leading-relaxed">
+                <p className="text-xs xl:text-lg md:text-base text-black/70 xl:ml-5 xl:w-[95%] font-[Inter] leading-relaxed">
                   We go beyond traditional training by engaging individuals in
                   interactive team experiences that relieve stress, boost
                   morale, and foster job satisfaction — resulting in higher
@@ -52,10 +53,11 @@ const General = () => {
                 </p>
               </div>
 
-              <button                 onClick={() => setShowPopup(true)}
-
-                className="flex  py-1 items-center font-[Inter] justify-evenly xl:ml-5 w-[35%] xl:w-[25%]  bg-[#FA5424]
-               text-white px-1   xl:pl-3 xl:pr-2 xl:py-2 rounded-2xl text-xs xl:text-base xl:font-semibold transition"
+              <button onClick={() => setShowPopup(true)}
+               className="flex  py-1 items-center font-[Inter] justify-evenly
+                 xl:ml-5 w-[35%] md:w-[20%] xl:w-[25%]  bg-[#FA5424]
+               text-white px-1 md:py-2  xl:pl-3 xl:pr-2 xl:py-2 rounded-2xl text-xs 
+                xl:text-base xl:font-semibold transition"
               >
                 Know More
                 <div
@@ -65,7 +67,7 @@ const General = () => {
                   <img
                     src={Arrow}
                     alt="arrow"
-                    className="xl:w-4 xl:h-4 w-2 h-2"
+                    className="xl:w-4 xl:h-4 md:w-3 md:h-3  w-2 h-2"
                   />
                 </div>
               </button>

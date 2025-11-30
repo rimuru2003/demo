@@ -94,21 +94,24 @@ const About = ({ goToTeam }) => {
     <div className="w-full h-screen text-black flex flex-col overflow-hidden">
       <KnowMoreCursor ref={cursorRef} />
 
-      <div className="flex flex-col w-full space-y-14 xl:space-y-40">
-        {/* Top Section */}
-        <div className="xl:w-[80%] w-full mx-auto font-semibold px-3 xl:text-5xl text-start tracking-wider">
+      <div className="flex flex-col w-full lg:mt-24 xl:mt-16  space-y-14 lg:space-y-32 xl:space-y-40">
+        <div
+          className="xl:w-[80%] w-full mx-auto font-semibold px-3 md:px-8 
+        xl:text-4xl  md:text-3xl text-start tracking-wider"
+        >
           Engage is a multi-faceted services organization that conceptualizes,
           designs, and delivers world-class people engagement programs — from
           C-suite curated experiences to transformational workshops with top
           speakers and trainers, driving measurable organizational change.
         </div>
 
-        {/* Video Row */}
-        <div className="flex xl:flex-row flex-col w-[95%] items-center space-y-5 xl:justify-between xl:items-end mx-auto">
-          {/* Video Card */}
+        <div
+          className="flex lg:flex-row flex-col w-[95%] items-center space-y-5 xl:justify-between
+         xl:items-end mx-auto"
+        >
           <div
             ref={videoRef}
-            className="xl:w-[30%] w-full h-[15rem] xl:h-[20rem] rounded-2xl overflow-hidden "
+            className="xl:w-[30%] w-full  h-[15rem] sm:w-[80%] xl:h-[20rem] md:h-[17rem] rounded-2xl overflow-hidden "
           >
             <video
               className="w-full h-full object-cover block"
@@ -124,7 +127,7 @@ const About = ({ goToTeam }) => {
           {/* Right Side */}
           <div className="flex flex-col w-full px-3 xl:w-[70%] xl:ml-16">
             <div
-              className="xl:w-[70%] w-full tracking-wider font-semibold text-start
+              className="xl:w-[70%] w-full tracking-wider md:text-xl lg:text-2xl font-semibold text-start
              xl:text-3xl leading-snug"
             >
               Rooted in Antworx Experience Pvt. Ltd., we draw strength from a
@@ -137,20 +140,23 @@ const About = ({ goToTeam }) => {
               <div
                 onClick={() => setShowPopup(true)}
                 className="flex items-center justify-between border-[1.5px]
-                border-black rounded-[14px] px-2 py-1 w-fit cursor-pointer
+                border-black rounded-[14px] lg:px-2 lg:py-1 px-1 py-1 w-fit cursor-pointer
                 hover:bg-gray-100 transition"
               >
-                <span className="text-xl ml-2  font-semibold">know more</span>
-                <div className="ml-4 bg-black rounded-xl p-3 flex justify-center items-center">
-                  <img src={Arrow} alt="arrow" className="w-4 h-4" />
+                <span className="lg:text-xl  ml-2  font-semibold">
+                  know more
+                </span>
+                <div className="ml-4 bg-black rounded-xl lg:p-3 p-2 flex justify-center items-center">
+                  <img src={Arrow} alt="arrow" className="lg:w-4 lg:h-4" />
                 </div>
               </div>
 
               <div
                 onClick={goToTeam}
-                className="border-[1.5px] border-black rounded-xl p-1 flex w-12 h-12 justify-center items-center cursor-pointer hover:bg-gray-100 transition"
+                className="border-[1.5px] border-black rounded-xl p-1 flex lg:w-12 lg:h-12 w-8 h-8
+                justify-center items-center cursor-pointer hover:bg-gray-100 transition"
               >
-                <img src={Hand} alt="hand" className="w-6 h-6" />
+                <img src={Hand} alt="hand" className="lg:w-6 lg:h-6 w-4 h-4 " />
               </div>
             </div>
           </div>

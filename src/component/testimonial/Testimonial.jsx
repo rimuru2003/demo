@@ -72,14 +72,11 @@ const testimonials = [
 
 const Card = ({ text, name, company, image, bg }) => {
   return (
-    <div className="relative w-full max-w-[30rem] mx-auto">
+    <div className="relative  w-[30rem] mx-auto">
       <span
-        className="absolute top-2 left-8 z-20
-                   flex items-center justify-center
-                   w-12 h-12 sm:w-14 sm:h-14
-                   rounded-full shadow-md
-                   bg-white ring-4 ring-[#F3B24D]
-                   pointer-events-none"
+        className="absolute top-2 left-8 z-20 flex items-center justify-center
+                   w-12 h-12 sm:w-14 sm:h-14 rounded-full shadow-md
+                   bg-white ring-4 ring-[#F3B24D] pointer-events-none"
         aria-hidden="true"
       >
         <img src={Coma} alt="" className="w-6 sm:w-10" />
@@ -136,35 +133,28 @@ const TestimonialsCarousel = () => {
     <section className="py-12 sm:py-16 lg:py-20 mt-10 lg:mt-20 text-black overflow-hidden">
       <div className="mx-auto w-full">
         <Swiper
-          onSwiper={(swiper) => {
-            swiperRef.current = swiper;
-          }}
           modules={[Autoplay]}
           loop
+          grabCursor
+          speed={5000}
           freeMode
           freeModeMomentum={false}
-          grabCursor
-          spaceBetween={12}
           autoplay={{
             delay: 0,
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
-          speed={6000}
-          allowTouchMove
+          spaceBetween={24} // 👈 gap fixed!
           breakpoints={{
-            0: { slidesPerView: 1 },
-            440: { slidesPerView: 1 },
-            640: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
+            0: { slidesPerView: 1.1, spaceBetween: 16 },
+            640: { slidesPerView: 1.5, spaceBetween: 20 },
+            1024: { slidesPerView: 2.3, spaceBetween: 24 },
           }}
-          className="!px-2 sm:!px-3"
+          className="!px-4"
         >
           {testimonials.map((t, i) => (
-            <SwiperSlide key={i}>
-              <div className="px-2 sm:px-3">
-                <Card {...t} />
-              </div>
+            <SwiperSlide>
+              <Card {...t} />
             </SwiperSlide>
           ))}
         </Swiper>

@@ -56,7 +56,7 @@ const KnowMoreCursor = React.forwardRef((props, ref) => {
   const node = (
     <div
       ref={ref}
-      className="fixed z-[9999] "
+      className="fixed z-[9999] pointer-events-none "
       style={{ opacity: 0, transform: "scale(0.85)", left: 0, top: 0 }}
     >
       <div className="flex flex-col ml-6 mt-6 items-center gap-2">
@@ -197,7 +197,7 @@ const OurTeam = ({ onBackClick }) => {
 
       <button
         onClick={onBackClick}
-        className="absolute bottom-8 right-8 flex items-center gap-2 border border-black p-2 h-12 w-12  rounded-2xl 
+        className="absolute bottom-8 left-8 xl:right-8 flex items-center gap-2 border border-black p-2 h-12 w-12  rounded-2xl 
         text-sm tracking-wider cursor-pointer hover:underline bg-white/50 backdrop-blur"
       >
         <img src={Back} alt="Back" className="w-6 h-6" />
