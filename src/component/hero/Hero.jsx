@@ -4,6 +4,7 @@ import CounterBox from "./Counter";
 import SplitText from "../../animation/scrollRevealHeading";
 import antworx from "../../assest/antworx 1video1.2.webm";
 import antworx2 from "../../assest/antworx 1video1.3.webm";
+import AnimatedText from "../../animation/scrollRevealHeading";
 
 const Hero = () => {
   const heroRef = useRef(null);
@@ -84,36 +85,40 @@ const Hero = () => {
   return (
     <div
       ref={heroRef}
-      className="relative h-[80vh] xl:h-[130vh] w-full overflow-hidden flex flex-col justify-around md:justify-evenly "
+      className="relative h-[80vh] xl:h-[130vh] w-full overflow-hidden flex flex-col 
+      justify-around "
     >
       <div
-        className=" flex flex-wrap space-y-0 flex-col font-Parkinsans text-[#1A1A1A]
-         xl:px-10 items-start font-semibold px-2 text-5xl  xl:text-[7rem] leading-[1.2] xl:leading-[1.21]"
+        className=" flex flex-wrap lg:space-y-6 flex-col font-Parkinsans text-[#1A1A1A]
+         xl:px-10 items-start px-2  leading-[1.2]
+          xl:leading-[1.21]"
       >
-        <SplitText
-          text="We Make Things  Possible"
-          delay={100}
-          duration={0.6}
-          ease="power3.out"
-          splitType="chars"
-          from={{ opacity: 0, y: 40 }}
-          to={{ opacity: 1, y: 0 }}
-          threshold={0.1}
-          rootMargin="-100px"
-          textAlign="start"
-        />
-        <SplitText
-          text="Once And Always"
-          delay={200}
-          duration={0.6}
-          ease="power3.out"
-          splitType="chars"
-          from={{ opacity: 0, y: 40 }}
-          to={{ opacity: 1, y: 0 }}
-          threshold={0.1}
-          rootMargin="-100px"
-          textAlign="start"
-        />
+        <div className="text-start">
+          {/* for mobile  */}
+          <AnimatedText
+            tag="h1"
+            text="We Make Things  "
+            className=" text-3xl block md:hidden xsm:text-4xl  font-semibold"
+          />
+          <AnimatedText tag="h1" text="Possible" className=" text-3xl  block md:hidden xsm:text-4xl font-semibold" />
+          <AnimatedText
+            tag="h1"
+            text="Amazing Designs"
+            className="  text-3xl xsm:text-4xl  block md:hidden font-semibold"
+          />
+          {/* for above lg */}
+          <AnimatedText
+            tag="h1"
+            text="We Make Things  Possible"
+            className=" hidden md:block text-5xl xl:text-[7rem] font-semibold"
+          />
+
+          <AnimatedText
+            tag="h1"
+            text="Amazing Designs"
+            className=" hidden md:block text-5xl xl:text-[7rem] font-semibold"
+          />
+        </div>
         <p className="xl:text-3xl text-start  mt-4 text-sm md:text-base font-semibold">
           Unleashing Potential Through
           <br /> Experiential Programs
@@ -123,9 +128,8 @@ const Hero = () => {
       <div className="flex justify-center items-center font-[Inter]  ">
         <div
           ref={(el) => (cardsRef.current[0] = el)}
-
           className="xl:w-96 xl:h-[32rem]  h-[15rem] md:h-[18rem] md:w-56 w-36 -ml-8 q1 rounded-3xl  bg-[#F9B900]"
->
+        >
           <CounterBox
             value={900}
             mainHeading="Projects Worldwide"
@@ -147,10 +151,8 @@ const Hero = () => {
         </div>
         <div
           ref={(el) => (cardsRef.current[2] = el)}
-
           className="xl:w-96 -ml-8 q3 h-[15rem] w-36  md:h-[18rem] md:w-56 rounded-3xl xl:h-[32rem] bg-[#0D8DFF]"
-
->
+        >
           <CounterBox
             value={13}
             mainHeading="Countries"

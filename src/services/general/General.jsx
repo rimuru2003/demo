@@ -42,8 +42,9 @@ const General = () => {
             </div>
           </div>
 
-          <div className="flex lg:flex-row  flex-col-reverse   xl:justify-between  lg:h-[70%] w-full">
-            <div className="flex flex-col w-full xl:w-[40%] space-y-4 justify-end">
+          <div className="flex lg:flex-row  flex-col-reverse   xl:justify-between  lg:h-[70%] 
+          w-full">
+            <div className="flex flex-col w-full xl:w-[50%] space-y-4 justify-end">
               <div className=" text-start space-y-2">
                 <h2 className="xsm:text-base text-sm lg:text-2xl md:text-xl font-semibold leading-snug">
                   Building stronger, happier, and more productive teams through
@@ -76,7 +77,7 @@ const General = () => {
               </button>
             </div>
 
-            <div className="relative w-full lg:w-[50%] flex justify-start h-full">
+            <div className="relative w-full lg:w-[40%] flex justify-start h-full">
               <Images
                 borderClass="border-orange-500"
                 img1={General1}

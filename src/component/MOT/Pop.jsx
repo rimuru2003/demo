@@ -13,14 +13,12 @@ const InfoMediaCard = ({
 }) => {
   const panelRef = useRef(null);
 
-  // Close on ESC
   useEffect(() => {
     const onKey = (e) => e.key === "Escape" && onClose?.();
     if (open) window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [open, onClose]);
 
-  // Focus trap (basic)
   useEffect(() => {
     if (!open || !panelRef.current) return;
     const focusable = panelRef.current.querySelectorAll(
@@ -31,7 +29,6 @@ const InfoMediaCard = ({
 
   if (!open || !card) return null;
 
-  // ✅ Normalize details to an array
   const detailItems = Array.isArray(card.details)
     ? card.details
     : card.details

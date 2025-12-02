@@ -145,11 +145,12 @@ const Navbar = () => {
     <>
       {/* Navbar */}
       <div
-        className={`w-full px-5 md:px-11 py-4 overflow-y-hidden md:py-4 flex items-center justify-between 
+        className={`w-full px-3 lg:px-11 py-2 overflow-y-hidden md:py-4 flex items-center 
+          justify-between 
           fixed top-0 left-0 right-0 z-30 
-  transition-transform duration-500 ease-out
-  bg-white/20 backdrop-blur-md border-b border-white/10
-  ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
+           transition-transform duration-500 ease-out
+           bg-white/20 backdrop-blur-md border-b border-white/10
+          ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
       >
         {/* Logo */}
         <div className="flex items-center gap-3">
@@ -157,8 +158,10 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center bg-white rounded-2xl py-1 px-4 gap-x-2 
-        font-semibold ">
+        <div
+          className="hidden xl:flex items-center bg-white rounded-2xl py-1 px-4 gap-x-2 
+        font-semibold "
+        >
           <NavItems />
         </div>
 
@@ -192,15 +195,17 @@ const Navbar = () => {
       {/* <div
         ref={mobileOverlayRef}
         onClick={() => setMobileOpen(false)}
-        className="fixed inset-0 bg-black/50 m-0 backdrop-blur-sm opacity-0 pointer-events-none z-40 transition-opacity md:hidden"
+        className="fixed inset-0 bg-black/50 m-0 backdrop-blur-sm opacity-0 pointer-events-none 
+        z-40 transition-opacity md:hidden"
       /> */}
       <Portal>
         <div
           ref={mobileMenuRef}
-          className="fixed top-0 right-0 h-screen w-[100%]  flex flex-col items-end  bg-[#FAF4EC] z-[22221] translate-x-full md:hidden shadow-2xl"
+          className="fixed top-0 right-0 h-screen w-[100%]  flex flex-col items-end 
+           bg-[#FAF4EC] z-[22221] translate-x-full lg:hidden shadow-2xl"
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="md:hidden mr-5  mt-4     ">
+          <div className="lg:hidden mr-5  mt-4     ">
             <Hamburger
               toggled={mobileOpen}
               toggle={setMobileOpen}

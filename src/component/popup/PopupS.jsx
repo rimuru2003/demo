@@ -73,67 +73,67 @@ const PopupS = ({ open, onClose }) => {
       }}
     >
       <div className="relative w-full md:w-[95vw] max-w-[860px] max-h-[88vh] md:max-h-[100vh] rounded-xl md:rounded-2xl bg-white shadow-2xl border border-gray-200 flex flex-col">
-    {/* Close button */}
-    <button
-      className="absolute top-3 border-2 right-3 w-8 h-8 rounded-lg flex items-center justify-center text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300"
-      aria-label="Close"
-    >
-      ✕
-    </button>
+        {/* Close button */}
+        <button
+          className="absolute top-3 border-2 right-3 w-8 h-8 rounded-lg flex items-center justify-center text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300"
+          aria-label="Close"
+        >
+          ✕
+        </button>
 
-    {/* Header */}
-    <div className="px-5 md:px-8 md:pt-16  border-b border-gray-100">
-      <div className="flex md:flex-row flex-col items-start md:items-center gap-4">
-        <h1 id="popup-title" className="text-3xl md:text-4xl font-semibold">
-          Service Name
-        </h1>
+        {/* Header */}
+        <div className="px-5 md:px-8 md:pt-16  border-b border-gray-100">
+          <div className="flex md:flex-row flex-col items-start md:items-center gap-4">
+            <h1 id="popup-title" className="text-3xl md:text-4xl font-semibold">
+              Service Name
+            </h1>
+          </div>
+        </div>
+
+        {/* Content */}
+        <div
+          className="px-5 md:px-8 py-5 md:py-6 overflow-y-auto [scrollbar-width:thin]"
+          style={{ WebkitOverflowScrolling: "touch" }}
+        >
+          <section className="space-y-7 text-[15px] md:text-[16px] leading-relaxed text-gray-800">
+            <div>
+              <h2 className="text-lg md:text-xl font-bold mb-1 flex items-start gap-2">
+                <span className="text-orange-500 mt-0.5 md:mt-1">✷</span>
+                <span>Our Approach</span>
+              </h2>
+              <p className="text-base xl:ml-5 md:text-lg font-medium text-gray-700">
+                Our genesis has evolved from Antworx, where we, like Ants in an
+                colony, ensure methodical delivery of solutions, impacting every
+                function and person, with auditable ROI outcomes.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-lg md:text-xl font-bold mb-1 flex items-start gap-2">
+                <span className="text-orange-500 mt-0.5 md:mt-1">✷</span>
+                <span>Our Approach</span>
+              </h2>
+              <p className="text-base xl:ml-5 md:text-lg font-medium text-gray-700">
+                Our genesis has evolved from Antworx, where we, like Ants in an
+                colony, ensure methodical delivery of solutions, impacting every
+                function and person, with auditable ROI outcomes.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-lg md:text-xl font-bold mb-1 flex items-start gap-2">
+                <span className="text-orange-500 mt-0.5 md:mt-1">✷</span>
+                <span>Our Approach</span>
+              </h2>
+              <p className="text-base xl:ml-5 md:text-lg font-medium text-gray-700">
+                Our genesis has evolved from Antworx, where we, like Ants in an
+                colony, ensure methodical delivery of solutions, impacting every
+                function and person, with auditable ROI outcomes.
+              </p>
+            </div>
+          </section>
+        </div>
       </div>
-    </div>
-
-    {/* Content */}
-    <div
-      className="px-5 md:px-8 py-5 md:py-6 overflow-y-auto [scrollbar-width:thin]"
-      style={{ WebkitOverflowScrolling: "touch" }}
-    >
-      <section className="space-y-7 text-[15px] md:text-[16px] leading-relaxed text-gray-800">
-        <div>
-          <h2 className="text-lg md:text-xl font-bold mb-1 flex items-start gap-2">
-            <span className="text-orange-500 mt-0.5 md:mt-1">✷</span>
-            <span>Our Approach</span>
-          </h2>
-          <p className="text-base xl:ml-5 md:text-lg font-medium text-gray-700">
-            Our genesis has evolved from Antworx, where we, like Ants in an
-            colony, ensure methodical delivery of solutions, impacting every
-            function and person, with auditable ROI outcomes.
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-lg md:text-xl font-bold mb-1 flex items-start gap-2">
-            <span className="text-orange-500 mt-0.5 md:mt-1">✷</span>
-            <span>Our Approach</span>
-          </h2>
-          <p className="text-base xl:ml-5 md:text-lg font-medium text-gray-700">
-            Our genesis has evolved from Antworx, where we, like Ants in an
-            colony, ensure methodical delivery of solutions, impacting every
-            function and person, with auditable ROI outcomes.
-          </p>
-        </div>
-
-        <div>
-          <h2 className="text-lg md:text-xl font-bold mb-1 flex items-start gap-2">
-            <span className="text-orange-500 mt-0.5 md:mt-1">✷</span>
-            <span>Our Approach</span>
-          </h2>
-          <p className="text-base xl:ml-5 md:text-lg font-medium text-gray-700">
-            Our genesis has evolved from Antworx, where we, like Ants in an
-            colony, ensure methodical delivery of solutions, impacting every
-            function and person, with auditable ROI outcomes.
-          </p>
-        </div>
-      </section>
-    </div>
-  </div>
     </div>
   );
 
