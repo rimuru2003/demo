@@ -59,8 +59,6 @@ const Moments = () => {
 
   // gsap
 
- 
-
   // ALL DATA
   const cards = [
     {
@@ -70,8 +68,16 @@ const Moments = () => {
       border: "#FA5424",
       gray_logo: GlanG,
       logo: Glan,
-      details: ["Details line 1", "Details line 2"],
-      images: ["https://images.unsplash.com/photo-1503342217505"],
+      details: [
+        "Our genesis has evolved from Antworx, where we, like Ants in an colony, ensure methodical delivery of solutions, impacting every function and person, with auditable ROI outcomes.",
+        "Our genesis has evolved from Antworx, where we, like Ants in an colony, ensure methodical delivery of solutions, impacting every function and person, with auditable ROI outcomes.",
+        "It helped us design and develop people-centric and engagement oriented experiences, that is sure to empower enterprise-wide change.",
+      ],
+      images: [
+        "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1200&auto=format&fit=crop",
+      ],
       videos: ["https://www.w3schools.com/html/mov_bbb.mp4"],
     },
     {
@@ -81,8 +87,16 @@ const Moments = () => {
       border: "#0D8DFF",
       gray_logo: AirtelG,
       logo: Airtel,
-      details: ["Details line 1"],
-      images: ["https://images.unsplash.com/photo-1503342217505"],
+      details: [
+        "Our genesis has evolved from Antworx, where we, like Ants in an colony, ensure methodical delivery of solutions, impacting every function and person, with auditable ROI outcomes.",
+        "Our genesis has evolved from Antworx, where we, like Ants in an colony, ensure methodical delivery of solutions, impacting every function and person, with auditable ROI outcomes.",
+        "It helped us design and develop people-centric and engagement oriented experiences, that is sure to empower enterprise-wide change.",
+      ],
+      images: [
+        "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1200&auto=format&fit=crop",
+      ],
       videos: ["https://www.w3schools.com/html/mov_bbb.mp4"],
     },
     {
@@ -92,8 +106,16 @@ const Moments = () => {
       border: "#FA5424",
       gray_logo: BiraG,
       logo: Bira,
-      details: ["Details line 1", "Details line 2"],
-      images: ["https://images.unsplash.com/photo-1503342217505"],
+      details: [
+        "Our genesis has evolved from Antworx, where we, like Ants in an colony, ensure methodical delivery of solutions, impacting every function and person, with auditable ROI outcomes.",
+        "Our genesis has evolved from Antworx, where we, like Ants in an colony, ensure methodical delivery of solutions, impacting every function and person, with auditable ROI outcomes.",
+        "It helped us design and develop people-centric and engagement oriented experiences, that is sure to empower enterprise-wide change.",
+      ],
+      images: [
+        "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1200&auto=format&fit=crop",
+      ],
       videos: ["https://www.w3schools.com/html/mov_bbb.mp4"],
     },
     {
@@ -103,8 +125,16 @@ const Moments = () => {
       border: "#0D8DFF",
       gray_logo: DisneyG,
       logo: Disney,
-      details: ["Details line 1"],
-      images: ["https://images.unsplash.com/photo-1503342217505"],
+      details: [
+        "Our genesis has evolved from Antworx, where we, like Ants in an colony, ensure methodical delivery of solutions, impacting every function and person, with auditable ROI outcomes.",
+        "Our genesis has evolved from Antworx, where we, like Ants in an colony, ensure methodical delivery of solutions, impacting every function and person, with auditable ROI outcomes.",
+        "It helped us design and develop people-centric and engagement oriented experiences, that is sure to empower enterprise-wide change.",
+      ],
+      images: [
+        "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1200&auto=format&fit=crop",
+      ],
       videos: ["https://www.w3schools.com/html/mov_bbb.mp4"],
     },
     {
@@ -114,8 +144,16 @@ const Moments = () => {
       border: "#FA5424",
       gray_logo: AirtelBG,
       logo: AirtelB,
-      details: ["Details line 1", "Details line 2"],
-      images: ["https://images.unsplash.com/photo-1503342217505"],
+      details: [
+        "Our genesis has evolved from Antworx, where we, like Ants in an colony, ensure methodical delivery of solutions, impacting every function and person, with auditable ROI outcomes.",
+        "Our genesis has evolved from Antworx, where we, like Ants in an colony, ensure methodical delivery of solutions, impacting every function and person, with auditable ROI outcomes.",
+        "It helped us design and develop people-centric and engagement oriented experiences, that is sure to empower enterprise-wide change.",
+      ],
+      images: [
+        "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1200&auto=format&fit=crop",
+      ],
       videos: ["https://www.w3schools.com/html/mov_bbb.mp4"],
     },
     {
@@ -125,8 +163,16 @@ const Moments = () => {
       border: "#0D8DFF",
       gray_logo: HindwareG,
       logo: Hindware,
-      details: ["Details line 1"],
-      images: ["https://images.unsplash.com/photo-1503342217505"],
+      details: [
+        "Our genesis has evolved from Antworx, where we, like Ants in an colony, ensure methodical delivery of solutions, impacting every function and person, with auditable ROI outcomes.",
+        "Our genesis has evolved from Antworx, where we, like Ants in an colony, ensure methodical delivery of solutions, impacting every function and person, with auditable ROI outcomes.",
+        "It helped us design and develop people-centric and engagement oriented experiences, that is sure to empower enterprise-wide change.",
+      ],
+      images: [
+        "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1200&auto=format&fit=crop",
+      ],
       videos: ["https://www.w3schools.com/html/mov_bbb.mp4"],
     },
     {
@@ -136,8 +182,16 @@ const Moments = () => {
       border: "#FA5424",
       gray_logo: TargetG,
       logo: Target,
-      details: ["Details line 1", "Details line 2"],
-      images: ["https://images.unsplash.com/photo-1503342217505"],
+      details: [
+        "Our genesis has evolved from Antworx, where we, like Ants in an colony, ensure methodical delivery of solutions, impacting every function and person, with auditable ROI outcomes.",
+        "Our genesis has evolved from Antworx, where we, like Ants in an colony, ensure methodical delivery of solutions, impacting every function and person, with auditable ROI outcomes.",
+        "It helped us design and develop people-centric and engagement oriented experiences, that is sure to empower enterprise-wide change.",
+      ],
+      images: [
+        "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1200&auto=format&fit=crop",
+      ],
       videos: ["https://www.w3schools.com/html/mov_bbb.mp4"],
     },
     {
@@ -147,8 +201,16 @@ const Moments = () => {
       border: "#0D8DFF",
       gray_logo: CloudFG,
       logo: CloudF,
-      details: ["Details line 1"],
-      images: ["https://images.unsplash.com/photo-1503342217505"],
+      details: [
+        "Our genesis has evolved from Antworx, where we, like Ants in an colony, ensure methodical delivery of solutions, impacting every function and person, with auditable ROI outcomes.",
+        "Our genesis has evolved from Antworx, where we, like Ants in an colony, ensure methodical delivery of solutions, impacting every function and person, with auditable ROI outcomes.",
+        "It helped us design and develop people-centric and engagement oriented experiences, that is sure to empower enterprise-wide change.",
+      ],
+      images: [
+        "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1200&auto=format&fit=crop",
+      ],
       videos: ["https://www.w3schools.com/html/mov_bbb.mp4"],
     },
   ];
@@ -160,7 +222,7 @@ const Moments = () => {
 
     useGSAP(
       () => {
-        if (!hover) return; 
+        if (!hover) return;
         gsap.fromTo(
           btnRef.current.children,
           { y: 20, opacity: 0 },
