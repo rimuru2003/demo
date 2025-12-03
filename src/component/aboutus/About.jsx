@@ -4,7 +4,7 @@ import Popup from "../popup/Popup";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Arrow from "../../assest/arrow.svg";
-import Hand from "../../assest/hand.svg";
+import { ReactComponent as Hand } from "../../assest/hand.svg";
 import Video from "../../assest/videoplayback.mp4";
 import Vlogo from "../../assest/videologo.svg";
 
@@ -127,7 +127,8 @@ const About = ({ goToTeam }) => {
           {/* Right Side */}
           <div className="flex flex-col w-full px-3 xl:w-[70%] xl:ml-16">
             <div
-              className="xl:w-[70%] w-full tracking-wider md:text-xl lg:text-2xl font-semibold text-start
+              className="xl:w-[70%] w-full tracking-wider md:text-xl  lg:text-2xl font-semibold 
+              text-start
              xl:text-3xl leading-snug"
             >
               Rooted in Antworx Experience Pvt. Ltd., we draw strength from a
@@ -136,27 +137,28 @@ const About = ({ goToTeam }) => {
               across every level, delivering clear, auditable ROI.
             </div>
 
-            <div className="flex justify-between mt-4">
+            <div className="flex sm:flex-row flex-col space-y-3 sm:items-center justify-between mt-4">
               <div
                 onClick={() => setShowPopup(true)}
-                className="flex items-center justify-between border-[1.5px]
+                className="flex items-center justify-between border-[1.5px] h-10 sm:h-auto
                 border-black rounded-[14px] lg:px-2 lg:py-1 px-1 py-1 w-fit cursor-pointer
                 hover:bg-gray-100 transition"
               >
                 <span className="lg:text-xl  ml-2  font-semibold">
                   know more
                 </span>
-                <div className="ml-4 bg-black rounded-xl lg:p-3 p-2 flex justify-center items-center">
+                <div className="ml-4 bg-black rounded-xl lg:p-3 p-2  flex justify-center items-center">
                   <img src={Arrow} alt="arrow" className="lg:w-4 lg:h-4" />
                 </div>
               </div>
 
               <div
                 onClick={goToTeam}
-                className="border-[1.5px] border-black rounded-xl p-1 flex lg:w-12 lg:h-12 w-8 h-8
-                justify-center items-center cursor-pointer hover:bg-gray-100 transition"
+                className="group border-2 border-red-100 w-[12rem] lg:w-auto rounded-2xl lg:pl-5 lg:pr-2 py-1 font-semibold 
+                lg:text-lg text-sm gap-x-2 flex justify-center items-center cursor-pointer hover:bg-[#E61F25] hover:text-white transition"
               >
-                <img src={Hand} alt="hand" className="lg:w-6 lg:h-6 w-4 h-4 " />
+                Meet Our team
+                <Hand className=" text-[#E61F25] group-hover:text-white transition-colors" />
               </div>
             </div>
           </div>

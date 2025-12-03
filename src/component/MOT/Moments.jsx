@@ -304,10 +304,8 @@ const Moments = () => {
               <FaInstagram className="bg-[#0ABAB5] p-1 rounded-lg" />
             </div>
           </div>
-
-          {/* RIGHT (CARDS) */}
           <div className="w-[55%] h-full z-30">
-            <div className="w-full flex flex-col gap-y-6">
+            <div className="w-full flex flex-col gap-y-6 ">
               {cards
                 .reduce((rows, _, i) => {
                   if (i % 2 === 0) rows.push(cards.slice(i, i + 2));
