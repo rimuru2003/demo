@@ -1,16 +1,36 @@
+import { useEffect } from "react";
 import "./App.css";
 import Services from "./component/service/Services";
-import Lenis from 'lenis'
+import Lenis from "lenis";
 import Hero from "./component/hero/Hero";
 import ClickSpark from "./animation/ClickSpark";
 import Moments from "./component/MOT/Moments";
-// import Client from "./component/client/Client";  
 import AboutLayout from "./component/aboutlayout/AboutLayout";
 import TestimonialsCarousel from "./component/testimonial/Testimonial";
 import Footer from "./component/footer/Footer";
 import Navbar from "./component/navbar/Navbar";
 
 function App() {
+  useEffect(() => {
+    // Initialize Lenis with options
+    const lenis = new Lenis({
+      duration: 1.3,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
   return (
     <ClickSpark
       sparkColor="#E61F25"
@@ -20,7 +40,7 @@ function App() {
       duration={400}
     >
       <div className="App space-y-12 xl:space-y-16">
-        <Navbar /> 
+        <Navbar />
         <Hero />
         <div id="about">
           <AboutLayout />
@@ -29,13 +49,12 @@ function App() {
           <Services />
         </div>
         <div id="works">
-           <Moments /> 
+          <Moments />
         </div>
-        {/* <Client /> */}
         <div id="feedbacks">
           <TestimonialsCarousel />
         </div>
-         <Footer /> 
+        <Footer />
       </div>
     </ClickSpark>
   );
