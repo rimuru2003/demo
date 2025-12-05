@@ -240,7 +240,8 @@ const Moments = () => {
 
     return (
       <div
-        className="relative w-[20rem] md:w-[22rem] bg-[#FAF4EC] h-[12rem] rounded-3xl
+        className="relative w-[20rem] sm:w-[12rem] xxl:w-[22rem] bg-[#FAF4EC]
+         h-28 xxl:h-[12rem] rounded-3xl xl:h-36 xl:w-[15rem]
         flex border-[3px] border-solid border-[#E2E2E2]
         items-center justify-around px-4 transition-all duration-300 cursor-pointer"
         onMouseEnter={() => setHover(true)}
@@ -254,22 +255,22 @@ const Moments = () => {
           <img
             src={hover ? card.logo : card.gray_logo}
             alt={card.brand}
-            className="w-28 h-28 transition-all duration-300"
+            className="xxl:w-28 xxl:h-28 h-14 w-14 xl:w-24 xl:h-24 transition-all duration-300"
           />
         </div>
 
         <div
           ref={btnRef}
-          className="flex flex-col items-center justify-center gap-5"
+          className="flex flex-col items-center justify-center gap-3 xxl:gap-5"
         >
           <button onClick={() => onOpen(card, "details")} className="btn-box">
-            <img src={detailM} className="w-8 h-8" />
+            <img src={detailM} className="xxl:w-8 xxl:h-8 xl:w-6 xl:h-6 w-4 h-4" />
           </button>
           <button onClick={() => onOpen(card, "videos")} className="btn-box">
-            <img src={VideoM} className="w-8 h-8" />
+            <img src={VideoM} className="xxl:w-8 xxl:h-8 xl:w-6 xl:h-6 w-4 h-4" />
           </button>
           <button onClick={() => onOpen(card, "images")} className="btn-box">
-            <img src={ImgM} className="w-8 h-8" />
+            <img src={ImgM} className="xxl:w-8 xxl:h-8 xl:w-6 xl:h-6 w-4 h-4" />
           </button>
         </div>
       </div>
@@ -279,7 +280,11 @@ const Moments = () => {
   return (
     <>
       <div className="relative w-full h-screen overflow-hidden">
-        <div className="relative w-full h-full flex flex-col md:flex-row justify-evenly px-4 md:px-20">
+        <div
+          className="relative w-full h-full flex flex-col items-center lg:items-start lg:flex-row 
+        space-y-12 lg:justify-evenly px-4
+         lg :px-20"
+        >
           {/* BG elements */}
           <img
             src={yelloStar}
@@ -291,21 +296,28 @@ const Moments = () => {
           />
 
           {/* LEFT SECTION */}
-          <div className="w-full md:w-[35%] flex flex-col justify-start items-start space-y-10">
-            <div className="text-5xl md:text-[7rem] font-bold text-[#1A1A1A]">
+          <div
+            className="w-full lg:w-[35%] flex flex-col justify-start items-start space-y-3
+           xl:space-y-10"
+          >
+            <div
+              className="text-4xl text-start xsm:text-5xl sm:text-6xl md:text-7xl xxl:text-[7rem]
+             font-extrabold text-[#1A1A1A]"
+            >
               <p>Moments</p>
               <p>of Truth</p>
             </div>
 
-            <div className="flex gap-8 text-4xl text-white">
+            <div className="flex gap-2 xl:gap-8 text-xl xl:text-4xl text-white">
               <FaLinkedinIn className="bg-[#FA4616] p-1 rounded-lg" />
               <FaYoutube className="bg-[#E16C02] p-1 rounded-lg" />
               <FaFacebookF className="bg-[#E63364] p-1 rounded-lg" />
               <FaInstagram className="bg-[#0ABAB5] p-1 rounded-lg" />
             </div>
           </div>
-          <div className="w-[55%] h-full z-30">
-            <div className="w-full flex flex-col gap-y-6 ">
+          <div className="xxl:w-[55%] w-full xsm:w-[70%] md:w-[60%] lg:w-[50%] xl:w-[45%]
+             sm:h-full  h-full ">
+            <div className="w-full flex flex-col  gap-y-2 xl:gap-y-6 ">
               {cards
                 .reduce((rows, _, i) => {
                   if (i % 2 === 0) rows.push(cards.slice(i, i + 2));
@@ -314,7 +326,7 @@ const Moments = () => {
                 .map((row, index) => (
                   <div
                     key={index}
-                    className={`flex gap-12 w-full ${
+                    className={`flex gap-2 xl:gap-12 w-full ${
                       index % 2 === 0 ? "justify-start" : "justify-end"
                     }`}
                   >

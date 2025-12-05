@@ -9,10 +9,10 @@ import AboutLayout from "./component/aboutlayout/AboutLayout";
 import TestimonialsCarousel from "./component/testimonial/Testimonial";
 import Footer from "./component/footer/Footer";
 import Navbar from "./component/navbar/Navbar";
+import Client from "./component/client/Client";
 
 function App() {
   useEffect(() => {
-    // Initialize Lenis with options
     const lenis = new Lenis({
       duration: 1.3,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -50,6 +50,9 @@ function App() {
         </div>
         <div id="works">
           <Moments />
+        </div>
+        <div>
+          <Client />
         </div>
         <div id="feedbacks">
           <TestimonialsCarousel />
