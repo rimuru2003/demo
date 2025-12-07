@@ -93,6 +93,9 @@ const About = ({ goToTeam }) => {
   return (
     <div className="w-full h-screen text-black flex flex-col overflow-hidden">
       <KnowMoreCursor ref={cursorRef} />
+      <span className="bg-[#EAE4D8] w-36 text-center p-1  ml-20 text-2xl rounded-lg font-semibold">
+        <h1>About Us</h1>
+      </span>
 
       <div className="flex flex-col w-full lg:mt-24 xl:mt-16  space-y-14 lg:space-y-32 xl:space-y-40">
         <div

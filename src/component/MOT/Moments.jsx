@@ -264,10 +264,16 @@ const Moments = () => {
           className="flex flex-col items-center justify-center gap-3 xxl:gap-5"
         >
           <button onClick={() => onOpen(card, "details")} className="btn-box">
-            <img src={detailM} className="xxl:w-8 xxl:h-8 xl:w-6 xl:h-6 w-4 h-4" />
+            <img
+              src={detailM}
+              className="xxl:w-8 xxl:h-8 xl:w-6 xl:h-6 w-4 h-4"
+            />
           </button>
           <button onClick={() => onOpen(card, "videos")} className="btn-box">
-            <img src={VideoM} className="xxl:w-8 xxl:h-8 xl:w-6 xl:h-6 w-4 h-4" />
+            <img
+              src={VideoM}
+              className="xxl:w-8 xxl:h-8 xl:w-6 xl:h-6 w-4 h-4"
+            />
           </button>
           <button onClick={() => onOpen(card, "images")} className="btn-box">
             <img src={ImgM} className="xxl:w-8 xxl:h-8 xl:w-6 xl:h-6 w-4 h-4" />
@@ -315,8 +321,10 @@ const Moments = () => {
               <FaInstagram className="bg-[#0ABAB5] p-1 rounded-lg" />
             </div>
           </div>
-          <div className="xxl:w-[55%] w-full xsm:w-[70%] md:w-[60%] lg:w-[50%] xl:w-[45%]
-             sm:h-full  h-full ">
+          <div
+            className="xxl:w-[55%] w-full xsm:w-[70%] md:w-[60%] lg:w-[50%] xl:w-[45%]
+             sm:h-full  h-full "
+          >
             <div className="w-full flex flex-col  gap-y-2 xl:gap-y-6 ">
               {cards
                 .reduce((rows, _, i) => {
