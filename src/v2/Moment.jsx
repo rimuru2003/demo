@@ -37,16 +37,16 @@ const Moment = () => {
 
   const circleData = {
     left: [
-      { bgColor: "bg-green-600", grayLogo: GlanG, coloredLogo: Glan },
-      { bgColor: "bg-blue-600", grayLogo: AirtelG, coloredLogo: Airtel },
-      { bgColor: "bg-red-300", grayLogo: BiraG, coloredLogo: Bira },
-      { bgColor: "bg-yellow-300", grayLogo: DisneyG, coloredLogo: Disney },
+      { bgColor: "bg-[#E61F25]", grayLogo: GlanG, coloredLogo: Glan },
+      { bgColor: "bg-[#F9B900]", grayLogo: AirtelG, coloredLogo: Airtel },
+      { bgColor: "bg-[#0ABAB5]", grayLogo: BiraG, coloredLogo: Bira },
+      { bgColor: "bg-[#E63364]", grayLogo: DisneyG, coloredLogo: Disney },
     ],
     right: [
-      { bgColor: "bg-purple-600", grayLogo: HindwareG, coloredLogo: Hindware },
-      { bgColor: "bg-orange-500", grayLogo: TargetG, coloredLogo: Target },
-      { bgColor: "bg-teal-400", grayLogo: AirtelBG, coloredLogo: AirtelB },
-      { bgColor: "bg-indigo-600", grayLogo: CloudFG, coloredLogo: CloudF },
+      { bgColor: "bg-[#008080]", grayLogo: HindwareG, coloredLogo: Hindware },
+      { bgColor: "bg-[#005BA9]", grayLogo: TargetG, coloredLogo: Target },
+      { bgColor: "bg-[#8ABF3C]", grayLogo: AirtelBG, coloredLogo: AirtelB },
+      { bgColor: "bg-[#E16C02]", grayLogo: CloudFG, coloredLogo: CloudF },
     ],
   };
 
@@ -125,7 +125,7 @@ const Moment = () => {
   };
 
   return (
-    <div className="flex h-screen relative">
+    <div className="flex h-screen  relative">
       <div className="w-[30%] h-full flex flex-col relative -left-28 rotate-12 justify-center items-center">
         <CircleWithActions
           circle={circleData.left[0]}

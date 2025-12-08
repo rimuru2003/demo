@@ -64,8 +64,8 @@ const Moments = () => {
     {
       id: 1,
       brand: "Glanbia",
-      color: "#FA5424",
-      border: "#FA5424",
+      color: "#E61F25",
+      border: "#E61F25",
       gray_logo: GlanG,
       logo: Glan,
       details: [
@@ -83,8 +83,8 @@ const Moments = () => {
     {
       id: 2,
       brand: "Airtel",
-      color: "#0D8DFF",
-      border: "#0D8DFF",
+      color: "#F9B900",
+      border: "#F9B900",
       gray_logo: AirtelG,
       logo: Airtel,
       details: [
@@ -102,8 +102,8 @@ const Moments = () => {
     {
       id: 3,
       brand: "Bira",
-      color: "#FA5424",
-      border: "#FA5424",
+      color: "#0ABAB5",
+      border: "##0ABAB5",
       gray_logo: BiraG,
       logo: Bira,
       details: [
@@ -121,8 +121,8 @@ const Moments = () => {
     {
       id: 4,
       brand: "Disney",
-      color: "#0D8DFF",
-      border: "#0D8DFF",
+      color: "#E63364",
+      border: "#E63364",
       gray_logo: DisneyG,
       logo: Disney,
       details: [
@@ -140,8 +140,8 @@ const Moments = () => {
     {
       id: 5,
       brand: "AirtelB",
-      color: "#FA5424",
-      border: "#FA5424",
+      color: "#8ABF3C",
+      border: "#8ABF3C",
       gray_logo: AirtelBG,
       logo: AirtelB,
       details: [
@@ -159,8 +159,8 @@ const Moments = () => {
     {
       id: 6,
       brand: "Hindware",
-      color: "#0D8DFF",
-      border: "#0D8DFF",
+      color: "#008080",
+      border: "#008080",
       gray_logo: HindwareG,
       logo: Hindware,
       details: [
@@ -178,8 +178,8 @@ const Moments = () => {
     {
       id: 7,
       brand: "Target",
-      color: "#FA5424",
-      border: "#FA5424",
+      color: "#005BA9",
+      border: "#005BA9",
       gray_logo: TargetG,
       logo: Target,
       details: [
@@ -197,8 +197,8 @@ const Moments = () => {
     {
       id: 8,
       brand: "CloudF",
-      color: "#0D8DFF",
-      border: "#0D8DFF",
+      color: "#E16C02",
+      border: "#E16C02",
       gray_logo: CloudFG,
       logo: CloudF,
       details: [

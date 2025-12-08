@@ -13,6 +13,8 @@ import Client from "./component/client/Client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Heros from "./v2/Hero";
 import Moment from "./v2/Moment";
+import TestimonialSlider from "./v2/Testimonials";
+import Service from "./v2/Service";
 
 function MainContent() {
   return (
@@ -48,7 +50,7 @@ function MainContentTwo() {
         <AboutLayout />
       </div>
       <div id="services">
-        {/* <Services /> */}
+        <Service />
       </div>
       <div id="works">
         <Moment />
@@ -57,7 +59,7 @@ function MainContentTwo() {
         <Client />
       </div>
       <div id="feedbacks">
-        <TestimonialsCarousel />
+        <TestimonialSlider />
       </div>
       <Footer />
     </div>
