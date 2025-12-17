@@ -37,8 +37,8 @@ const Heros = () => {
 
   return (
     <div ref={containerRef} className="pt-16 relative overflow-hidden">
-      <div className="mt-10 flex flex-col items-center space-y-2 relative z-10">
-        <h1 className="text-6xl md:text-8xl font-bold text-center leading-tight">
+      <div className="xl:mt-10 flex flex-col items-center space-y-2 relative z-10">
+        <h1 className="text-6xl md:text-8xl font-bold xl:text-center xl:leading-tight">
           We make things <br />
           possible once and <br />
           always

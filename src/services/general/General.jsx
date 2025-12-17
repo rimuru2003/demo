@@ -14,7 +14,7 @@ const General = () => {
   return (
     <section
       ref={containerRef}
-      className="w-full h-[95vh]  flex justify-center xl:pb-10 bg-yellow-300 rounded-3xl"
+      className="w-full h-[95vh]  flex justify-center xl:pb-10 bg-[#FFFFFF] rounded-3xl"
     >
       <div className="w-[95%]   ">
         <div className="flex   flex-col h-full justify-evenly  ">

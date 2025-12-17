@@ -15,13 +15,14 @@ const TestimonialCard = ({
       <div className="relative w-full   max-w-md">
         {isActive && (
           <div
-            className="absolute inset-0 bg-white rounded-xl 
+            className="absolute inset-0 bg-gray-200 rounded-xl 
                 w-[250px] h-[350px] 
                 xxsm:w-[300px] xxsm:h-[350px] 
                 xsm:w-[350px] xsm:h-[340px] 
                 sm:w-[350px] sm:h-[350px] 
                  xl:w-[450px] xl:h-[400px] 
-                   z-0 rotate-[4deg] transition-all duration-500 ease-linear"
+                   z-0 rotate-[6deg] transition-all duration-500 
+                   ease-linear"
           />
         )}
         <div

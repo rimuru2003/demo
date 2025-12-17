@@ -67,7 +67,7 @@ const Moment = () => {
       <div
         ref={buttonsRef}
         className={`absolute ${
-          position === "left"
+          position === "left" 
             ? "right-full top-2/4 -mr-8"
             : "left-full top-1/4 -ml-8"
         } ${bgColor} w-40 p-3 -rotate-12 space-x-5
@@ -125,7 +125,7 @@ const Moment = () => {
   };
 
   return (
-    <div className="flex h-screen  relative">
+    <div className="flex h-screen relative overflow-hidden isolate">
       <div className="w-[30%] h-full flex flex-col relative -left-28 rotate-12 justify-center items-center">
         <CircleWithActions
           circle={circleData.left[0]}

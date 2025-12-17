@@ -10,7 +10,12 @@ import TestimonialsCarousel from "./component/testimonial/Testimonial";
 import Footer from "./component/footer/Footer";
 import Navbar from "./component/navbar/Navbar";
 import Client from "./component/client/Client";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
 import Heros from "./v2/Hero";
 import Moment from "./v2/Moment";
 import TestimonialSlider from "./v2/Testimonials";
@@ -45,7 +50,7 @@ function MainContentTwo() {
   return (
     <div className=" space-y-12 xl:space-y-16">
       <Navbar />
-      <Heros />
+      <Heros /> 
       <div id="about">
         <AboutLayout />
       </div>
@@ -62,6 +67,40 @@ function MainContentTwo() {
         <TestimonialSlider />
       </div>
       <Footer />
+    </div>
+  );
+}
+
+function NavigateButton() {
+  const navigate = useNavigate();
+
+  return (
+    <div className="fixed bottom-5 right-5 z-[9999] flex gap-2 pointer-events-auto">
+      <button
+        onClick={() => navigate("/")}
+        className="px-4 py-2 rounded-full bg-black text-white
+                   opacity-60 hover:opacity-100 transition"
+      >
+        Go V1
+      </button>
+
+      <button
+        onClick={() => navigate("/v2")}
+        className="px-4 py-2 rounded-full bg-black text-white
+                   opacity-60 hover:opacity-100 transition"
+      >
+        Go V2
+      </button>
+
+      {/* 
+      <button
+        onClick={() => navigate("/v3")}
+        className="px-4 py-2 rounded-full bg-black text-white
+                   opacity-60 hover:opacity-100 transition"
+      >
+        Go V3
+      </button> 
+      */}
     </div>
   );
 }
@@ -92,6 +131,7 @@ function App() {
       duration={400}
     >
       <Router>
+        <NavigateButton />
         <Routes>
           <Route path="/" element={<MainContent />} />
           <Route path="/v2" element={<MainContentTwo />} />

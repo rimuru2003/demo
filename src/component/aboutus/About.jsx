@@ -79,9 +79,11 @@ const About = ({ goToTeam }) => {
       });
     };
 
+
     video.addEventListener("mouseenter", onMouseEnter);
     video.addEventListener("mouseleave", onMouseLeave);
     video.addEventListener("mousemove", onMouseMove);
+    
 
     return () => {
       video.removeEventListener("mouseenter", onMouseEnter);

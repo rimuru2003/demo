@@ -31,14 +31,15 @@ const Service = () => {
   return (
     <div className="min-h-screen">
       <div className=" flex flex-col items-center space-y-6 p-0 ">
-        <h1 className="text-9xl font-bold">what we offers</h1>
+        <h1 className="text-6xl md:text-8xl font-bold px-4 xl:px-0 ">what we offer</h1>
 
-        <div className="flex text-2xl font-medium space-x-6">
+        <div className="flex text-xs xl:text-2xl px-6  gap-2 font-medium flex-wrap  justify-center xl:space-x-6">
           {tabshown.map((valu, ind) => (
             <div
               key={ind}
               onClick={() => handleTabClick(ind)}
-              className={`border-2 px-3 py-1 rounded-lg cursor-pointer transition-colors ${
+              className={`border-2 px-3 py-1  rounded-lg cursor-pointer 
+                transition-colors  ${
                 activeIndex === ind
                   ? "bg-[#FA5424] text-white "
                   : "bg-[#EAE4D8]  hover:bg-emerald-100"
