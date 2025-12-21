@@ -17,6 +17,8 @@ import {
   useNavigate,
 } from "react-router-dom";
 import Heros from "./v2/Hero";
+import Herov from "./v3/Herov";
+import AboutL from "./v3/AboutL"
 import Moment from "./v2/Moment";
 import TestimonialSlider from "./v2/Testimonials";
 import Service from "./v2/Service";
@@ -50,9 +52,34 @@ function MainContentTwo() {
   return (
     <div className=" space-y-12 xl:space-y-16">
       <Navbar />
-      <Heros /> 
+      <Heros />
       <div id="about">
         <AboutLayout />
+      </div>
+      <div id="services">
+        <Service />
+      </div>
+      <div id="works">
+        <Moment />
+      </div>
+      <div>
+        <Client />
+      </div>
+      <div id="feedbacks">
+        <TestimonialSlider />
+      </div>
+      <Footer />
+    </div>
+  );
+}
+
+function MainContentThree() {
+  return (
+    <div className=" space-y-12 xl:space-y-16">
+      <Navbar />
+      <Herov />
+      <div id="about">
+        <AboutL />
       </div>
       <div id="services">
         <Service />
@@ -92,7 +119,7 @@ function NavigateButton() {
         Go V2
       </button>
 
-      {/* 
+      
       <button
         onClick={() => navigate("/v3")}
         className="px-4 py-2 rounded-full bg-black text-white
@@ -100,7 +127,7 @@ function NavigateButton() {
       >
         Go V3
       </button> 
-      */}
+     
     </div>
   );
 }
@@ -135,6 +162,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainContent />} />
           <Route path="/v2" element={<MainContentTwo />} />
+          <Route path="/v3" element={<MainContentThree />} />
         </Routes>
       </Router>
     </ClickSpark>
