@@ -71,7 +71,7 @@ const OurTeam = ({ onBackClick }) => {
   ];
 
   useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth <= 767);
+    const check = () => setIsMobile(window.innerWidth <= 768);
     check();
     window.addEventListener("resize", check);
     return () => window.removeEventListener("resize", check);
@@ -147,7 +147,7 @@ const OurTeam = ({ onBackClick }) => {
   return (
     <div
       ref={containerRef}
-      className="h-screen bg-[#FAF4EC] flex flex-col items-center justify-center 
+      className="h-screen bg-[#FAF4EC] overflow-hidden flex flex-col items-center justify-center 
       relative px-6 md:px-24"
     >
       <KnowMoreCursor ref={cursorRef} />

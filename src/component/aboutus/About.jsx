@@ -93,7 +93,7 @@ const About = ({ goToTeam }) => {
   }, []);
 
   return (
-    <div className="w-full h-screen text-black flex flex-col overflow-hidden">
+    <div className="w-full min-h-screen text-black flex flex-col overflow-hidden">
       <KnowMoreCursor ref={cursorRef} />
       <span className="bg-[#EAE4D8]  w-36 text-center p-1 mx-4 mb-4  xl:ml-20 text-2xl
        rounded-lg font-semibold">
@@ -117,7 +117,7 @@ const About = ({ goToTeam }) => {
         >
           <div
             ref={videoRef}
-            className="xl:w-[30%] w-full  h-[15rem] sm:w-[80%] xl:h-[20rem] md:h-[17rem] rounded-2xl overflow-hidden "
+            className="xl:w-[30%] w-full  h-[15rem] sm:w-[80%] md:w-[70%] xl:h-[20rem] md:h-[15rem] rounded-2xl overflow-hidden "
           >
             <video
               className="w-full h-full object-cover block"
@@ -131,7 +131,7 @@ const About = ({ goToTeam }) => {
           </div>
 
           {/* Right Side */}
-          <div className="flex flex-col w-full px-3 xl:w-[70%] xl:ml-16">
+          <div className="flex  flex-col w-full px-3 xl:w-[70%] xl:ml-16">
             <div
               className="xl:w-[70%] w-full tracking-wider md:text-xl  lg:text-2xl font-semibold 
               text-start
