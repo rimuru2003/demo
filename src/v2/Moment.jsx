@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import {
   FaLinkedinIn,
   FaYoutube,
@@ -6,6 +6,7 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 import { gsap } from "gsap";
+import InfoMediaCard from "../component/MOT/Pop";
 
 // Action icons
 import VideoM from "../assest/videom.svg";
@@ -34,7 +35,22 @@ import CloudF from "../assest/logo/CloudF.svg";
 
 const Moment = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [open, setOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState("details");
+  const [activeCard, setActiveCard] = useState(null);
 
+  const onOpen = useCallback((card, tab) => {
+    setActiveCard(card);
+    setActiveTab(tab);
+    setOpen(true);
+    document.body.style.overflow = "hidden";
+  }, []);
+
+  const onClose = useCallback(() => {
+    setOpen(false);
+    setActiveCard(null);
+    document.body.style.overflow = "";
+  }, []);
   const circleData = {
     left: [
       { bgColor: "bg-[#E61F25]", grayLogo: GlanG, coloredLogo: Glan },
@@ -50,7 +66,7 @@ const Moment = () => {
     ],
   };
 
-  const ActionButtons = ({ position, bgColor, isVisible }) => {
+  const ActionButtons = ({ position, bgColor, isVisible, card }) => {
     const buttonsRef = useRef(null);
 
     useEffect(() => {
@@ -67,27 +83,36 @@ const Moment = () => {
       <div
         ref={buttonsRef}
         className={`absolute ${
-          position === "left" 
+          position === "left"
             ? "right-full top-2/4 -mr-8"
             : "left-full top-1/4 -ml-8"
         } ${bgColor} w-40 p-3 -rotate-12 space-x-5
         rounded-lg flex justify-evenly border-2 border-white items-center z-10`}
       >
-        <img
-          src={detailM}
-          alt=""
-          className="cursor-pointer hover:scale-110 transition-transform"
-        />
-        <img
-          src={ImgM}
-          alt=""
-          className="cursor-pointer hover:scale-110 transition-transform"
-        />
-        <img
-          src={VideoM}
-          alt=""
-          className="cursor-pointer hover:scale-110 transition-transform"
-        />
+        <button onClick={() => onOpen(card, "details")} className="btn-box">
+          {" "}
+          <img
+            src={detailM}
+            alt=""
+            className="cursor-pointer hover:scale-110 transition-transform"
+          />
+        </button>
+        <button onClick={() => onOpen(card, "images")} className="btn-box">
+          {" "}
+          <img
+            src={ImgM}
+            alt=""
+            className="cursor-pointer hover:scale-110 transition-transform"
+          />
+        </button>
+        <button onClick={() => onOpen(card, "videos")} className="btn-box">
+          {" "}
+          <img
+            src={VideoM}
+            alt=""
+            className="cursor-pointer hover:scale-110 transition-transform"
+          />
+        </button>
       </div>
     );
   };
@@ -118,6 +143,7 @@ const Moment = () => {
             position={position}
             bgColor={circle.bgColor}
             isVisible={isHovered}
+            card={circle}
           />
         )}
       </div>
@@ -125,79 +151,88 @@ const Moment = () => {
   };
 
   return (
-    <div className="flex h-screen relative overflow-hidden isolate">
-      <div className="w-[30%] h-full flex flex-col relative -left-28 rotate-12 justify-center items-center">
-        <CircleWithActions
-          circle={circleData.left[0]}
-          position="right"
-          index="left-0"
-        />
-        <div className="flex -mt-8">
+    <>
+      <div className="flex h-screen relative overflow-hidden isolate">
+        <div className="w-[30%] h-full flex flex-col relative -left-28 rotate-12 justify-center items-center">
           <CircleWithActions
-            circle={circleData.left[1]}
+            circle={circleData.left[0]}
             position="right"
-            index="left-1"
+            index="left-0"
           />
-          <CircleWithActions
-            circle={circleData.left[2]}
-            position="right"
-            index="left-2"
-          />
-        </div>
-        <div className="-mt-8">
-          <CircleWithActions
-            circle={circleData.left[3]}
-            position="right"
-            index="left-3"
-          />
-        </div>
-      </div>
-
-      <div className="flex flex-col w-[40%] justify-center items-center space-y-3 xl:space-y-10">
-        <div className="text-4xl text-center xsm:text-5xl sm:text-6xl md:text-7xl xxl:text-[7rem] font-extrabold text-[#1A1A1A]">
-          <p>Moments of</p>
-          <p>Truth</p>
+          <div className="flex -mt-8">
+            <CircleWithActions
+              circle={circleData.left[1]}
+              position="right"
+              index="left-1"
+            />
+            <CircleWithActions
+              circle={circleData.left[2]}
+              position="right"
+              index="left-2"
+            />
+          </div>
+          <div className="-mt-8">
+            <CircleWithActions
+              circle={circleData.left[3]}
+              position="right"
+              index="left-3"
+            />
+          </div>
         </div>
 
-        <div className="flex gap-2 xl:gap-8 text-xl xl:text-4xl text-white">
-          <FaLinkedinIn className="bg-[#FA4616] p-1 rounded-lg" />
-          <FaYoutube className="bg-[#E16C02] p-1 rounded-lg" />
-          <FaFacebookF className="bg-[#E63364] p-1 rounded-lg" />
-          <FaInstagram className="bg-[#0ABAB5] p-1 rounded-lg" />
-        </div>
-        <div className="flex justify-center items-center space-x-2">
-          <span className="bg-red-500 h-4 w-4"></span>
-          <p className="font-semibold">MOVE YOUR MOUSE TO SEE OUR WORKS</p>
-        </div>
-      </div>
+        <div className="flex flex-col w-[40%] justify-center items-center space-y-3 xl:space-y-10">
+          <div className="text-4xl text-center xsm:text-5xl sm:text-6xl md:text-7xl xxl:text-[7rem] font-extrabold text-[#1A1A1A]">
+            <p>Moments of</p>
+            <p>Truth</p>
+          </div>
 
-      <div className="w-[30%] h-full flex relative -right-28 flex-col rotate-12 justify-center items-center">
-        <CircleWithActions
-          circle={circleData.right[0]}
-          position="left"
-          index="right-0"
-        />
-        <div className="flex -mt-8">
-          <CircleWithActions
-            circle={circleData.right[1]}
-            position="left"
-            index="right-1"
-          />
-          <CircleWithActions
-            circle={circleData.right[2]}
-            position="left"
-            index="right-2"
-          />
+          <div className="flex gap-2 xl:gap-8 text-xl xl:text-4xl text-white">
+            <FaLinkedinIn className="bg-[#FA4616] p-1 rounded-lg" />
+            <FaYoutube className="bg-[#E16C02] p-1 rounded-lg" />
+            <FaFacebookF className="bg-[#E63364] p-1 rounded-lg" />
+            <FaInstagram className="bg-[#0ABAB5] p-1 rounded-lg" />
+          </div>
+          <div className="flex justify-center items-center space-x-2">
+            <span className="bg-red-500 h-4 w-4"></span>
+            <p className="font-semibold">MOVE YOUR MOUSE TO SEE OUR WORKS</p>
+          </div>
         </div>
-        <div className="-mt-8">
+
+        <div className="w-[30%] h-full flex relative -right-28 flex-col rotate-12 justify-center items-center">
           <CircleWithActions
-            circle={circleData.right[3]}
+            circle={circleData.right[0]}
             position="left"
-            index="right-3"
+            index="right-0"
           />
+          <div className="flex -mt-8">
+            <CircleWithActions
+              circle={circleData.right[1]}
+              position="left"
+              index="right-1"
+            />
+            <CircleWithActions
+              circle={circleData.right[2]}
+              position="left"
+              index="right-2"
+            />
+          </div>
+          <div className="-mt-8">
+            <CircleWithActions
+              circle={circleData.right[3]}
+              position="left"
+              index="right-3"
+            />
+          </div>
         </div>
       </div>
-    </div>
+      <InfoMediaCard
+        open={open}
+        onClose={onClose}
+        card={activeCard}
+        activeTab={activeTab}
+        onTabChange={setActiveTab}
+      />
+    </>
   );
 };
 
