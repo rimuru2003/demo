@@ -58,6 +58,7 @@ const Service = () => {
           grabCursor={true}
           centeredSlides={true}
           loop={true}
+          speed={1500}
           onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
           creativeEffect={{
             prev: {
