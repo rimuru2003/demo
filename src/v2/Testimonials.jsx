@@ -115,7 +115,7 @@ const TestimonialSlider = () => {
     <div className="flex flex-col justify-center  h-screen items-center space-y-5">
       <p
         data-aos="fade-up"
-        className="lg:text-[82px] md:text-6xl text-4xl text-center  font-bold font-parkinsans px-10"
+        className="text-4xl  xsm:text-5xl sm:text-6xl md:text-7xl xxl:text-[7rem] font-extrabold text-center   font-parkinsans px-10"
       >
         Reviews & Feedbacks
       </p>

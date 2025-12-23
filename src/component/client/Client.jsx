@@ -7,7 +7,7 @@ const Client = () => {
 
   return (
     <div
-      className=" w-full h-auto xl:h-screen bg-[#F9F6EE] overflow-hidden flex flex-col
+      className=" w-full py-36 bg-[#F9F6EE] overflow-hidden flex flex-col
      items-center space-y-8 lg:space-y-16 "
     >
       <h1 className="xl:pr-8 z-10 text-center text-4xl  xsm:text-5xl sm:text-6xl md:text-7xl xxl:text-[7rem] font-extrabold text-[#1A1A1A] leading-[0.9]">
