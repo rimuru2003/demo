@@ -26,7 +26,7 @@ const AboutLayout = () => {
   };
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full min-h-screen overflow-hidden">
       <div ref={containerRef} className="flex w-[200vw] h-full">
         <div className="w-[100vw] h-full">
           <About goToTeam={goToTeam} />
