@@ -18,10 +18,11 @@ import {
 } from "react-router-dom";
 import Heros from "./v2/Hero";
 import Herov from "./v3/Herov";
-import AboutL from "./v3/AboutL"
+import AboutL from "./v3/AboutL";
 import Moment from "./v2/Moment";
 import TestimonialSlider from "./v2/Testimonials";
 import Service from "./v2/Service";
+import CardAni from "./v4/Cardabi";
 
 function MainContent() {
   return (
@@ -55,6 +56,7 @@ function MainContentTwo() {
       <Heros />
       <div id="about">
         <AboutLayout />
+        <CardAni />
       </div>
       <div id="services">
         <Service />
@@ -98,6 +100,32 @@ function MainContentThree() {
   );
 }
 
+function MainContentFour() {
+  return (
+    <div className=" space-y-12 xl:space-y-16">
+      <Navbar />
+      <Heros />
+      <div id="about">
+        <AboutLayout />
+        <CardAni />{" "}
+      </div>
+      <div id="services">
+        <Service />
+      </div>
+      <div id="works">
+        <Moments />
+      </div>
+      <div>
+        <Client />
+      </div>
+      <div id="feedbacks">
+        <TestimonialSlider />
+      </div>
+      <Footer />
+    </div>
+  );
+}
+
 function NavigateButton() {
   const navigate = useNavigate();
 
@@ -119,21 +147,27 @@ function NavigateButton() {
         Go V2
       </button>
 
-      
       <button
         onClick={() => navigate("/v3")}
         className="px-4 py-2 rounded-full bg-black text-white
                    opacity-60 hover:opacity-100 transition"
       >
         Go V3
-      </button> 
-       <button
+      </button>
+      <button
         onClick={() => navigate("https://antworxengage.com/")}
         className="px-4 py-2 rounded-full bg-black text-white
                    opacity-60 hover:opacity-100 transition"
       >
-      Original
-      </button> 
+        Original
+      </button>
+      <button
+        onClick={() => navigate("/v4")}
+        className="px-4 py-2 rounded-full bg-black text-white
+                   opacity-60 hover:opacity-100 transition"
+      >
+        v4
+      </button>
     </div>
   );
 }
@@ -169,6 +203,7 @@ function App() {
           <Route path="/" element={<MainContent />} />
           <Route path="/v2" element={<MainContentTwo />} />
           <Route path="/v3" element={<MainContentThree />} />
+          <Route path="/v4" element={<MainContentFour />} />
         </Routes>
       </Router>
     </ClickSpark>

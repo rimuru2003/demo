@@ -73,9 +73,8 @@ const About = ({ goToTeam = () => {} }) => {
 
   const [showPopup, setShowPopup] = useState(false);
 
-  /* ---------- Cursor (Desktop Only) ---------- */
   useGSAP(() => {
-    if (window.innerWidth < 1024) return;
+    // if (window.innerWidth < 1024) return;
 
     const video = videoRef.current;
     const cursor = cursorRef.current;
@@ -145,7 +144,6 @@ const About = ({ goToTeam = () => {} }) => {
         return () => tl.kill();
       });
 
-      /* Mobile cleanup */
       if (window.innerWidth < 1024) {
         gsap.set([textRef.current, secondTextRef.current, buttonsRef.current], {
           clearProps: "all",
