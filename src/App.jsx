@@ -23,6 +23,7 @@ import Moment from "./v2/Moment";
 import TestimonialSlider from "./v2/Testimonials";
 import Service from "./v2/Service";
 import CardAni from "./v4/Cardabi";
+import Clients from "./v4/Clients";
 
 function MainContent() {
   return (
@@ -116,7 +117,7 @@ function MainContentFour() {
         <Moments />
       </div>
       <div>
-        <Client />
+        <Clients />
       </div>
       <div id="feedbacks">
         <TestimonialSlider />
