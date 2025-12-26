@@ -113,7 +113,7 @@ const About = ({ goToTeam = () => {} }) => {
             trigger: sectionRef.current,
             start: "top top",
             end: "+=70%",
-            scrub: 1,
+            scrub: 2,
             pin: true,
             anticipatePin: 1,
           },
@@ -131,11 +131,11 @@ const About = ({ goToTeam = () => {} }) => {
         tl.to(
           videoContainerRef.current,
           {
-            x: "40vw",
-            xPercent: -50,
-            scale: 2.3,
-            width: "40vw",
-            height: "30vh",
+            x: "50vw",
+            xPercent: -55,
+            scale: 2,
+            width: "80vw",
+            height: "35vh",
             ease: "power2.out",
           },
           0
@@ -160,7 +160,7 @@ const About = ({ goToTeam = () => {} }) => {
     <>
       <section
         ref={sectionRef}
-        className="w-full min-h-screen flex flex-col overflow-hidden text-black"
+        className="w-full min-h-screen py-28 xl:h-[120vh] flex flex-col overflow-hidden  text-black"
       >
         <KnowMoreCursor ref={cursorRef} />
 
@@ -171,10 +171,10 @@ const About = ({ goToTeam = () => {} }) => {
         <div className="flex flex-col w-full lg:mt-24 xl:mt-16 space-y-32">
           <div
             ref={textRef}
-            className="xl:w-[80%] mx-auto px-4 xl:text-4xl md:text-3xl font-semibold tracking-wide"
+            className="xl:w-[60%]  px-20 xl:text-4xl md:text-3xl font-semibold tracking-wide"
           >
             {" "}
-            <span className="text-[#E61F25] underline underline-offset-4">
+            <span className="text-[#E61F25] underline font-[Inter] underline-offset-4">
               Engage
             </span>{" "}
             is a multi-faceted services organization that conceptualizes,
@@ -183,10 +183,10 @@ const About = ({ goToTeam = () => {} }) => {
             speakers and trainers, driving measurable organizational change.
           </div>
 
-          <div className="flex flex-col lg:flex-row w-[95%] mx-auto gap-10 items-center">
+          <div className="flex  flex-col lg:flex-row w-[95%] mx-auto gap-10 items-center">
             <div
               ref={videoContainerRef}
-              className="xl:w-[30%] w-full md:w-[70%] h-[15rem] xl:h-[20rem] rounded-2xl overflow-hidden"
+              className="xl:w-[30%] w-full md:w-[70%] h-[15rem] xl:h-[20rem] rounded-xl overflow-hidden"
             >
               <video
                 ref={videoRef}
@@ -203,7 +203,7 @@ const About = ({ goToTeam = () => {} }) => {
             <div className="flex flex-col w-full xl:w-[70%] xl:ml-16 px-4">
               <div
                 ref={secondTextRef}
-                className="xl:w-[70%] xl:text-3xl md:text-xl font-semibold tracking-wide"
+                className="xl:w-[70%] font-[Inter] xl:text-3xl md:text-xl font-semibold tracking-wide"
               >
                 Rooted in Antworx Experience Pvt. Ltd., we draw strength from a
                 deep understanding of enterprise structures and hierarchies;

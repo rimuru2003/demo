@@ -83,7 +83,7 @@ const CardAni = () => {
   return (
     <div
       ref={heroRef}
-      className="relative h-[80vh] xl:h-[130vh] w-full overflow-hidden flex flex-col 
+      className="relative py-20 w-full overflow-hidden flex flex-col 
       justify-around "
     >
       <div className="flex justify-center items-center font-[Inter]  ">

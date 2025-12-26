@@ -48,7 +48,7 @@ const Images = ({
 
   return (
     <div
-      className="relative w-[30rem]6ml-4 h-full xl:-top-40 md:ml-16 xl:mt-12 ml-4 lg:ml-0
+      className="relative w-[30rem] h-full 
     flex flex-col items-center justify-start"
     >
       {/* Top Row */}

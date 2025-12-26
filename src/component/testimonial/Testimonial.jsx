@@ -87,7 +87,7 @@ const Card = ({ text, name, company, image, bg, color }) => {
     >
       <span
         className="absolute lg:-top-6 -top-3 -left-3 lg:-left-6 flex items-center justify-center 
-        w-14 h-14  lg:w-24  lg:h-24
+        w-14 h-14  lg:w-24  lg:h-24 
     rounded-full bg-white"
       >
         <ComaIcon className="w-10 lg:w-28" style={{ color }} />

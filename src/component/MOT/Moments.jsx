@@ -303,18 +303,18 @@ const Moments = () => {
 
           {/* LEFT SECTION */}
           <div
-            className="w-full lg:w-[35%] flex flex-col justify-start items-start space-y-3
+            className="w-full lg:w-[35%] flex flex-col justify-start items-center lg:items-start space-y-3
            xl:space-y-10"
           >
             <div
-              className="text-4xl text-start xsm:text-5xl sm:text-6xl md:text-7xl xxl:text-[7rem]
-             font-extrabold text-[#1A1A1A]"
+              className="text-4xl  text-center font-Parkinsans lg:text-start xsm:text-5xl sm:text-6xl md:text-8xl xxl:text-[7rem]
+             font-bold text-[#1A1A1A]"
             >
               <p>Moments</p>
               <p>of Truth</p>
             </div>
 
-            <div className="flex gap-2 xl:gap-8 text-xl xl:text-4xl text-white">
+            <div className="flex gap-6 xl:gap-8 text-3xl xl:text-4xl text-white">
               <FaLinkedinIn className="bg-[#FA4616] p-1 rounded-lg" />
               <FaYoutube className="bg-[#E16C02] p-1 rounded-lg" />
               <FaFacebookF className="bg-[#E63364] p-1 rounded-lg" />
@@ -322,7 +322,7 @@ const Moments = () => {
             </div>
           </div>
           <div
-            className="xxl:w-[55%] w-full xsm:w-[70%] md:w-[60%] lg:w-[50%] xl:w-[45%]
+            className="xxl:w-[45%] w-full xsm:w-[70%] md:w-[60%] lg:w-[50%] xl:w-[50%]
              sm:h-full  h-full "
           >
             <div className="w-full flex flex-col  gap-y-2 xl:gap-y-6 ">
@@ -334,7 +334,7 @@ const Moments = () => {
                 .map((row, index) => (
                   <div
                     key={index}
-                    className={`flex gap-2 xl:gap-12 w-full ${
+                    className={`flex gap-2 xl:gap-10 w-full ${
                       index % 2 === 0 ? "justify-start" : "justify-end"
                     }`}
                   >

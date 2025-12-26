@@ -57,50 +57,42 @@ const Training = () => {
   return (
     <section
       ref={containerRef}
-      className="w-full h-[95vh] flex justify-center xl:pb-10 bg-[#33C791] rounded-3xl"
+      className="w-[80%] mx-auto h-[75vh]  flex justify-center  bg-[#33C791] 
+      rounded-3xl"
     >
       <div className="w-[95%]   ">
-        <div className="flex  flex-col h-full justify-evenly">
-          <div className="flex  justify-between ">
+        <div className="flex w-full justify-between  h-full   ">
+          <div className="flex flex-col justify-around w-[50%]  ">
             <div className="text-start  space-y-2 md:space-y-6">
-              <span
-                className="xl:text-sm  text-xs w-32 font-[Inter] font-medium 
-               px-2 py-1 rounded-lg  
-               bg-white"
+              <div
+                className="  text-[50px] md:text-[70px] lg:text-8xl font-semibold
+             text-black/10 select-none"
               >
-                What we Offers
-              </span>
+                03
+              </div>
+            </div>
+            <div className="flex flex-col space-y-10 justify-end">
               <h1
-                className="text-xl  md:text-4xl lg:text-[50px] font-bold text-black
+                className="text-8xl  font-semibold text-black
                leading-none"
               >
                 Training
                 <br className="hidden lg:block" /> Programs
               </h1>
-            </div>
-
-            <div
-               className="  text-[50px] md:text-[70px] lg:text-[100px] font-semibold
-             text-black/10 select-none"
-            >
-              03
-            </div>
-          </div>
-
-          <div className="flex lg:flex-row  flex-col-reverse   lg:justify-between  lg:h-[70%] w-full">
-            <div className="flex flex-col w-full lg:w-[50%] space-y-4 justify-end">
-              <div className=" text-start space-y-2">
+              <div className=" text-start space-y-2 ">
                 <h2 className="text-sm md:text-xl lg:text-2xl  font-semibold leading-snug">
                   Empowering individuals with the right skills to lead, adapt,
                   and excel.
                 </h2>
-                <p className="text-xs md:text-base lg:text-lg text-black/70  xl:ml-5 leading-relaxed">
+                <p className="text-xs md:text-base lg:text-xl text-[#161616]   xl:ml-5 leading-relaxed">
                   From leadership development to digital transformation, our
                   training modules are designed to strengthen every layer of
                   your organization. We offer:
                 </p>
-                <ul className="list-disc text-xs lg:text-base font-normal  space-y-2 ml-10
-                 xl:font-medium text-black/80 leading-relaxed">
+                <ul
+                  className="list-disc text-xs lg:text-lg text-[#161616]  font-normal  space-y-2 ml-10
+                 xl:font-medium  leading-relaxed"
+                >
                   <li>
                     Leadership Development: Build managerial and executive
                     excellence.
@@ -126,35 +118,36 @@ const Training = () => {
                   </div>
                 </ul>
               </div>
-
-           <button
-                className="flex items-center justify-evenly  w-[40%] md:w-[20%] lg:w-[40%] xl:w-[20%]
+              <div className="w-full flex justify-end">
+                <button
+                  className="flex items-center justify-evenly  w-[40%] md:w-[20%] lg:w-[40%] xl:w-[20%]
                 px-1 py-1 lg:pl-3 lg:pr-2  bg-white text-black 
                 rounded-2xl transition font-[Inter] text-xs lg:text-sm lg:font-semibold "
-              >
-                Know More
-                <div
-                  className="xl:ml-4  bg-black rounded-xl -rotate-90  p-2 xl:p-3 flex justify-center
-                 items-center"
                 >
-                  <img
-                    src={Arrow}
-                    alt="arrow"
-                    className="w-2 h-2 lg:w-3 lg:h-3"
-                  />
-                </div>
-              </button>
+                  Know More
+                  <div
+                    className="xl:ml-4  bg-black rounded-xl -rotate-90  p-2 xl:p-3 flex justify-center
+                 items-center"
+                  >
+                    <img
+                      src={Arrow}
+                      alt="arrow"
+                      className="w-2 h-2 lg:w-3 lg:h-3"
+                    />
+                  </div>
+                </button>
+              </div>
             </div>
+          </div>
 
-            <div className="relative w-full md:w-[45%] flex justify-center h-full">
-              <Images
-                borderClass="border-orange-500"
-                img1={Training1}
-                img2={Training2}
-                img3={Training3}
-                img4={Training4}
-              />
-            </div>
+          <div className=" w-[30%] mt-16 flex justify-center items-center h-full">
+            <Images
+              borderClass="border-orange-500"
+              img1={Training1}
+              img2={Training2}
+              img3={Training3}
+              img4={Training4}
+            />
           </div>
         </div>
       </div>

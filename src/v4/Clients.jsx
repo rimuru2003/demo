@@ -59,7 +59,7 @@ const LogoColumn = ({ direction = "up" }) => {
         { y: direction === "up" ? 0 : -halfHeight },
         {
           y: direction === "up" ? -halfHeight : 0,
-          duration: 14,
+          duration: 20,
           ease: "none",
           repeat: -1,
         }
