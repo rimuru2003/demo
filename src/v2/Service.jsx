@@ -33,7 +33,7 @@ const Service = () => {
       <div className=" flex flex-col items-center space-y-6 p-0 ">
         <h1 className="text-6xl md:text-8xl font-Parkinsans  xl:text-9xl font-bold px-4 xl:px-0 ">What We Offer</h1>
 
-        <div className="flex text-xs xl:text-2xl px-6  gap-2 font-medium flex-wrap  justify-center xl:space-x-6">
+        <div className="flex text-sm md:text-base xl:text-2xl px-6  gap-2 font-medium flex-wrap  justify-center xl:space-x-6">
           {tabshown.map((valu, ind) => (
             <div
               key={ind}
@@ -75,7 +75,7 @@ const Service = () => {
             const Component = valu.component;
             return (
               <SwiperSlide key={ind}>
-                <div className="  p-8">
+                <div className="  p-4 md:p-8">
                   <Component />
                 </div>
               </SwiperSlide>

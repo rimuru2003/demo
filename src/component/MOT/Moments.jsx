@@ -287,8 +287,8 @@ const Moments = () => {
     <>
       <div className="relative w-full h-screen overflow-hidden">
         <div
-          className="relative w-full h-full flex flex-col items-center lg:items-start lg:flex-row 
-        space-y-12 lg:justify-evenly px-4
+          className="relative w-full h-full flex flex-col items-center xl:items-start xl:flex-row 
+        space-y-12 xl:justify-evenly px-4
          lg :px-20"
         >
           {/* BG elements */}

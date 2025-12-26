@@ -14,15 +14,15 @@ const General = () => {
   return (
     <section
       ref={containerRef}
-      className="w-[80%] mx-auto h-[75vh]  flex justify-center  bg-[#FFFFFF] 
+      className="xl:w-[80%] h-[60vh] mx-auto md:h-[65vh] lg:h-[75vh] w-full  flex justify-center  bg-[#FFFFFF] 
       rounded-3xl"
     >
-      <div className="w-[95%]   ">
+      <div className="w-[95%] px-2  py-4 ">
         <div className="flex w-full justify-between  h-full   ">
-          <div className="flex flex-col justify-around w-[50%]  ">
+          <div className="flex flex-col justify-evenly w-full sm:w-[50%]  ">
             <div className="text-start  font-[Parkinsans] space-y-2 md:space-y-8">
               <div
-                className="  text-[50px] md:text-[70px] lg:text-8xl font-semibold
+                className="  text-4xl md:text-4xl lg:text-6xl xxxl:text-8xl font-semibold
              text-black/10 select-none"
               >
                 01
@@ -30,17 +30,17 @@ const General = () => {
             </div>
             <div className="flex flex-col w-full  space-y-10 ">
               <h1
-                className="text-8xl  font-semibold text-black
+                className="text-4xl md:text-4xl lg:text-6xl xxxl:text-8xl  font-semibold text-black
                leading-none"
               >
                 General
               </h1>
               <div className=" text-start space-y-2">
-                <h2 className="xsm:text-base text-sm xl:text-3xl md:text-xl font-semibold leading-snug">
+                <h2 className="xsm:text-base md:text-lg text-sm xxxl:text-3xl xl:text-2xl font-semibold leading-snug">
                   Building stronger, happier, and more productive teams through
                   experience-driven activities.
                 </h2>
-                <p className="xsm:text-sm text-xs lg:text-xl md:text-base text-[#161616] font-medium xl:ml-5 xl:w-[95%] font-[Inter] leading-relaxed">
+                <p className="xsm:text-sm text-xs  xl:text-lg text-[#161616] font-medium xl:ml-5 xl:w-[95%] font-[Inter] leading-relaxed">
                   We go beyond traditional training by engaging individuals in
                   interactive team experiences that relieve stress, boost
                   morale, and foster job satisfaction — resulting in higher
@@ -51,9 +51,9 @@ const General = () => {
                 <button
                   onClick={() => setShowPopup(true)}
                   className={`
-                flex items-center justify-evenly  w-[40%] md:w-[20%] lg:w-[40%] xl:w-[20%]
-                px-1 py-1 lg:pl-3 lg:pr-2  bg-[#FA5424] text-white 
-                rounded-2xl transition font-[Inter] text-xs lg:text-sm lg:font-semibold 
+                flex items-center justify-evenly  w-[8rem] lg:w-[10rem]
+                px-1 py-1 lg:pl-3 lg:pr-2  bg-[#E16C02] text-white rounded-lg
+                 transition font-[Inter] text-xs lg:text-sm lg:font-semibold 
                `}
                 >
                   Know More
@@ -61,7 +61,7 @@ const General = () => {
                     <img
                       src={Arrow}
                       alt="arrow"
-                      className="w-2 h-2 lg:w-3 lg:h-3"
+                      className="w-3 h-3 lg:w-4 lg:h-4"
                     />
                   </div>
                 </button>
@@ -69,7 +69,7 @@ const General = () => {
             </div>
           </div>
 
-          <div className=" w-[30%] mt-16 flex justify-center items-center h-full">
+          <div className=" w-[30%] lg:w-[40%] hidden sm:flex xxxl:mt-16 mt-20 lg:mt-10 justify-center items-center h-full">
             <Images
               borderClass="border-orange-500"
               img1={General1}

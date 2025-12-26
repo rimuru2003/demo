@@ -44,7 +44,11 @@ const Footer = () => {
         <div className="h-[2px] mx-auto w-full bg-[#E61F25]"></div>
       </div>
       <div className="flex flex-col-reverse xl:flex-row pb-4 justify-between  items-end  gap-10">
-        <img src={Image} alt="Engage Logo" className="xl:w-[70%] w-full " />
+        <img
+          src={Image}
+          alt="Engage Logo"
+          className="xl:w-[70%] w-full grayscale hover:grayscale-0 transition-all duration-150 ease-linear "
+        />
 
         <div className="text-end space-y-4">
           <div className="flex flex-col ">

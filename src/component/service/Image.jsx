@@ -55,8 +55,8 @@ const Images = ({
       <div className="flex  relative">
         <div
           ref={(el) => (cardsRef.current[0] = el)}
-          className={`xl:w-[18rem] w-[10rem] h-[12rem] md:w-[12rem] md:h-[14rem] lg:h-[18rem]
-             lg:w-[14rem] xl:h-[22rem] rotate-[0deg] z-[11]
+          className={`xxxl:w-[18rem] w-[9rem] h-[11rem] md:w-[11rem] md:h-[13rem] lg:h-[18rem]
+             lg:w-[14rem] xxxl:h-[22rem] rotate-[0deg] z-[11]
           border-[5px] ${borderClass} rounded-2xl overflow-hidden shadow-lg cursor-pointer`}
         >
           <img src={img1} alt="card-1" className="w-full h-full object-cover" />
@@ -64,8 +64,8 @@ const Images = ({
 
         <div
           ref={(el) => (cardsRef.current[1] = el)}
-          className={`xl:w-[18rem] w-[10rem] h-[12rem] xl:h-[22rem] md:w-[12rem]
-             md:h-[14rem] lg:w-[14rem] lg:h-[18rem] relative top-14 right-20 rotate-[9deg] z-[10]
+          className={`xxxl:w-[18rem] w-[9rem] h-[11rem] xxxl:h-[22rem] md:w-[11rem] md:h-[13rem] 
+             lg:w-[14rem] lg:h-[18rem] relative top-14 right-20 rotate-[9deg] z-[10]
           border-[5px] ${borderClass} rounded-2xl overflow-hidden shadow-lg cursor-pointer -ml-4`}
         >
           <img src={img2} alt="card-2" className="w-full h-full object-cover" />
@@ -76,8 +76,8 @@ const Images = ({
       <div className="flex relative">
         <div
           ref={(el) => (cardsRef.current[2] = el)}
-          className={`xl:w-[18rem] w-[10rem] h-[12rem] xl:h-[22rem] md:w-[12rem] 
-            md:h-[14rem] lg:w-[14rem] lg:h-[18rem] relative -top-14 rotate-[-8deg] z-[9]
+          className={`xxxl:w-[18rem] w-[9rem] h-[11rem] xxxl:h-[22rem] md:w-[11rem] md:h-[13rem]  
+           lg:w-[14rem] lg:h-[18rem] relative -top-14 rotate-[-8deg] z-[9]
           border-[5px] ${borderClass} rounded-2xl overflow-hidden shadow-lg cursor-pointer`}
         >
           <img src={img3} alt="card-3" className="w-full h-full object-cover" />
@@ -85,8 +85,8 @@ const Images = ({
 
         <div
           ref={(el) => (cardsRef.current[3] = el)}
-          className={`xl:w-[18rem] w-[10rem] h-[12rem] xl:h-[22rem] md:w-[12rem] 
-            md:h-[14rem] lg:w-[14rem] lg:h-[17rem] relative -top-14 right-14 rotate-[8deg] z-[8]
+          className={`xxxl:w-[18rem] w-[9rem] h-[11rem] xxxl:h-[22rem] md:w-[11rem] md:h-[13rem] 
+            lg:w-[14rem] lg:h-[18rem] relative -top-14 right-14 rotate-[8deg] z-[8]
           border-[5px] ${borderClass} rounded-2xl overflow-hidden shadow-lg cursor-pointer -ml-4`}
         >
           <img src={img4} alt="card-4" className="w-full h-full object-cover" />
