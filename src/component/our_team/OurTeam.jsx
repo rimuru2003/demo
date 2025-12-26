@@ -22,7 +22,8 @@ const Card = React.forwardRef(
       onClick={onClick}
       onMouseEnter={onEnter}
       onMouseLeave={onLeave}
-      className="group bg-white hover:bg-[#E16C02] border border-white rounded-3xl w-[18rem] sm:w-[20rem] h-[26rem] sm:h-[28rem] flex flex-col justify-between overflow-hidden cursor-pointer transition-colors duration-300"
+      className="group bg-white hover:bg-[#E16C02] border border-white rounded-3xl
+       w-[18rem] sm:w-[20rem] h-[26rem] sm:h-[28rem] flex flex-col justify-between overflow-hidden cursor-pointer transition-colors duration-300"
     >
       <div className="flex items-center gap-2 p-4 group-hover:text-white">
         <div className="w-3 h-3 bg-black group-hover:bg-white rounded-sm" />
@@ -71,7 +72,7 @@ const OurTeam = ({ onBackClick }) => {
   ];
 
   useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth <= 768);
+    const check = () => setIsMobile(window.innerWidth <= 1280);
     check();
     window.addEventListener("resize", check);
     return () => window.removeEventListener("resize", check);
@@ -118,9 +119,10 @@ const OurTeam = ({ onBackClick }) => {
       duration: 0.2,
       ease: "power2.inOut",
     });
-
   const handleEnter = (i) => {
     const { rotate, x, y } = team[i];
+    gsap.killTweensOf(cardRefs.current[i]);
+
     gsap.to(cardRefs.current[i], {
       rotate,
       x,
@@ -128,11 +130,15 @@ const OurTeam = ({ onBackClick }) => {
       duration: 0.4,
       ease: "power3.out",
       zIndex: 20,
+      overwrite: "auto",
+      scrub: 5,
     });
     showCursor();
   };
 
   const handleLeave = (i) => {
+    gsap.killTweensOf(cardRefs.current[i]);
+
     gsap.to(cardRefs.current[i], {
       rotate: 0,
       x: 0,
@@ -140,6 +146,8 @@ const OurTeam = ({ onBackClick }) => {
       duration: 0.35,
       ease: "power3.inOut",
       zIndex: 10,
+      overwrite: "auto",
+      scrub: 5,
     });
     hideCursor();
   };
@@ -156,7 +164,7 @@ const OurTeam = ({ onBackClick }) => {
       </h1>
 
       {!isMobile ? (
-        <div className="flex gap-6  mt-36">
+        <div className="flex gap-4   mt-36">
           {team.map((m, i) => (
             <Card
               key={m.name}

@@ -20,7 +20,7 @@ const Heros = () => {
           y: 0,
           opacity: 1,
           duration: 3,
-          delay: 0.8,
+          delay: 0.4,
           ease: "power2.out",
           scrub: 5,
         }
