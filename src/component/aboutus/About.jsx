@@ -108,11 +108,24 @@ const About = ({ goToTeam = () => {} }) => {
       const mm = gsap.matchMedia();
 
       mm.add("(min-width: 1024px)", () => {
+        const getScrollValues = () => {
+          const width = window.innerWidth;
+          if (width >= 1536) {
+            return { start: "bottom bottom", end: "+=60%" };
+          }
+          if (width >= 1280) {
+            return { start: "bottom bottom", end: "+=85%" };
+          }
+          return { start: "bottom bottom", end: "+=70%" };
+        };
+
+        const scrollValues = getScrollValues();
+
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top top",
-            end: "+=70%",
+            start: scrollValues.start,
+            end: scrollValues.end,
             scrub: 2,
             pin: true,
             anticipatePin: 1,
@@ -133,9 +146,9 @@ const About = ({ goToTeam = () => {} }) => {
           {
             x: "50vw",
             xPercent: -55,
-            scale: 2,
+            scale: 1.6,
             width: "80vw",
-            height: "35vh",
+            height: "50vh",
             ease: "power2.out",
           },
           0
@@ -160,7 +173,7 @@ const About = ({ goToTeam = () => {} }) => {
     <>
       <section
         ref={sectionRef}
-        className="w-full min-h-screen py-28 xl:h-[120vh] flex flex-col overflow-hidden  text-black"
+        className="w-full min-h-screen py-28 h-[120vh] flex flex-col overflow-hidden  text-black"
       >
         <KnowMoreCursor ref={cursorRef} />
 

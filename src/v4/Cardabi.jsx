@@ -83,13 +83,13 @@ const CardAni = () => {
   return (
     <div
       ref={heroRef}
-      className="relative py-20 w-full overflow-hidden flex flex-col 
+      className="relative lg:py-20 w-full overflow-hidden flex flex-col 
       justify-around "
     >
-      <div className="flex justify-center items-center font-[Inter]  ">
+      <div className="md:flex py-16 justify-center items-center font-[Inter] hidden  ">
         <div
           ref={(el) => (cardsRef.current[0] = el)}
-          className="xl:w-96 xl:h-[32rem]  h-[15rem] md:h-[18rem] md:w-56 w-36 -ml-8 q1 rounded-3xl  bg-[#F9B900]"
+          className="xl:w-80 xxxl:w-96 xxxl:h-[32rem] xl:h-[28rem]  h-[15rem] md:h-[18rem] md:w-56 w-36 -ml-8 q1 rounded-3xl  bg-[#F9B900]"
         >
           <CounterBox
             value={900}
@@ -99,7 +99,7 @@ const CardAni = () => {
         </div>
         <div
           ref={(el) => (cardsRef.current[1] = el)}
-          className="xl:w-96 -ml-8  hidden md:block md:h-[18rem] md:w-56 q3 h-[15rem] rounded-3xl xl:h-[32rem] "
+          className="xl:w-80 -ml-8 xxxl:w-96  hidden md:block xl:h-[28rem] md:h-[18rem] md:w-56 q3 h-[15rem] rounded-3xl xxxl:h-[32rem] "
         >
           <video
             className="w-full h-full rounded-3xl object-cover block"
@@ -112,7 +112,7 @@ const CardAni = () => {
         </div>
         <div
           ref={(el) => (cardsRef.current[2] = el)}
-          className="xl:w-96 -ml-8 q3 h-[15rem] w-36  md:h-[18rem] md:w-56 rounded-3xl xl:h-[32rem] bg-[#0D8DFF]"
+          className="xl:w-80 -ml-8 xxxl:w-96 q3 h-[15rem] w-36 xl:h-[28rem]  md:h-[18rem] md:w-56 rounded-3xl xxxl:h-[32rem] bg-[#0D8DFF]"
         >
           <CounterBox
             value={13}
@@ -122,7 +122,7 @@ const CardAni = () => {
         </div>
         <div
           ref={(el) => (cardsRef.current[3] = el)}
-          className="xl:w-96 hidden md:block -ml-8 md:h-[18rem] md:w-56 q3 h-[15rem] rounded-3xl xl:h-[32rem]"
+          className="xl:w-80 hidden xxxl:w-96 md:block -ml-8 xl:h-[28rem] md:h-[18rem] md:w-56 q3 h-[15rem] rounded-3xl xxxl:h-[32rem]"
         >
           <video
             className="w-full h-full rounded-3xl object-cover block"
@@ -135,13 +135,42 @@ const CardAni = () => {
         </div>
         <div
           ref={(el) => (cardsRef.current[4] = el)}
-          className="xl:w-96 -ml-8 q5 h-[15rem] w-36 md:h-[18rem] md:w-56 rounded-3xl xl:h-[32rem] bg-[#33C791]"
+          className="xl:w-80 -ml-8 xxxl:w-96 q5 h-[15rem] w-36 xl:h-[28rem] md:h-[18rem] md:w-56 rounded-3xl xxxl:h-[32rem] bg-[#33C791]"
         >
           <CounterBox
             value={100}
             mainHeading="Brands"
             subHeading="Built for Tomorrow"
           />
+        </div>
+      </div>
+      <div className="flex flex-col lg:flex-row w-full  mx-auto justify-evenly items-center  space-y-4 font-[Inter] md:hidden">
+        <div className="bg-[#F9B900] lg:px-4 lg:py-8 py-4  rounded-xl space-x-3 flex justify-around items-center sm:w-[70%] w-[90%] md:w-[60%]">
+          <p className="lg:text-8xl xsm:text-5xl text-3xl text-start w-[30%]  font-bold">900+</p>
+          <span className="space-y-1 flex flex-col items-start w-[50%]">
+            <p className="xsm:text-xl text-lg font-bold border-b-4 border-black py-2">
+              Projects Worldwide
+            </p>
+            <p className="font-medium text-sm">Crafted for Every Culture</p>
+          </span>
+        </div>
+        <div className="bg-[#0D8DFF] lg:px-4 lg:py-8  rounded-xl py-4 justify-around items-center space-x-3 sm:w-[70%] flex w-[90%] md:w-[60%]">
+          <p className="lg:text-8xl xsm:text-5xl text-3xl text-start w-[30%] font-bold">13+</p>
+          <span className="space-y-1 flex flex-col items-start w-[50%]">
+            <p className="xsm:text-xl text-lg font-bold border-b-4 border-black py-2">
+              Countries
+            </p>
+            <p className="font-medium text-sm">United by Vision</p>
+          </span>
+        </div>
+        <div className="bg-[#33C791] lg:px-4 lg:py-8  rounded-xl py-4 justify-around items-center space-x-3 sm:w-[70%] flex w-[90%] md:w-[60%]">
+          <p className="lg:text-8xl xsm:text-5xl text-3xl text-start w-[30%]  font-bold">100+</p>
+          <span className="space-y-1 flex flex-col items-start w-[50%]">
+            <p className="xsm:text-xl text-lg font-bold border-b-4 border-black py-2">
+              Brands
+            </p>
+            <p className="font-medium text-sm">Built for Tomorrow</p>
+          </span>
         </div>
       </div>
     </div>
