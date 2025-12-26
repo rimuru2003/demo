@@ -89,7 +89,7 @@ const Navbar = () => {
       <div
         className="
 fixed top-4 left-1/2 -translate-x-1/2 w-[90%] 
-rounded-2xl px-4 py-2 bg-white/60 border border-black/5  flex items-center justify-between z-30
+rounded-2xl px-4 py-2 bg-white/90 border border-black/5  flex items-center justify-between z-30
 "
       >
         <img src={Image} alt="logo" className="h-9 md:h-10" />
