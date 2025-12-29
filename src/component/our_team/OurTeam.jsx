@@ -155,11 +155,11 @@ const OurTeam = ({ onBackClick }) => {
   return (
     <div
       ref={containerRef}
-      className="h-screen bg-[#FAF4EC] overflow-hidden flex flex-col items-center justify-center 
+      className="h-screen bg-[#FAF4EC] overflow-hidden flex flex-col items-center justify-around 
       relative px-6 md:px-24"
     >
       <KnowMoreCursor ref={cursorRef} />
-      <h1 className="text-5xl md:text-8xl font-bold  text-center">
+      <h1 className="text-6xl md:text-8xl font-Parkinsans text-center  xl:text-9xl font-bold ">
         Meet Our Team
       </h1>
 
