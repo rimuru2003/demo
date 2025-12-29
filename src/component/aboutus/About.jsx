@@ -173,7 +173,7 @@ const About = ({ goToTeam = () => {} }) => {
     <>
       <section
         ref={sectionRef}
-        className="w-full min-h-screen py-28 h-[120vh] flex flex-col overflow-hidden  text-black"
+        className="w-full min-h-screen py-28 lg:h-[120vh] flex flex-col overflow-hidden  text-black"
       >
         <KnowMoreCursor ref={cursorRef} />
 
@@ -181,10 +181,10 @@ const About = ({ goToTeam = () => {} }) => {
           About Us
         </span>
 
-        <div className="flex flex-col w-full lg:mt-24 xl:mt-16 space-y-32">
+        <div className="flex flex-col w-full lg:mt-24 xl:mt-16 space-y-12 lg:space-y-32">
           <div
             ref={textRef}
-            className="xl:w-[60%]  px-20 xl:text-4xl md:text-3xl font-semibold tracking-wide"
+            className="xl:w-[60%] px-6 xl:px-20 xl:text-4xl md:text-3xl font-semibold tracking-wide"
           >
             {" "}
             <span className="text-[#E61F25] underline font-[Inter] underline-offset-4">
@@ -195,11 +195,22 @@ const About = ({ goToTeam = () => {} }) => {
             C-suite curated experiences to transformational workshops with top
             speakers and trainers, driving measurable organizational change.
           </div>
+          <div className="flex flex-col lg:flex-row w-[95%] mx-auto gap-10 items-center">
+            <div className="block lg:hidden w-full h-[10rem] xsm:h-[12rem] sm:h-[15rem] md:h-[18rem] xsm:w-[80%] sm:w-[60%] rounded-xl overflow-hidden">
+              <video
+                src={Video}
+                className="w-full h-full object-cover"
+                muted
+                autoPlay
+                loop
+                playsInline
+                controls
+              />
+            </div>
 
-          <div className="flex  flex-col lg:flex-row w-[95%] mx-auto gap-10 items-center">
             <div
               ref={videoContainerRef}
-              className="xl:w-[30%] w-full md:w-[70%] h-[15rem] xl:h-[20rem] rounded-xl overflow-hidden"
+              className="hidden lg:block xl:w-[30%] h-[20rem] rounded-xl overflow-hidden"
             >
               <video
                 ref={videoRef}
@@ -226,11 +237,11 @@ const About = ({ goToTeam = () => {} }) => {
 
               <div
                 ref={buttonsRef}
-                className="flex flex-col sm:flex-row gap-4 justify-between mt-6"
+                className="flex flex-col text-sm sm:text-base sm:flex-row gap-4 justify-between mt-6"
               >
                 <button
                   onClick={() => setShowPopup(true)}
-                  className="flex items-center border border-black rounded-xl px-3 py-1"
+                  className="flex items-center border w-[9rem] sm:w-auto border-black rounded-xl px-2 sm:px-3 py-1"
                 >
                   <span className="font-semibold">Know more</span>
                   <div className="ml-4 bg-black rounded-xl p-2">
@@ -240,7 +251,7 @@ const About = ({ goToTeam = () => {} }) => {
 
                 <button
                   onClick={goToTeam}
-                  className="border-2 rounded-2xl px-5 py-1 font-semibold flex items-center gap-2 hover:bg-[#E61F25] hover:text-white"
+                  className="border-2 w-[13rem] sm:w-auto rounded-2xl px-3 sm:px-5 py-1 font-semibold flex items-center gap-2 hover:bg-[#E61F25] hover:text-white"
                 >
                   Meet Our Team
                   <Hand />
