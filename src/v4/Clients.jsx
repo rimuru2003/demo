@@ -112,7 +112,7 @@ const LogoColumn = ({ direction = "up" }) => {
 const Clients = () => {
   return (
     <div className="h-screen flex flex-col-reverse lg:flex-row justify-evenly overflow-hidden">
-      <div className="lg:w-[30%] w-full mx-6 h-full flex  overflow-hidden">
+      <div className="lg:w-[30%] w-[90%] mx-auto h-full flex  overflow-hidden">
         <LogoColumn direction="up" />
         <LogoColumn direction="down" />
       </div>
