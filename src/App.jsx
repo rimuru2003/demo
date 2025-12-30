@@ -117,7 +117,7 @@ function MainContentFour() {
         <Moments />
       </div>
       <div>
-        {/* <Clients /> */}
+        <Clients /> 
       </div>
       <div id="feedbacks">
         <TestimonialSlider />
