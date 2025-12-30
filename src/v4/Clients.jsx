@@ -126,21 +126,21 @@ const Clients = () => {
         </div>
 
         <div className="flex w-full mx-auto justify-end space-x-4 xl:space-x-8">
-          <span className="border-r-8 text-4xl text-end sm:text-4xl md:text-5xl xl:text-6xl border-[#E61F25] pr-4">
+          <span className="border-r-8 text-4xl text-end sm:text-5xl md:text-6xl xl:text-7xl border-[#E61F25] pr-4">
             <p className="flex text-end font-extrabold">
               900<span className="font-bold">+</span>
             </p>
             <p className="font-semibold text-end font-semibold text-xs sm:text-sm md:text-base xl:text-lg">Projects Worldwide</p>
           </span>
 
-          <span className="border-r-8  text-4xl sm:text-4xl md:text-5xl xl:text-6xl border-[#F9B900] pr-4">
+          <span className="border-r-8  text-4xl sm:text-5xl md:text-6xl xl:text-7xl border-[#F9B900] pr-4">
             <p className="flex font-extrabold">
               13<span className="font-bold">+</span>
             </p>
             <p className="font-semibold text-end  font-semibold text-xs sm:text-sm md:text-base xl:text-lg">Countries</p>
           </span>
 
-          <span className="border-r-8  text-4xl sm:text-4xl md:text-5xl xl:text-6xl border-[#0ABAB5] pr-4">
+          <span className="border-r-8  text-4xl sm:text-5xl md:text-6xl xl:text-7xl border-[#0ABAB5] pr-4">
             <p className="flex font-extrabold">
               100<span className="font-bold">+</span>
             </p>
