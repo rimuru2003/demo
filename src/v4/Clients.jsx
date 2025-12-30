@@ -23,19 +23,19 @@ const logos = [
 
 const LogoCard = ({ logo }) => {
   return (
-    <div className="relative w-[220px] h-[140px] grid place-items-center group py-6">
+    <div className="relative lg:w-[220px] w-[180px] h-[100px] lg:h-[140px] grid place-items-center group py-6">
       <div className="absolute inset-0 rounded-xl transition-colors duration-300 group-hover:bg-[#E61F25]" />
 
       <img
         src={logo.gray}
         alt=""
-        className="absolute w-[120px] transition-opacity duration-300 group-hover:opacity-0"
+        className="absolute lg:w-[120px] w-[80px] transition-opacity duration-300 group-hover:opacity-0"
       />
 
       <img
         src={logo.color}
         alt=""
-        className="absolute w-[120px] opacity-0 group-hover:opacity-100"
+        className="absolute  opacity-0  lg:w-[120px] w-[80px] group-hover:opacity-100"
       />
     </div>
   );
