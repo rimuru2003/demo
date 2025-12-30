@@ -127,7 +127,7 @@ const Clients = () => {
 
         <div className="flex w-full mx-auto justify-end space-x-4 xl:space-x-8">
           <span className="border-r-8 text-4xl text-end sm:text-4xl md:text-5xl xl:text-6xl border-[#E61F25] pr-4">
-            <p className="flex font-extrabold">
+            <p className="flex text-end font-extrabold">
               900<span className="font-bold">+</span>
             </p>
             <p className="font-semibold text-end font-semibold text-xs sm:text-sm md:text-base xl:text-lg">Projects Worldwide</p>
