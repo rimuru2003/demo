@@ -130,21 +130,21 @@ const Clients = () => {
             <p className="flex font-extrabold">
               900<span className="font-bold">+</span>
             </p>
-            <p className="font-semibold text-end text-lg">Projects Worldwide</p>
+            <p className="font-semibold text-end font-semibold text-xs sm:text-sm md:text-base xl:text-lg">Projects Worldwide</p>
           </span>
 
           <span className="border-r-8  text-3xl sm:text-4xl md:text-5xl xl:text-6xl border-[#F9B900] pr-4">
             <p className="flex font-extrabold">
               13<span className="font-bold">+</span>
             </p>
-            <p className="font-semibold text-end text-lg">Countries</p>
+            <p className="font-semibold text-end  font-semibold text-xs sm:text-sm md:text-base xl:text-lg">Countries</p>
           </span>
 
           <span className="border-r-8  text-3xl sm:text-4xl md:text-5xl xl:text-6xl border-[#0ABAB5] pr-4">
             <p className="flex font-extrabold">
               100<span className="font-bold">+</span>
             </p>
-            <p className="font-semibold text-end text-lg">Brands</p>
+            <p className="font-semibold text-xs sm:text-sm md:text-base text-end xl:text-lg">Brands</p>
           </span>
         </div>
       </div>
