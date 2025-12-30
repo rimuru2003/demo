@@ -112,14 +112,14 @@ const LogoColumn = ({ direction = "up" }) => {
 const Clients = () => {
   return (
     <div className="h-screen flex flex-col-reverse lg:flex-row justify-evenly">
-      <div className="w-[30%] h-full flex  overflow-hidden">
+      <div className="lg:w-[30%] w-full mx-6 h-full flex  overflow-hidden">
         <LogoColumn direction="up" />
         <LogoColumn direction="down" />
       </div>
 
       {/* RIGHT SIDE – CONTENT */}
-      <div className="w-[50%] h-full flex flex-col justify-evenly px-8">
-        <div className="text-4xl  text-center font-Parkinsans lg:text-start xsm:text-5xl sm:text-6xl md:text-8xl xxl:text-[7rem]">
+      <div className="lg:w-[50%] w-full mx-6 h-full flex flex-col justify-evenly px-8">
+        <div className="text-4xl  text-center font-bold font-Parkinsans lg:text-start xsm:text-5xl sm:text-6xl md:text-8xl xxl:text-[7rem]">
           These brands
           <br /> we worked
           <br /> with.
