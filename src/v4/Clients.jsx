@@ -118,7 +118,7 @@ const Clients = () => {
       </div>
 
       {/* RIGHT SIDE – CONTENT */}
-      <div className="lg:w-[50%] w-full mx-6 h-full flex flex-col justify-evenly px-8">
+      <div className="lg:w-[50%] w-full  h-full flex flex-col justify-evenly px-8">
         <div className="text-4xl  text-center font-bold font-Parkinsans lg:text-start xsm:text-5xl sm:text-6xl md:text-8xl xxl:text-[7rem]">
           These brands
           <br /> we worked
@@ -133,14 +133,14 @@ const Clients = () => {
             <p className="font-semibold text-end text-lg">Projects Worldwide</p>
           </span>
 
-          <span className="border-r-8 text-6xl border-[#F9B900] pr-4">
+          <span className="border-r-8  text-3xl sm:text-4xl md:text-5xl xl:text-6xl border-[#F9B900] pr-4">
             <p className="flex font-extrabold">
               13<span className="font-bold">+</span>
             </p>
             <p className="font-semibold text-end text-lg">Countries</p>
           </span>
 
-          <span className="border-r-8 text-6xl border-[#0ABAB5] pr-4">
+          <span className="border-r-8  text-3xl sm:text-4xl md:text-5xl xl:text-6xl border-[#0ABAB5] pr-4">
             <p className="flex font-extrabold">
               100<span className="font-bold">+</span>
             </p>
