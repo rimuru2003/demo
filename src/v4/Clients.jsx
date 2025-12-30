@@ -111,7 +111,7 @@ const LogoColumn = ({ direction = "up" }) => {
 
 const Clients = () => {
   return (
-    <div className="h-screen flex flex-col-reverse lg:flex-row justify-evenly">
+    <div className="h-screen flex flex-col-reverse lg:flex-row justify-evenly overflow-hidden">
       <div className="lg:w-[30%] w-full mx-6 h-full flex  overflow-hidden">
         <LogoColumn direction="up" />
         <LogoColumn direction="down" />
@@ -125,8 +125,8 @@ const Clients = () => {
           <br /> with.
         </div>
 
-        <div className="flex justify-end space-x-8">
-          <span className="border-r-8 text-6xl border-[#E61F25] pr-4">
+        <div className="flex justify-end space-x-4 xl:space-x-8">
+          <span className="border-r-8 text-3xl sm:text-4xl md:text-5xl xl:text-6xl border-[#E61F25] pr-4">
             <p className="flex font-extrabold">
               900<span className="font-bold">+</span>
             </p>
