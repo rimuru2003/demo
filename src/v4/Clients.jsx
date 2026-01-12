@@ -118,7 +118,7 @@ const Clients = () => {
       </div>
 
       {/* RIGHT SIDE – CONTENT */}
-      <div className="lg:w-[50%] w-full  h-full flex flex-col justify-evenly px-8">
+      <div className="lg:w-[50%] w-full h-[50%]  sm:h-full flex flex-col justify-start px-8">
         <div className="text-4xl  text-center font-bold font-Parkinsans lg:text-start xsm:text-5xl sm:text-6xl md:text-8xl xxl:text-[7rem]">
           These brands
           <br /> we worked

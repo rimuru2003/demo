@@ -240,9 +240,9 @@ const Moments = () => {
 
     return (
       <div
-        className="relative w-[20rem] sm:w-[12rem] xxl:w-[22rem] bg-[#FAF4EC]
-         h-28 xxl:h-[12rem] rounded-3xl xl:h-36 xl:w-[15rem]
-        flex border-[3px] border-solid border-[#E2E2E2]
+        className="relative w-[20rem]  sm:w-[10rem]  md:w-[15rem] xxl:w-[22rem] bg-[#FAF4EC]
+         h-20 md:h-28 xxl:h-[12rem] rounded-xl md:rounded-3xl xl:h-36 xl:w-[15rem]
+        flex border-[2px] md:border-[3px] border-solid border-[#E2E2E2]
         items-center justify-around px-4 transition-all duration-300 cursor-pointer"
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
@@ -251,11 +251,11 @@ const Moments = () => {
           borderColor: hover ? card.border : "#E2E2E2",
         }}
       >
-        <div className="flex flex-col items-end w-[60%]">
+        <div className="flex flex-col items-end w-[50%] md:w-[60%]">
           <img
             src={hover ? card.logo : card.gray_logo}
             alt={card.brand}
-            className="xxl:w-28 xxl:h-28 h-14 w-14 xl:w-24 xl:h-24 transition-all duration-300"
+            className="xxl:w-28 xxl:h-28 h-12 w-12 sm:w-16 sm:h-16 xl:w-24 xl:h-24 transition-all duration-300"
           />
         </div>
 
@@ -285,7 +285,7 @@ const Moments = () => {
 
   return (
     <>
-      <div className="relative w-full h-screen overflow-hidden">
+      <div className="relative w-full  overflow-hidden">
         <div
           className="relative w-full h-full flex flex-col items-center xl:items-start xl:flex-row 
         space-y-12 xl:justify-evenly px-4
@@ -322,7 +322,7 @@ const Moments = () => {
             </div>
           </div>
           <div
-            className="xxl:w-[45%] w-full xsm:w-[70%] md:w-[60%] lg:w-[50%] xl:w-[50%]
+            className="xxl:w-[45%] w-full xsm:w-[80%] sm:w-[60%] md:w-[80%] lg:w-[50%] xl:w-[50%]
              sm:h-full  h-full "
           >
             <div className="w-full flex flex-col  gap-y-2 xl:gap-y-6 ">

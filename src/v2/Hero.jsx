@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import curve from "../assest/curve.svg";
 import Shapes from "../assest/v2/shapes.svg";
+import ShapesM from "../assest/v2/shapesmobole.svg";
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -56,7 +57,12 @@ const Heros = () => {
         <img
           src={Shapes}
           alt=""
-          className="relative w-[135vw] max-w-none -left-[20vw] float-img"
+          className="relative hidden sm:block w-[135vw] max-w-none -left-[20vw] float-img"
+        />
+        <img
+          src={ShapesM}
+          alt=""
+          className="relative block sm:hidden w-screen max-w-none float-img"
         />
       </div>
     </div>
